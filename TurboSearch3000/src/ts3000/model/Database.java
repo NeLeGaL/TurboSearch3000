@@ -1,5 +1,9 @@
 package ts3000.model;
 
+// 1. Read it.
+// 2. ???
+// 3. Profit.
+
 public class Document {
 	public String getTitle();
 	public String getAnnotation();
