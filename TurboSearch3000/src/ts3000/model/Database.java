@@ -13,6 +13,7 @@ public class Document {
 public abstract class Database {
 	public void initDatabase(String filename) {
 		// Some cool code here
+        // Really some cool code
 	}
 	
 	// one word query - just for now
