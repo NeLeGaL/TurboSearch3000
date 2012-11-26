@@ -3,6 +3,8 @@ package ts3000.model;
 // 1. Read it.
 // 2. ???
 // 3. Profit.
+// Sorry, just want to check, if git works fine. Stas.
+// One more meaningfull comment sorry.
 
 public class Document {
 	public String getTitle();
