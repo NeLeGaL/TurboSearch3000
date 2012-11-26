@@ -3,6 +3,7 @@ package ts3000.model;
 // 1. Read it.
 // 2. ???
 // 3. Profit.
+// Once again, sorry. Meaningless, yeah. To master
 
 public class Document {
 	public String getTitle();
