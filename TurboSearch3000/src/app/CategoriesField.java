@@ -43,7 +43,7 @@ public class CategoriesField extends javax.swing.JPanel {
 
         lnkNextPage.setText(">>");
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24));
         lblTitle.setText("Categories");
 
         lnkPrevPage.setText("<<");
@@ -58,7 +58,6 @@ public class CategoriesField extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 584, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -85,7 +84,6 @@ public class CategoriesField extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -109,15 +107,15 @@ public class CategoriesField extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox cmbSortBy;
-    private javax.swing.JLabel lblCurPage;
-    private javax.swing.JLabel lblSortBy;
-    private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel lnkNextPage;
-    private javax.swing.JLabel lnkPrevPage;
-    private app.SearchResult searchResult1;
-    private app.SearchResult searchResult2;
-    private app.SearchResult searchResult3;
-    private app.SearchResult searchResult4;
+    protected javax.swing.JComboBox cmbSortBy;
+    protected javax.swing.JLabel lblCurPage;
+    protected javax.swing.JLabel lblSortBy;
+    protected javax.swing.JLabel lblTitle;
+    protected javax.swing.JLabel lnkNextPage;
+    protected javax.swing.JLabel lnkPrevPage;
+    protected app.SearchResult searchResult1;
+    protected app.SearchResult searchResult2;
+    protected app.SearchResult searchResult3;
+    protected app.SearchResult searchResult4;
     // End of variables declaration//GEN-END:variables
 }

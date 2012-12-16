@@ -12,6 +12,14 @@ public class Document {
 	public String getText() {
 		return text;
 	}
+        
+        // from UI team - for tests
+        public Document(String title, String annotation, String text)
+        {
+            this.title = title;
+            this.annotation = annotation;
+            this.text = text;
+        }
 	
 	private String title;
 	private String annotation;

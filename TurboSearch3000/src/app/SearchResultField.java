@@ -10,6 +10,10 @@
  */
 package app;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import ts3000.model.Document;
+
 /**
  *
  * @author Андрей
@@ -19,6 +23,94 @@ public class SearchResultField extends javax.swing.JPanel {
     /** Creates new form SearchResultField */
     public SearchResultField() {
         initComponents();
+    }
+    
+    private ArrayList<Document> docs = new ArrayList<Document>(10);
+    
+    private int pages = 0;
+    private int currentPage;
+    
+    private void makeVisibleByPage(int pageNum) {
+        if (pageNum < pages - 1) {
+            makeVisibleByNum(4);
+        } else {
+            int howMuch = docs.size() % 4;
+            if (howMuch == 0 && pages > 0) {
+                howMuch = 4;
+            }
+            makeVisibleByNum(howMuch);
+        }   
+    }
+    
+    private void makeVisibleByNum(int num) {
+        searchResult1.setVisible(num >= 1);
+        searchResult2.setVisible(num >= 2);
+        searchResult3.setVisible(num >= 3);
+        searchResult4.setVisible(num >= 4);        
+    }
+    
+    public boolean setPage(int newPage) {
+        if (pages < newPage || newPage < 0) {
+            return false;
+        } else {
+            currentPage = newPage;
+            lblCurPage.setText("Page " + Integer.toString(currentPage + 1));
+            makeVisibleByPage(newPage);
+            int howMuch = docs.size() % 4;
+            if (howMuch == 0 || newPage < pages - 1) {
+                howMuch = 4;
+            }
+            
+            if (pages == 0) {
+                return true;
+            }
+            
+            if (howMuch >= 1) {
+                searchResult1.setCaption(docs.get(newPage*4 + 0).getTitle());
+                String desc = docs.get(newPage*4 + 0).getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult1.setDescription(desc);
+                searchResult1.setPath(docs.get(newPage*4 + 0).getTitle() + "/");
+            }
+            if (howMuch >= 2) {
+                searchResult2.setCaption(docs.get(newPage*4 + 1).getTitle());
+                String desc = docs.get(newPage*4 + 1).getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult2.setDescription(desc);
+                searchResult2.setPath(docs.get(newPage*4 + 1).getTitle() + "/");
+            }
+            if (howMuch >= 3) {
+                searchResult3.setCaption(docs.get(newPage*4 + 2).getTitle());
+                String desc = docs.get(newPage*4 + 2).getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult3.setDescription(desc);
+                searchResult3.setPath(docs.get(newPage*4 + 2).getTitle() + "/");
+            }
+            if (howMuch >= 4) {
+                searchResult4.setCaption(docs.get(newPage*4 + 3).getTitle());
+                String desc = docs.get(newPage*4 + 3).getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult4.setDescription(desc);
+                searchResult4.setPath(docs.get(newPage*4 + 3).getTitle() + "/");
+            }
+            
+            return true;
+        }
+    }
+    
+    public void setSource(Document[] docs) {
+        this.docs = new ArrayList<Document>(docs.length);
+        this.docs.addAll(Arrays.asList(docs));
+        pages = (docs.length + 3)/4;
+        setPage(0);
     }
     
     public void setSize(int i) {
@@ -52,12 +144,24 @@ public class SearchResultField extends javax.swing.JPanel {
 
         lblSortBy.setText("sort by:");
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24));
         lblTitle.setText("Search results");
 
         lnkPrevPage.setText("<<");
+        lnkPrevPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lnkPrevPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lnkPrevPageMouseClicked(evt);
+            }
+        });
 
         lnkNextPage.setText(">>");
+        lnkNextPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lnkNextPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lnkNextPageMouseClicked(evt);
+            }
+        });
 
         lblCurPage.setText("curr");
 
@@ -113,16 +217,31 @@ public class SearchResultField extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lnkPrevPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkPrevPageMouseClicked
+        if (currentPage == 0)
+            return;
+        
+        setPage(currentPage - 1);
+    }//GEN-LAST:event_lnkPrevPageMouseClicked
+
+    private void lnkNextPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkNextPageMouseClicked
+        if (currentPage == pages - 1)
+            return;
+        
+        setPage(currentPage + 1);
+    }//GEN-LAST:event_lnkNextPageMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox cmbSortBy;
-    private javax.swing.JLabel lblCurPage;
-    private javax.swing.JLabel lblSortBy;
-    private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel lnkNextPage;
-    private javax.swing.JLabel lnkPrevPage;
-    private app.SearchResult searchResult1;
-    private app.SearchResult searchResult2;
-    private app.SearchResult searchResult3;
-    private app.SearchResult searchResult4;
+    protected javax.swing.JComboBox cmbSortBy;
+    protected javax.swing.JLabel lblCurPage;
+    protected javax.swing.JLabel lblSortBy;
+    protected javax.swing.JLabel lblTitle;
+    protected javax.swing.JLabel lnkNextPage;
+    protected javax.swing.JLabel lnkPrevPage;
+    protected app.SearchResult searchResult1;
+    protected app.SearchResult searchResult2;
+    protected app.SearchResult searchResult3;
+    protected app.SearchResult searchResult4;
     // End of variables declaration//GEN-END:variables
 }

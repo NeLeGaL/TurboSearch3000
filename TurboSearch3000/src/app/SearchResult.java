@@ -22,6 +22,18 @@ public class SearchResult extends javax.swing.JPanel {
     public SearchResult() {
         initComponents();
     }
+    
+    public void setCaption(String newCaption) {
+        caption.setText(newCaption);
+    }
+    
+    public void setDescription(String newDesc) {
+        description.setText(newDesc);
+    }
+    
+    public void setPath(String newPath) {
+        path.setText(newPath);
+    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -70,12 +82,12 @@ public class SearchResult extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(description)
-                        .addContainerGap(438, Short.MAX_VALUE))
+                        .addContainerGap(539, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(path)
-                        .addContainerGap(378, Short.MAX_VALUE))
+                        .addContainerGap(479, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(caption, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                        .addComponent(caption, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
                         .addGap(197, 197, 197))))
         );
         layout.setVerticalGroup(
@@ -99,8 +111,8 @@ public class SearchResult extends javax.swing.JPanel {
     }//GEN-LAST:event_formMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel caption;
-    private javax.swing.JLabel description;
-    private javax.swing.JLabel path;
+    protected javax.swing.JLabel caption;
+    protected javax.swing.JLabel description;
+    protected javax.swing.JLabel path;
     // End of variables declaration//GEN-END:variables
 }

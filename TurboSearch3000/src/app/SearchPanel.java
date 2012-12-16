@@ -10,6 +10,11 @@
  */
 package app;
 
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
+import javax.swing.JOptionPane;
+import ts3000.model.Document;
+
 /**
  *
  * @author Андрей
@@ -20,6 +25,9 @@ public class SearchPanel extends javax.swing.JPanel {
     public SearchPanel() {
         initComponents();
     }
+    
+    protected Document[] gotDocs;
+    protected MainWindow parentWindow;
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -33,7 +41,7 @@ public class SearchPanel extends javax.swing.JPanel {
         tbxSearchField = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
 
-        tbxSearchField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tbxSearchField.setFont(new java.awt.Font("Tahoma", 0, 18));
         tbxSearchField.setText("search documents...");
         tbxSearchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -41,14 +49,18 @@ public class SearchPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 14));
         btnSearch.setText("Search!");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(99, 99, 99)
                 .addComponent(tbxSearchField, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
@@ -58,7 +70,6 @@ public class SearchPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(207, 207, 207)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -72,8 +83,27 @@ public class SearchPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
 }//GEN-LAST:event_tbxSearchFieldActionPerformed
 
+    private void loadDocs(String query) {
+        gotDocs = new Document[9];
+        gotDocs[0] = new Document("One", "Uno", "Odin");
+        gotDocs[1] = new Document("Two", "Due", "Dva");
+        gotDocs[2] = new Document("Three", "Tre", "Tri");
+        gotDocs[3] = new Document("Four", "Quattro", "Chetyre");
+        gotDocs[4] = new Document("Five", "Cinco", "Pyat");
+        gotDocs[5] = new Document("Six", "Sei", "Shest");
+        gotDocs[6] = new Document("Seven", "Sette", "Sem");
+        gotDocs[7] = new Document("Eight", "Otto", "Vosem");
+        gotDocs[8] = new Document("Nine", "Nueve", "Devyat");
+    }
+    
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        loadDocs(tbxSearchField.getText());
+        parentWindow.searchResults.setSource(gotDocs);
+        parentWindow.setSearchResults();
+    }//GEN-LAST:event_btnSearchActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSearch;
-    private javax.swing.JTextField tbxSearchField;
+    protected javax.swing.JButton btnSearch;
+    protected javax.swing.JTextField tbxSearchField;
     // End of variables declaration//GEN-END:variables
 }

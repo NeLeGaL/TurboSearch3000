@@ -30,6 +30,7 @@ public class MainWindow extends javax.swing.JApplet {
     /** Initializes the applet MainWindow */
     public void init() {
         try {
+            
             java.awt.EventQueue.invokeAndWait(new Runnable() {
 
                 public void run() {
@@ -40,8 +41,10 @@ public class MainWindow extends javax.swing.JApplet {
                     historyLabel.setFocusable(true);
                     
                     setSearchPanel();
+                    searchPanel.tbxSearchField.requestFocus();
                 }
             });
+            searchPanel.parentWindow = this;
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -73,7 +76,9 @@ public class MainWindow extends javax.swing.JApplet {
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        searchDocumentLabel.setFont(new java.awt.Font("Tahoma", 0, 14));
+        menuPanel.setBackground(new java.awt.Color(230, 230, 230));
+
+        searchDocumentLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         searchDocumentLabel.setForeground(new java.awt.Color(0, 0, 255));
         searchDocumentLabel.setText("Search document");
         searchDocumentLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -207,7 +212,15 @@ public class MainWindow extends javax.swing.JApplet {
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
-        searchPanel.setBackground(new java.awt.Color(204, 255, 255));
+        contentPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        searchPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        searchResults.setBackground(new java.awt.Color(255, 255, 255));
+
+        historyField.setBackground(new java.awt.Color(255, 255, 255));
+
+        categoriesField.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
@@ -296,6 +309,8 @@ public class MainWindow extends javax.swing.JApplet {
     }//GEN-LAST:event_searchFieldFocusLost
 
     private void searchDocumentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchDocumentLabelMouseClicked
+        searchDocumentLabel.requestFocus();
+        //searchPanel.tbxSearchField.requestFocus();
         activateSearchDocument();
     }//GEN-LAST:event_searchDocumentLabelMouseClicked
 
@@ -324,6 +339,7 @@ public class MainWindow extends javax.swing.JApplet {
     }//GEN-LAST:event_allDocumentsLabelMouseExited
 
     private void allDocumentsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allDocumentsLabelMouseClicked
+        allDocumentsLabel.requestFocus();
         activateAllDocuments();
     }//GEN-LAST:event_allDocumentsLabelMouseClicked
 
@@ -352,6 +368,7 @@ public class MainWindow extends javax.swing.JApplet {
     }//GEN-LAST:event_historyLabelMouseExited
 
     private void historyLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyLabelMouseClicked
+        historyLabel.requestFocus();
         activateHistory();
     }//GEN-LAST:event_historyLabelMouseClicked
 
@@ -361,7 +378,7 @@ public class MainWindow extends javax.swing.JApplet {
         }
     }//GEN-LAST:event_historyLabelKeyPressed
 
-    private void setSearchPanel()
+    protected  void setSearchPanel()
     {
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanelLayout.setHonorsVisibility(true);
@@ -381,7 +398,7 @@ public class MainWindow extends javax.swing.JApplet {
         searchPanel.setVisible(true);
     }
     
-    private void setSearchResults()
+    protected void setSearchResults()
     {
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanelLayout.setHonorsVisibility(true);
@@ -401,7 +418,7 @@ public class MainWindow extends javax.swing.JApplet {
         searchPanel.setVisible(false);
     }
     
-    private void setHistoryPanel()
+    protected void setHistoryPanel()
     {
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanelLayout.setHonorsVisibility(true);
@@ -421,7 +438,7 @@ public class MainWindow extends javax.swing.JApplet {
         searchPanel.setVisible(false);
     }
     
-    private void setCategoriesPanel()
+    protected void setCategoriesPanel()
     {
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanelLayout.setHonorsVisibility(true);
@@ -472,16 +489,16 @@ public class MainWindow extends javax.swing.JApplet {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel allDocumentsLabel;
-    private app.CategoriesField categoriesField;
+    protected app.CategoriesField categoriesField;
     private javax.swing.JPanel contentPanel;
-    private app.HistoryField historyField;
+    protected app.HistoryField historyField;
     private javax.swing.JLabel historyLabel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel searchDocumentLabel;
     private javax.swing.JTextField searchField;
-    private app.SearchPanel searchPanel;
-    private app.SearchResultField searchResults;
+    protected app.SearchPanel searchPanel;
+    protected app.SearchResultField searchResults;
     // End of variables declaration//GEN-END:variables
 }
