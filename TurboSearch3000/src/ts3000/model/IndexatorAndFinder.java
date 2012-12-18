@@ -8,59 +8,23 @@ import java.util.StringTokenizer;
 import java.util.concurrent.Semaphore;
 
 class IndexatorAndFinder {
-	private static final String DELIMETERS = "\t\n .<>,!&?$%#@()";
+	static final String DELIMETERS = "\t\n .<>,!&?$%#@()[]{}";
 	private FileWorker fileWorker;
 	private Map<String, HashSet<Integer>> grams = new HashMap<String, HashSet<Integer>>();
 	private Semaphore synchSemaphore = new Semaphore(1);
+	private IndexFindStrategy strategy;
 	
-	public IndexatorAndFinder(String filename) {
+	public IndexatorAndFinder(String filename, IndexFindStrategy strategy) {
 		//fileWorker creation
+		this.strategy = strategy;
 	}
 	
 	List<Document> processQuery(String query) {
-		StringTokenizer tokenizer = new StringTokenizer(query, DELIMETERS);
-		String word = tokenizer.nextToken();
-		
-		try {
-			synchSemaphore.acquire();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		HashSet<Integer> ans = grams.get(word);
-		
-		while (tokenizer.hasMoreTokens()) {
-			word = tokenizer.nextToken();
-			ans.retainAll(grams.get(word));
-		}
-		synchSemaphore.release();
-		
-		return fileWorker.getListOfDocuments(ans);
+		return fileWorker.getListOfDocuments(strategy.find(query, grams, synchSemaphore));
 	}
 	
 	void indexIt(List<Document> listOfDocuments) {
-		Map<String, HashSet<Integer>> newGrams = new HashMap<String, HashSet<Integer>>();
-		for (int i = 0; i < listOfDocuments.size(); ++i) {
-			indexOneDocument(listOfDocuments.get(i).getPlainText(), i, newGrams);
-		}
+		strategy.indexIt(listOfDocuments, grams, synchSemaphore);
+	}
 		
-		try {
-			synchSemaphore.acquire();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		grams = newGrams;
-		synchSemaphore.release();
-	}
-	
-	private void indexOneDocument(String document, int documentNumber, Map<String, HashSet<Integer>> grams) {
-		StringTokenizer tokenizer = new StringTokenizer(document, DELIMETERS);
-		while(tokenizer.hasMoreTokens()) {
-			String word = tokenizer.nextToken();
-			HashSet<Integer> cur = grams.get(word);
-			cur.add(documentNumber);
-		}
-	}
-	
 }
