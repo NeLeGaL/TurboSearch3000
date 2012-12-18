@@ -52,6 +52,19 @@ public class Database {
 		this.filename = filename;
 	}
 	
+        public Document[] getDocsByCategory(String category) {
+            
+        }
+        
+        public Category[] getCategories() {
+            
+        }
+        
+        public Document getDocument(String category, String title) {
+            
+        }
+                
+        
 	// one word query - just for now
 	public Document[] proccessQuery(String query) throws SAXException, IOException, ParserConfigurationException {
 		

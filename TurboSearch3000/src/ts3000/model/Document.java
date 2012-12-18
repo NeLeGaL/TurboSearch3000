@@ -1,5 +1,7 @@
 package ts3000.model;
 
+import java.util.Date;
+
 public class Document {
 	public String getTitle() {
 		return title;
@@ -13,6 +15,14 @@ public class Document {
 		return text;
 	}
         
+        public String getCategory() {
+            
+        }
+        
+        public Date getDate() {
+            
+        }
+        
         // from UI team - for tests
         public Document(String title, String annotation, String text)
         {
@@ -24,4 +34,5 @@ public class Document {
 	private String title;
 	private String annotation;
 	private String text;
+        private String category;
 }
