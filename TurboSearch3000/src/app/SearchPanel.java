@@ -84,16 +84,7 @@ public class SearchPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_tbxSearchFieldActionPerformed
 
     private void loadDocs(String query) {
-        gotDocs = new Document[9];
-        gotDocs[0] = new Document("One", "Uno", "Odin");
-        gotDocs[1] = new Document("Two", "Due", "Dva");
-        gotDocs[2] = new Document("Three", "Tre", "Tri");
-        gotDocs[3] = new Document("Four", "Quattro", "Chetyre");
-        gotDocs[4] = new Document("Five", "Cinco", "Pyat");
-        gotDocs[5] = new Document("Six", "Sei", "Shest");
-        gotDocs[6] = new Document("Seven", "Sette", "Sem");
-        gotDocs[7] = new Document("Eight", "Otto", "Vosem");
-        gotDocs[8] = new Document("Nine", "Nueve", "Devyat");
+
     }
     
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed

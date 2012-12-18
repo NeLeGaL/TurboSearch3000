@@ -1,0 +1,572 @@
+<div id="subdoc1">  	
+	<h2 id="docTitle" style="">  Title </h2>
+	<div id="docAnnotation" style=""> Annotation </div> 	
+	<div id="docDate" style=""> Sat, 12 Aug 1995 13:30:00 GMT </div>
+ 	Содержимое документа в виде html-разметки
+//END_OF_DOCUMENT
+ </div>
+
+<div id="wikipedia">  	
+	<h2 id="docTitle" style="">URL</h2>
+	<div id="docAnnotation" style="">Article about URL</div> 	
+	<div id="docDate" style=""> Sat, 12 Aug 1995 13:30:00 GMT </div>
+ 
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" class="client-nojs">
+<head>
+<title>URL — Википедия</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21wmf5" />
+<link rel="alternate" type="application/x-wiki" title="Править" href="/w/index.php?title=URL&amp;action=edit" />
+<link rel="edit" title="Править" href="/w/index.php?title=URL&amp;action=edit" />
+<link rel="apple-touch-icon" href="//ru.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Википедия (ru)" />
+<link rel="EditURI" type="application/rsd+xml" href="//ru.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Википедия — Atom-лента" href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom" />
+<link rel="stylesheet" href="//bits.wikimedia.org/ru.wikipedia.org/load.php?debug=false&amp;lang=ru&amp;modules=ext.flaggedRevs.basic%7Cext.gadget.collapserefs%2CdirectLinkToCommons%2CreferenceTooltips%7Cext.wikihiero%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmw.PopUpMediaTransform%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/ru.wikipedia.org/load.php?debug=false&amp;lang=ru&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<noscript><link rel="stylesheet" href="//bits.wikimedia.org/ru.wikipedia.org/load.php?debug=false&amp;lang=ru&amp;modules=noscript&amp;only=styles&amp;skin=vector&amp;*" /></noscript>
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: ruwiki:resourceloader:filter:minify-css:7:c884871e92fe0235e1543a88374827c4 */</style>
+
+<script src="//bits.wikimedia.org/ru.wikipedia.org/load.php?debug=false&amp;lang=ru&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"URL","wgTitle":"URL","wgCurRevisionId":50643049,"wgArticleId":59656,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Стандарты Интернета","Уникальные идентификаторы"],"wgBreakFrames":false,"wgPageContentLanguage":"ru","wgSeparatorTransformTable":[",	."," 	,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgMonthNamesShort":["","янв","фев","мар","апр","мая","июн","июл","авг","сен","окт","ноя","дек"],"wgRelevantPageName":"URL","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVectorEnabledModules":{"collapsiblenav":true,"collapsibletabs":true,"editwarning":true,"expandablesearch":false,"footercleanup":false,"sectioneditlinks":false,"experiments":true},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3,"quality":2,"pristine":4}}},"wgStableRevisionId":50643049,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","Geo":{"city":"","country":""},"wgNoticeProject":"wikipedia"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3
+,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"ru","language":"ru","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs102":false,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":false,"searchNs107":false,"gadget-BKL":1,"gadget-collapserefs":1,"gadget-directLinkToCommons":1,"gadget-referenceTooltips":1});;},{},{});mw.loader.implement(
+"user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: ruwiki:resourceloader:filter:minify-js:7:67a935a7507ca48dda430f7281b64bea */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralNotice.bannerController"]);
+}</script>
+<script src="//bits.wikimedia.org/geoiplookup"></script><link rel="dns-prefetch" href="//meta.wikimedia.org" /><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.21wmf5/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-URL skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- CentralNotice --><script>
+	mw.loader.using( 'ext.centralNotice.bannerController', function() { mw.centralNotice.initialize(); } );
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\" lang=\"ru\" dir=\"ltr\"\x3e\x3c/div\x3e");
+/* ]]> */
+</script></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading" lang="ru"><span dir="auto">URL</span></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">Материал из Википедии — свободной энциклопедии</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					Перейти к:					<a href="#mw-head">навигация</a>, 					<a href="#p-search">поиск</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" lang="ru" dir="ltr" class="mw-content-ltr"><p><b>Единый указатель ресурсов</b> (<a href="/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Английский язык">англ.</a>&#160;<i><span lang="en" xml:lang="en"><b>URL — Uniform Resource Locator</b></span></i>)&#160;— единообразный локатор (определитель местонахождения) ресурса. По-<a href="/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Английский язык">английски</a> «URL» целиком произносится как <span class="IPA"><a href="/wiki/%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D1%84%D0%BE%D0%BD%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82" title="Международный фонетический алфавит">/ɜː(ɹ)l/</a></span>, по-русски чаще говорят [<i>у-эр-э́л</i>], [<i>ю-ар-эл</i>] или [<i>урл</i>] (<i><a href="/wiki/%D0%A1%D0%BB%D0%B5%D0%BD%D0%B3" title="Сленг">сленг</a></i>). Ранее назывался <b>Universal Resource Locator</b>&#160;— универсальный локатор ресурса. URL&#160;— это стандартизированный способ записи адреса ресурса в сети <a href="/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82" title="Интернет">Интернет</a>.</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Содержание</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F"><span class="tocnumber">1</span> <span class="toctext">История</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_URL"><span class="tocnumber">2</span> <span class="toctext">Структура URL</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.D0.A1.D1.85.D0.B5.D0.BC.D1.8B_.28.D0.BF.D1.80.D0.BE.D1.82.D0.BE.D0.BA.D0.BE.D0.BB.D1.8B.29_URL"><span class="tocnumber">3</span> <span class="toctext">Схемы (протоколы) URL</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.D0.9A.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_URL"><span class="tocnumber">4</span> <span class="toctext">Кодирование URL</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.D0.98.D0.BD.D0.B8.D1.86.D0.B8.D0.B0.D1.82.D0.B8.D0.B2.D0.B0_PURL"><span class="tocnumber">5</span> <span class="toctext">Инициатива PURL</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_URL"><span class="tocnumber">6</span> <span class="toctext">Примеры URL</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"><span class="tocnumber">7</span> <span class="toctext">См. также</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F"><span class="tocnumber">8</span> <span class="toctext">Примечания</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8"><span class="tocnumber">9</span> <span class="toctext">Ссылки</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=1" title="Редактировать раздел «История»">править</a>]</span> <span class="mw-headline" id=".D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F">История</span></h2>
+<p>URL был изобретён <a href="/wiki/%D0%91%D0%B5%D1%80%D0%BD%D0%B5%D1%80%D1%81-%D0%9B%D0%B8,_%D0%A2%D0%B8%D0%BC" title="Бернерс-Ли, Тим">Тимом Бернерсом-Ли</a> в <a href="/wiki/1990_%D0%B3%D0%BE%D0%B4" title="1990 год">1990&#160;году</a> в стенах Европейского совета по ядерным исследованиям (<a href="/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Французский язык">фр.</a>&#160;<i><span lang="fr" xml:lang="fr">Conseil Européen pour la Recherche Nucléaire, <a href="/wiki/CERN" title="CERN" class="mw-redirect">CERN</a></span></i>) в <a href="/wiki/%D0%96%D0%B5%D0%BD%D0%B5%D0%B2%D0%B0" title="Женева">Женеве</a>, <a href="/wiki/%D0%A8%D0%B2%D0%B5%D0%B9%D1%86%D0%B0%D1%80%D0%B8%D1%8F" title="Швейцария">Швейцария</a>. URL стал фундаментальной инновацией в Интернете. Изначально URL предназначался для обозначения мест расположения ресурсов (чаще всего файлов) во <a href="/wiki/%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D1%83%D1%82%D0%B8%D0%BD%D0%B0" title="Всемирная паутина">Всемирной паутине</a>. Сейчас URL применяется для обозначения адресов почти всех ресурсов Интернета. Стандарт URL закреплён в документе <a class="external mw-magiclink-rfc" href="//tools.ietf.org/html/rfc1738">RFC 1738</a>, прежняя версия была определена в <a class="external mw-magiclink-rfc" href="//tools.ietf.org/html/rfc1630">RFC 1630</a>. Сейчас URL позиционируется как часть более общей системы идентификации ресурсов <a href="/wiki/URI" title="URI">URI</a>, сам термин URL постепенно уступает место более широкому термину <b>URI</b>. Стандарт URL регулируется организацией <a href="/wiki/IETF" title="IETF" class="mw-redirect">IETF</a> и её подразделениями.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=2" title="Редактировать раздел «Структура URL»">править</a>]</span> <span class="mw-headline" id=".D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_URL">Структура URL</span></h2>
+<p>Изначально локатор URL был разработан как система для максимально естественного указания на местонахождения ресурсов в сети. Локатор должен был быть легко расширяемым и использовать лишь ограниченный набор <a href="/wiki/ASCII" title="ASCII">ASCII</a>‐символов (к примеру, <a href="/wiki/%D0%9F%D1%80%D0%BE%D0%B1%D0%B5%D0%BB" title="Пробел">пробел</a> никогда не применяется в URL). В связи с этим, возникла следующая традиционная форма записи URL:</p>
+<pre>
+&lt;схема&gt;://&lt;логин&gt;:&lt;пароль&gt;@&lt;хост&gt;:&lt;порт&gt;/&lt;URL‐путь&gt;?&lt;параметры&gt;#&lt;якорь&gt;
+</pre>
+<p>В этой записи:</p>
+<dl>
+<dt><i>схема</i>&#160;</dt>
+<dd>схема обращения к ресурсу; в большинстве случаев имеется в виду <a href="/wiki/%D0%A1%D0%B5%D1%82%D0%B5%D0%B2%D1%8B%D0%B5_%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%8B" title="Сетевые протоколы" class="mw-redirect">сетевой протокол</a></dd>
+<dt><i>логин</i>&#160;</dt>
+<dd>имя пользователя, используемое для доступа к ресурсу</dd>
+<dt><i>пароль</i>&#160;</dt>
+<dd><a href="/wiki/%D0%9F%D0%B0%D1%80%D0%BE%D0%BB%D1%8C" title="Пароль">пароль</a> указанного пользователя</dd>
+<dt><i>хост</i>&#160;</dt>
+<dd>полностью прописанное <a href="/wiki/%D0%94%D0%BE%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BC%D1%8F" title="Доменное имя">доменное имя</a> <a href="/wiki/%D0%A5%D0%BE%D1%81%D1%82" title="Хост">хоста</a> в системе <a href="/wiki/DNS" title="DNS">DNS</a> или <a href="/wiki/IP-%D0%B0%D0%B4%D1%80%D0%B5%D1%81" title="IP-адрес">IP-адрес</a> хоста в форме четырёх групп <a href="/wiki/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Система счисления">десятичных</a> <a href="/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%BE" title="Число">чисел</a>, разделённых точками; числа&#160;— целые в интервале от 0 до 255.</dd>
+<dt><i>порт</i>&#160;</dt>
+<dd><a href="/wiki/%D0%9F%D0%BE%D1%80%D1%82_(TCP/UDP)" title="Порт (TCP/UDP)" class="mw-redirect">порт</a> хоста для подключения</dd>
+<dt><i>URL-путь</i>&#160;</dt>
+<dd>уточняющая <a href="/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F" title="Информация">информация</a> о месте нахождения ресурса; зависит от протокола.</dd>
+<dt><i>параметры</i>&#160;</dt>
+<dd>строка запроса с передаваемыми на сервер (<a href="/wiki/HTTP#GET" title="HTTP">методом GET</a>) параметрами. Разделитель параметров&#160;— знак <b>&amp;</b>.</dd>
+</dl>
+<p>Пример:&#160;?параметр_1=значение_1&amp;параметр_2=значение_2&amp;параметр3=значение_3</p>
+<dl>
+<dt><i>якорь</i>&#160;</dt>
+<dd>идентификатор «якоря», ссылающегося на некоторую часть (раздел) открываемого документа. С развитием <a href="/wiki/AJAX" title="AJAX">AJAX</a> в этой части стали размещать параметры для JavaScript на странице, и страница в зависимости от указанного якоря может в браузере выглядеть по-разному. Для обеспечения возможности индексирования подобных страниц поисковыми системами компания Google предложила подход, предполагающий использование знака&#160;! в начале якоря и некоторую поддержку на сервере сайта<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>.</dd>
+</dl>
+<p>На сегодняшний день <a href="/wiki/%D0%A2%D0%B8%D0%BC_%D0%91%D0%B5%D1%80%D0%BD%D0%B5%D1%81-%D0%9B%D0%B8" title="Тим Бернес-Ли" class="mw-redirect">Тим Бернес-Ли</a> признаёт, что символ двойной косой черты в структуре URL является избыточным<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=3" title="Редактировать раздел «Схемы (протоколы) URL»">править</a>]</span> <span class="mw-headline" id=".D0.A1.D1.85.D0.B5.D0.BC.D1.8B_.28.D0.BF.D1.80.D0.BE.D1.82.D0.BE.D0.BA.D0.BE.D0.BB.D1.8B.29_URL">Схемы (протоколы) URL</span></h2>
+<p>Общепринятые схемы (протоколы) URL включают:</p>
+<ul>
+<li>ftp&#160;— Протокол передачи файлов <a href="/wiki/FTP" title="FTP">FTP</a></li>
+<li>http&#160;— Протокол передачи <a href="/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D1%82%D0%B5%D0%BA%D1%81%D1%82" title="Гипертекст">гипертекста</a> <a href="/wiki/HTTP" title="HTTP">HTTP</a></li>
+<li>rtmp&#160;— Real Time Messaging Protocol проприетарный протокол потоковой передачи данных, в основном используется для передачи потокового видео и аудиопотоков с веб-камер через интернет.</li>
+<li>rtsp&#160;— Потоковый протокол реального времени.</li>
+<li>https&#160;— Специальная реализация протокола <a href="/wiki/HTTP" title="HTTP">HTTP</a>, использующая шифрование (как правило, <a href="/wiki/SSL" title="SSL">SSL</a> или <a href="/wiki/TLS" title="TLS">TLS</a>)</li>
+<li>gopher&#160;— Протокол <a href="/wiki/Gopher_(%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9_%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB)" title="Gopher (сетевой протокол)" class="mw-redirect">Gopher</a></li>
+<li>mailto&#160;— Адрес <a href="/wiki/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BF%D0%BE%D1%87%D1%82%D0%B0" title="Электронная почта">электронной почты</a></li>
+<li>news&#160;— Новости <a href="/wiki/Usenet" title="Usenet">Usenet</a></li>
+<li>nntp&#160;— Новости <a href="/wiki/Usenet" title="Usenet">Usenet</a> через протокол <a href="/wiki/NNTP" title="NNTP">NNTP</a></li>
+<li>irc&#160;— Протокол <a href="/wiki/IRC" title="IRC">IRC</a></li>
+<li>prospero&#160;— Служба каталогов <i><a href="/w/index.php?title=Prospero&amp;action=edit&amp;redlink=1" class="new" title="Prospero (страница отсутствует)">Prospero</a> Directory Service</i></li>
+<li>telnet&#160;— Ссылка на интерактивную сессию <a href="/wiki/Telnet" title="Telnet">Telnet</a></li>
+<li>wais&#160;— База данных системы <a href="/wiki/WAIS" title="WAIS">WAIS</a></li>
+<li>xmpp&#160;— Протокол XMPP (часть <a href="/wiki/Jabber" title="Jabber" class="mw-redirect">Jabber</a>)</li>
+<li>file&#160;— Имя локального <a href="/wiki/%D0%A4%D0%B0%D0%B9%D0%BB" title="Файл">файла</a></li>
+<li>data&#160;— Непосредственные данные (<a href="/wiki/Data:_URL" title="Data: URL">Data: URL</a>)</li>
+<li>tel&#160;— звонок по указаному телефону</li>
+</ul>
+<p>Экзотические схемы URL:</p>
+<ul>
+<li>afs&#160;— Глобальное имя файла в файловой системе <i>Andrew File System</i></li>
+<li>cid&#160;— Идентификатор содержимого для частей <a href="/wiki/MIME" title="MIME">MIME</a></li>
+<li>mid&#160;— Идентификатор сообщений для электронной почты</li>
+<li>mailserver&#160;— Доступ к данным с <a href="/wiki/%D0%9F%D0%BE%D1%87%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80" title="Почтовый сервер">почтовых серверов</a></li>
+<li>nfs&#160;— Имя файла в сетевой файловой системе <a href="/wiki/Network_File_System" title="Network File System">NFS</a></li>
+<li>tn3270&#160;— Эмуляция интерактивной сессии <a href="/wiki/Telnet" title="Telnet">Telnet</a> 3270</li>
+<li>z39.50&#160;— Доступ к службам <a href="/wiki/ANSI" title="ANSI" class="mw-redirect">ANSI</a> Z39.50</li>
+<li>skype&#160;— Протокол <a href="/wiki/Skype" title="Skype">Skype</a></li>
+<li>smsto&#160;— Открытие редактора <a href="/wiki/SMS" title="SMS">SMS</a> в некоторых <a href="/wiki/%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD" title="Мобильный телефон">мобильных телефонах</a></li>
+<li>ed2k&#160;— <a href="/wiki/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%BE%D0%B1%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B5%D1%82%D1%8C" title="Файлообменная сеть">Файлообменная сеть</a> <a href="/wiki/EDonkey2000_(%D1%81%D0%B5%D1%82%D1%8C)" title="EDonkey2000 (сеть)">eDonkey</a>, построенная по принципу <a href="/wiki/%D0%9E%D0%B4%D0%BD%D0%BE%D1%80%D0%B0%D0%BD%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B5%D1%82%D1%8C" title="Одноранговая сеть">P2P</a></li>
+<li>market&#160;— <a href="/wiki/Android" title="Android">Android</a> Маркет</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=4" title="Редактировать раздел «Кодирование URL»">править</a>]</span> <span class="mw-headline" id=".D0.9A.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_URL">Кодирование URL</span></h2>
+<p>Появление адресов URL стало существенным нововведением в <a href="/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82" title="Интернет">Интернете</a>. Однако с момента его изобретения и по сей день стандарт URL обладает серьёзным недостатком&#160;— в нём можно использовать только ограниченный набор <a href="/wiki/%D0%9F%D0%B5%D1%87%D0%B0%D1%82%D0%BD%D1%8B%D0%B5_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B" title="Печатные символы">символов</a>, даже меньший, нежели <span style="white-space: nowrap;">в <a href="/wiki/ASCII" title="ASCII">ASCII</a>:</span> латинские буквы, цифры и лишь некоторые знаки препинания. Если мы захотим использовать в URL символы <a href="/wiki/%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%D0%B8%D1%86%D0%B0" title="Кириллица">кириллицы</a>, или <a href="/wiki/%D0%98%D0%B5%D1%80%D0%BE%D0%B3%D0%BB%D0%B8%D1%84" title="Иероглиф">иероглифы</a>, или, скажем, специфические символы <a href="/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Французский язык">французского языка</a>, то нужные нам символы должны быть перекодированы особым образом.</p>
+<p>В русскоязычной <a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F" title="Википедия">Википедии</a> ежедневно приходится видеть пример кодирования URL, поскольку <a href="/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Русский язык">русский язык</a> использует символы кириллицы. Например, строка вида:</p>
+<pre>
+http://ru.wikipedia.org/wiki/Микрокредит
+</pre>
+<p>кодируется в URL как:</p>
+<pre>
+http://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BA%D1%80%D0%BE%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82
+</pre>
+<p>Такое преобразование происходит в два этапа: сначала каждый символ кириллицы кодируется в Юникоде (<a href="/wiki/UTF-8" title="UTF-8">UTF-8</a>) в последовательность из двух байтов, а затем каждый байт этой последовательности записывается в <a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">шестнадцатеричном</a> представлении:</p>
+<pre>
+М → D0 и 9C → %D0%9C
+и → D0 и B8 → %D0%B8
+к → D0 и BA → %D0%BA
+р → D1 и 80 → %D1%80, и т. д.
+</pre>
+<p>Перед каждым таким шестнадцатеричным кодом байта, согласно спецификации URL<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup>, ставится <a href="/wiki/%D0%97%D0%BD%D0%B0%D0%BA_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%BD%D1%82%D0%B0" title="Знак процента">знак процента</a> (%)&#160;— отсюда даже возник английский термин «percent‐encoding», обозначающий способ кодирования символов в URL и URI.</p>
+<p>Иные распространённые, но недопустимые в URL символы кодируются в таком соответствии:</p>
+<table class="wikitable">
+<tr>
+<td>&#160;!</td>
+<td>"</td>
+<td>#<sup id="cite_ref-s_4-0" class="reference"><a href="#cite_note-s-4">[4]</a></sup></td>
+<td>&#160;%</td>
+<td>&amp;<sup id="cite_ref-s_4-1" class="reference"><a href="#cite_note-s-4">[4]</a></sup></td>
+<td>'</td>
+<td>*</td>
+<td>,<sup id="cite_ref-s_4-2" class="reference"><a href="#cite_note-s-4">[4]</a></sup></td>
+<td>&#160;:<sup id="cite_ref-s_4-3" class="reference"><a href="#cite_note-s-4">[4]</a></sup></td>
+<td>&#160;;<sup id="cite_ref-s_4-4" class="reference"><a href="#cite_note-s-4">[4]</a></sup></td>
+<td>&lt;</td>
+<td>=<sup id="cite_ref-s_4-5" class="reference"><a href="#cite_note-s-4">[4]</a></sup></td>
+<td>&gt;</td>
+<td>&#160;?<sup id="cite_ref-s_4-6" class="reference"><a href="#cite_note-s-4">[4]</a></sup></td>
+<td>[</td>
+<td>]</td>
+<td>^</td>
+<td>`</td>
+<td>{</td>
+<td>|</td>
+<td>}</td>
+<td>&lt;пробел&gt;</td>
+</tr>
+<tr>
+<td>&#160;%21</td>
+<td>&#160;%22</td>
+<td>&#160;%23</td>
+<td>&#160;%25</td>
+<td>&#160;%26</td>
+<td>&#160;%27</td>
+<td>&#160;%2a</td>
+<td>&#160;%2c</td>
+<td>&#160;%3a</td>
+<td>&#160;%3b</td>
+<td>&#160;%3c</td>
+<td>&#160;%3d</td>
+<td>&#160;%3e</td>
+<td>&#160;%3f</td>
+<td>&#160;%5b</td>
+<td>&#160;%5d</td>
+<td>&#160;%5e</td>
+<td>&#160;%60</td>
+<td>&#160;%7b</td>
+<td>&#160;%7c</td>
+<td>&#160;%7d</td>
+<td>&#160;%20<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup></td>
+</tr>
+</table>
+<p>Поскольку такому преобразованию подвергаются буквы всех алфавитов, кроме базовой <a href="/wiki/%D0%9B%D0%B0%D1%82%D0%B8%D0%BD%D0%B8%D1%86%D0%B0" title="Латиница" class="mw-redirect">латиницы</a>, то URL со словами на подавляющем большинстве языков (кроме <a href="/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Английский язык">английского</a>, <a href="/wiki/%D0%98%D1%82%D0%B0%D0%BB%D1%8C%D1%8F%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Итальянский язык">итальянского</a>, <a href="/wiki/%D0%9B%D0%B0%D1%82%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Латинский язык">латинского</a>) может утратить способность восприниматься людьми.</p>
+<p>Это всё входит в противоречие с принципом <a href="/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC_(%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0)" title="Интернационализм (политика)" class="mw-redirect">интернационализма</a>, провозглашаемого всеми ведущими организациями <a href="/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82" title="Интернет">Интернета</a>, включая <a href="/wiki/W3C" title="W3C" class="mw-redirect">W3C</a> и <a href="/wiki/ISOC" title="ISOC" class="mw-redirect">ISOC</a>. Эту проблему призван решить стандарт <a href="/wiki/IRI" title="IRI">IRI</a> (<a href="/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Английский язык">англ.</a>&#160;<i><span lang="en" xml:lang="en">International Resource Identifier</span></i>)&#160;— международных идентификаторов ресурсов, в которых можно было бы без проблем использовать символы Юникода, и которые поэтому не ущемляли бы права других <a href="/wiki/%D0%AF%D0%B7%D1%8B%D0%BA_(%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2)" title="Язык (система знаков)" class="mw-redirect">языков</a>. Хотя заранее сложно сказать, смогут ли когда‐либо идентификаторы IRI заменить столь широко используемые URL (и <a href="/wiki/URI" title="URI">URI</a> в целом).</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=5" title="Редактировать раздел «Инициатива PURL»">править</a>]</span> <span class="mw-headline" id=".D0.98.D0.BD.D0.B8.D1.86.D0.B8.D0.B0.D1.82.D0.B8.D0.B2.D0.B0_PURL">Инициатива PURL</span></h2>
+<p>Ещё один кардинальный недостаток URL состоит в отсутствии гибкости. Ресурсы во Всемирной паутине и Интернете перемещаются, а <a href="/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0" title="Гиперссылка">ссылки</a> в виде URL остаются, указывая на уже отсутствующие ресурсы. Это особенно болезненно для электронных библиотек, каталогов и энциклопедий. Для решения этой проблемы были предложены постоянные локаторы <a href="/wiki/PURL" title="PURL">PURL</a> (<a href="/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Английский язык">англ.</a>&#160;<i><span lang="en" xml:lang="en">Persistent Uniform Resource Locator</span></i>). В сущности это те же URL, но они указывают не на конкретное место расположения ресурса, а на запись в базе данных PURL, где, в свою очередь, записан уже конкретный URL‐адрес ресурса. При обращении к PURL <a href="/wiki/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80_(%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5)" title="Сервер (приложение)" class="mw-redirect">сервер</a> находит нужную запись в этой <a href="/wiki/%D0%91%D0%B0%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85" title="База данных">базе данных</a> и перенаправляет запрос уже на конкретное местоположение ресурса. Если адрес ресурса меняется, то нет нужды исправлять все бесчисленные ссылки на него&#160;— достаточно лишь изменить запись в БД. В настоящий момент эта идея не стандартизирована и не имеет широкого распространения.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=6" title="Редактировать раздел «Примеры URL»">править</a>]</span> <span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_URL">Примеры URL</span></h2>
+<pre>
+http://ru.wikipedia.org/wiki/URL
+http://en.wikipedia.org:80/wiki/Special:Search?search=train&amp;go=Go 
+ftp://myname:mypass@myhost.com:21/etc/motd
+file://vms.myhost.edu/disk$user/my/notes/note123.txt
+</pre>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=7" title="Редактировать раздел «См. также»">править</a>]</span> <span class="mw-headline" id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</span></h2>
+<ul>
+<li><a href="/wiki/URI" title="URI">URI</a></li>
+<li><a href="/wiki/PURL" title="PURL">PURL</a></li>
+<li><a href="/wiki/URN" title="URN">URN</a></li>
+<li><a href="/wiki/IRI" title="IRI">IRI</a>&#160;— интернационализированный идентификатор ресурса</li>
+<li><a href="/wiki/XRI" title="XRI">XRI</a></li>
+<li><a href="/wiki/%D0%94%D0%BB%D0%B8%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0" title="Длинные доменные имена" class="mw-redirect">Длинные доменные имена</a></li>
+<li><a href="/wiki/%D0%A7%D0%9F%D0%A3_(%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82)" title="ЧПУ (Интернет)">Человеку Понятный URL</a></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=8" title="Редактировать раздел «Примечания»">править</a>]</span> <span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F">Примечания</span></h2>
+<div class="references-small" style="">
+<ol class="references">
+<li id="cite_note-1"><b><a href="#cite_ref-1">↑</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://code.google.com/intl/ru-RU/web/ajaxcrawling/docs/getting-started.html">GoogleCode: AJAX Crawling</a>&#160;<span class="ref-info" title="на английском языке" style="font-size:85%; cursor:help; color:#888;">(англ.)</span></span></li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">↑</a></b> <span class="reference-text"><span class="citation"><a rel="nofollow" class="external text" href="http://www.rian.ru/science/20091014/188848694.html">Двойной слеш в адресах интернета появился из-за спешки его создателя</a>.  <a href="/wiki/%D0%A0%D0%98%D0%90_%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8" title="РИА Новости">РИА Новости</a> (2009-10-14 19:05). <small><a rel="nofollow" class="external text" href="http://www.webcitation.org/61BpV4obP">Архивировано</a> из первоисточника 25 августа 2011.</small> <small>Проверено 11 июля 2010.</small></span></span></li>
+<li id="cite_note-3"><b><a href="#cite_ref-3">↑</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://tools.ietf.org/html/rfc2396">RFC 2396 часть 2.</a></span></li>
+<li id="cite_note-s-4"><span class="mw-cite-backlink">↑ <a href="#cite_ref-s_4-0"><sup><i><b>1</b></i></sup></a> <a href="#cite_ref-s_4-1"><sup><i><b>2</b></i></sup></a> <a href="#cite_ref-s_4-2"><sup><i><b>3</b></i></sup></a> <a href="#cite_ref-s_4-3"><sup><i><b>4</b></i></sup></a> <a href="#cite_ref-s_4-4"><sup><i><b>5</b></i></sup></a> <a href="#cite_ref-s_4-5"><sup><i><b>6</b></i></sup></a> <a href="#cite_ref-s_4-6"><sup><i><b>7</b></i></sup></a></span> <span class="reference-text">Символ допустим, но при указании прямым текстом несёт специальное синтаксическое значение</span></li>
+<li id="cite_note-5"><b><a href="#cite_ref-5">↑</a></b> <span class="reference-text">Следует отметить, что <a href="/wiki/MediaWiki" title="MediaWiki">MediaWiki</a> избегает кодирования пробела как&#160;%20, вместо этого он везде заменяется символом подчёркивания «_». Многие <a href="/wiki/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0" title="Поисковая система">поисковики</a> заменяют пробел на символ «+».</span></li>
+</ol>
+</div>
+<h2><span class="editsection">[<a href="/w/index.php?title=URL&amp;action=edit&amp;section=9" title="Редактировать раздел «Ссылки»">править</a>]</span> <span class="mw-headline" id=".D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Ссылки</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://tools.ietf.org/html/rfc1738">RFC 1738</a></li>
+<li><a rel="nofollow" class="external text" href="http://tools.ietf.org/html/rfc1630">RFC 1630</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.w3.org/International/O-URL-code.html">Кодирование URL</a></li>
+<li><a rel="nofollow" class="external text" href="http://i-technica.com/whitestuff/urlencodechart.html">URLEncode Code Chart&#160;— таблица кодирования символов URL</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.3dnews.ru/software-news/sozdatel_interneta_sozhaleet_o_dvoinom_sleshe/">Создатель интернета сожалеет о двойном слеше</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 635/1000000
+Preprocessor generated node count: 3972/1500000
+Post-expand include size: 3466/2048000 bytes
+Template argument size: 1670/2048000 bytes
+Highest expansion depth: 14/40
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key ruwiki:pcache:idhash:59656-0!*!0!!ru!*!* and timestamp 20121217080558 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Источник — «<a href="http://ru.wikipedia.org/w/index.php?title=URL&amp;oldid=50643049">http://ru.wikipedia.org/w/index.php?title=URL&amp;oldid=50643049</a>»				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D1%8B_%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0" title="Категория:Стандарты Интернета">Стандарты Интернета</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%8B" title="Категория:Уникальные идентификаторы">Уникальные идентификаторы</a></li></ul></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<div id="mw-navigation">
+			<h2>Навигация</h2>
+			<!-- header -->
+			<div id="mw-head" class="noprint">
+				
+<!-- 0 -->
+<div id="p-personal" role="navigation" class="">
+	<h3>Персональные инструменты</h3>
+	<ul>
+<li id="pt-createaccount"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=URL&amp;type=signup">Создать учётную запись</a></li><li id="pt-login"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=URL" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o">Представиться системе</a></li>	</ul>
+</div>
+
+<!-- /0 -->
+				<div id="left-navigation">
+					
+<!-- 0 -->
+<div id="p-namespaces" role="navigation" class="vectorTabs">
+	<h3>Пространства имён</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/URL"  title="Просмотр основной страницы [c]" accesskey="c">Статья</a></span></li>
+					<li  id="ca-talk"><span><a href="/wiki/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:URL"  title="Обсуждение основной страницы [t]" accesskey="t">Обсуждение</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3><span>Варианты</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+				</div>
+				<div id="right-navigation">
+					
+<!-- 0 -->
+<div id="p-views" role="navigation" class="vectorTabs">
+	<h3>Просмотры</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="/wiki/URL" >Читать</a></span></li>
+					<li id="ca-edit"><span><a href="/w/index.php?title=URL&amp;action=edit"  title="Эту статью можно изменять. Перед сохранением изменений, пожалуйста, нажмите кнопку предварительного просмотра для визуальной проверки результата [e]" accesskey="e">Правка</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=URL&amp;action=history"  title="Журнал изменений страницы [h]" accesskey="h">История</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet">
+	<h3><span>Действия</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Поиск</label></h3>
+	<form action="/w/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" title="Искать в Википедии [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Найти страницы, содержащие указанный текст" id="searchButton"><img src="//bits.wikimedia.org/static-1.21wmf5/skins/vector/images/search-ltr.png?303-4" alt="Найти" width="12" height="13" /></button>								<input type='hidden' name="title" value="Служебная:Поиск"/>
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+				</div>
+			</div>
+			<!-- /header -->
+			<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo" role="banner"><a style="background-image: url(//upload.wikimedia.org/wikipedia/commons/f/f6/Wikipedia-logo-v2-ru.png);" href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0"  title="Перейти на заглавную страницу"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" role="navigation" id='p-navigation'>
+	<h3>Навигация</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage"><a href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Перейти на заглавную страницу [z]" accesskey="z">Заглавная страница</a></li>
+			<li id="n-browse"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_%D0%BF%D0%BE_%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%D0%BC" title="Поиск по категориям">Рубрикация</a></li>
+			<li id="n-index"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%90%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C" title="Поиск по двум первым буквам">Указатель А — Я</a></li>
+			<li id="n-featured"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%98%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Статьи, считающиеся лучшими статьями проекта">Избранные статьи</a></li>
+			<li id="n-randompage"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x">Случайная статья</a></li>
+			<li id="n-currentevents"><a href="/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%A2%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F" title="Статьи о текущих событиях в мире">Текущие события</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- participation -->
+<div class="portal" role="navigation" id='p-participation'>
+	<h3>Участие</h3>
+	<div class="body">
+		<ul>
+			<li id="n-bug_in_article"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D0%B1_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85" title="Сообщить об ошибке в этой статье">Сообщить об ошибке</a></li>
+			<li id="n-portal"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB_%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0" title="О проекте, о том, чем здесь можно заниматься, а также — где что находится">Портал сообщества</a></li>
+			<li id="n-forum"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A4%D0%BE%D1%80%D1%83%D0%BC" title="Форум участников Википедии">Форум</a></li>
+			<li id="n-recentchanges"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r">Свежие правки</a></li>
+			<li id="n-newpages"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список недавно созданных страниц">Новые страницы</a></li>
+			<li id="n-help"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0" title="Место, где можно получить справку">Справка</a></li>
+			<li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C12_ru.wikipedia.org&amp;uselang=ru" title="Поддержите нас">Пожертвования</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /participation -->
+
+<!-- coll-print_export -->
+<div class="portal" role="navigation" id='p-coll-print_export'>
+	<h3>Печать/экспорт</h3>
+	<div class="body">
+		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F_%D0%BA%D0%BD%D0%B8%D0%B3&amp;bookcmd=book_creator&amp;referer=URL" title="Создать книгу или коллекцию статей" rel="nofollow">Создать книгу</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F_%D0%BA%D0%BD%D0%B8%D0%B3&amp;bookcmd=render_article&amp;arttitle=URL&amp;oldid=50643049&amp;writer=rl" title="Скачать PDF-версию этой вики-страницы" rel="nofollow">Скачать как PDF</a></li><li id="t-print"><a href="/w/index.php?title=URL&amp;printable=yes" title="Версия этой страницы для печати [p]" accesskey="p">Версия для печати</a></li></ul>	</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- TOOLBOX -->
+<div class="portal" role="navigation" id='p-tb'>
+	<h3>Инструменты</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/URL" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j">Ссылки сюда</a></li>
+			<li id="t-recentchangeslinked"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/URL" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k">Связанные правки</a></li>
+			<li id="t-specialpages"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q">Спецстраницы</a></li>
+			<li id="t-permalink"><a href="/w/index.php?title=URL&amp;oldid=50643049" title="Постоянная ссылка на эту версию страницы">Постоянная ссылка</a></li>
+			<li id="t-info"><a href="/w/index.php?title=URL&amp;action=info">Сведения о странице</a></li>
+<li id="t-cite"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A6%D0%B8%D1%82%D0%B0%D1%82%D0%B0&amp;page=URL&amp;id=50643049" title="Информация о том, как цитировать эту страницу">Цитировать страницу</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+<div class="portal" role="navigation" id='p-lang'>
+	<h3>На других языках</h3>
+	<div class="body">
+		<ul>
+			<li class="interwiki-af"><a href="//af.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="af" hreflang="af">Afrikaans</a></li>
+			<li class="interwiki-als"><a href="//als.wikipedia.org/wiki/URL" title="URL" lang="als" hreflang="als">Alemannisch</a></li>
+			<li class="interwiki-ar"><a href="//ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%A7%D8%B1_%D9%85%D9%88%D8%B1%D8%AF_%D9%85%D9%86%D9%85%D8%B7" title="مسار مورد منمط" lang="ar" hreflang="ar">العربية</a></li>
+			<li class="interwiki-az"><a href="//az.wikipedia.org/wiki/URL" title="URL" lang="az" hreflang="az">Azərbaycanca</a></li>
+			<li class="interwiki-be"><a href="//be.wikipedia.org/wiki/URL" title="URL" lang="be" hreflang="be">Беларуская</a></li>
+			<li class="interwiki-be-x-old"><a href="//be-x-old.wikipedia.org/wiki/URL" title="URL" lang="be-x-old" hreflang="be-x-old">Беларуская (тарашкевіца)‎</a></li>
+			<li class="interwiki-bg"><a href="//bg.wikipedia.org/wiki/%D0%A3%D0%BD%D0%B8%D1%84%D0%B8%D1%86%D0%B8%D1%80%D0%B0%D0%BD_%D0%BB%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D1%80_%D0%BD%D0%B0_%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%B8" title="Унифициран локатор на ресурси" lang="bg" hreflang="bg">Български</a></li>
+			<li class="interwiki-ca"><a href="//ca.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="ca" hreflang="ca">Català</a></li>
+			<li class="interwiki-cs"><a href="//cs.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="cs" hreflang="cs">Česky</a></li>
+			<li class="interwiki-cv"><a href="//cv.wikipedia.org/wiki/URL" title="URL" lang="cv" hreflang="cv">Чӑвашла</a></li>
+			<li class="interwiki-cy"><a href="//cy.wikipedia.org/wiki/URL" title="URL" lang="cy" hreflang="cy">Cymraeg</a></li>
+			<li class="interwiki-da"><a href="//da.wikipedia.org/wiki/URL" title="URL" lang="da" hreflang="da">Dansk</a></li>
+			<li class="interwiki-de"><a href="//de.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="de" hreflang="de">Deutsch</a></li>
+			<li class="interwiki-el"><a href="//el.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="el" hreflang="el">Ελληνικά</a></li>
+			<li class="interwiki-en"><a href="//en.wikipedia.org/wiki/Uniform_resource_locator" title="Uniform resource locator" lang="en" hreflang="en">English</a></li>
+			<li class="interwiki-eo"><a href="//eo.wikipedia.org/wiki/URL" title="URL" lang="eo" hreflang="eo">Esperanto</a></li>
+			<li class="interwiki-es"><a href="//es.wikipedia.org/wiki/Localizador_uniforme_de_recursos" title="Localizador uniforme de recursos" lang="es" hreflang="es">Español</a></li>
+			<li class="interwiki-et"><a href="//et.wikipedia.org/wiki/Internetiaadress" title="Internetiaadress" lang="et" hreflang="et">Eesti</a></li>
+			<li class="interwiki-eu"><a href="//eu.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="eu" hreflang="eu">Euskara</a></li>
+			<li class="interwiki-fa"><a href="//fa.wikipedia.org/wiki/%D9%86%D8%B4%D8%A7%D9%86%DB%8C_%D9%88%D8%A8" title="نشانی وب" lang="fa" hreflang="fa">فارسی</a></li>
+			<li class="interwiki-fr"><a href="//fr.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="fr" hreflang="fr">Français</a></li>
+			<li class="interwiki-ga"><a href="//ga.wikipedia.org/wiki/Aimsitheoir_Aonfhoirmeach_Acmhainne" title="Aimsitheoir Aonfhoirmeach Acmhainne" lang="ga" hreflang="ga">Gaeilge</a></li>
+			<li class="interwiki-gl"><a href="//gl.wikipedia.org/wiki/URL" title="URL" lang="gl" hreflang="gl">Galego</a></li>
+			<li class="interwiki-gu"><a href="//gu.wikipedia.org/wiki/%E0%AA%AF%E0%AB%81%E0%AA%A8%E0%AA%BF%E0%AA%AB%E0%AB%8B%E0%AA%B0%E0%AB%8D%E0%AA%AE_%E0%AA%B0%E0%AA%BF%E0%AA%B8%E0%AB%8B%E0%AA%B0%E0%AB%8D%E0%AA%B8_%E0%AA%B2%E0%AB%8B%E0%AA%95%E0%AB%87%E0%AA%9F%E0%AA%B0" title="યુનિફોર્મ રિસોર્સ લોકેટર" lang="gu" hreflang="gu">ગુજરાતી</a></li>
+			<li class="interwiki-he"><a href="//he.wikipedia.org/wiki/URL" title="URL" lang="he" hreflang="he">עברית</a></li>
+			<li class="interwiki-hi"><a href="//hi.wikipedia.org/wiki/%E0%A4%B8%E0%A4%AE_%E0%A4%B8%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%A4_%E0%A4%A8%E0%A4%BF%E0%A4%B0%E0%A5%8D%E0%A4%A7%E0%A4%BE%E0%A4%B0%E0%A4%95_(%E0%A4%B8%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%A8%E0%A4%BF)" title="सम स्रोत निर्धारक (स्रोनि)" lang="hi" hreflang="hi">हिन्दी</a></li>
+			<li class="interwiki-hr"><a href="//hr.wikipedia.org/wiki/URL" title="URL" lang="hr" hreflang="hr">Hrvatski</a></li>
+			<li class="interwiki-hu"><a href="//hu.wikipedia.org/wiki/URL" title="URL" lang="hu" hreflang="hu">Magyar</a></li>
+			<li class="interwiki-ia"><a href="//ia.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="ia" hreflang="ia">Interlingua</a></li>
+			<li class="interwiki-id"><a href="//id.wikipedia.org/wiki/URL" title="URL" lang="id" hreflang="id">Bahasa Indonesia</a></li>
+			<li class="interwiki-is"><a href="//is.wikipedia.org/wiki/Netsl%C3%B3%C3%B0" title="Netslóð" lang="is" hreflang="is">Íslenska</a></li>
+			<li class="interwiki-it"><a href="//it.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="it" hreflang="it">Italiano</a></li>
+			<li class="interwiki-ja"><a href="//ja.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="ja" hreflang="ja">日本語</a></li>
+			<li class="interwiki-jv"><a href="//jv.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="jv" hreflang="jv">Basa Jawa</a></li>
+			<li class="interwiki-kk"><a href="//kk.wikipedia.org/wiki/URL" title="URL" lang="kk" hreflang="kk">Қазақша</a></li>
+			<li class="interwiki-km"><a href="//km.wikipedia.org/wiki/URL" title="URL" lang="km" hreflang="km">ភាសាខ្មែរ</a></li>
+			<li class="interwiki-kn"><a href="//kn.wikipedia.org/wiki/%E0%B2%AF%E0%B3%81.%E0%B2%86%E0%B2%B0%E0%B3%8D.%E0%B2%8E%E0%B2%B2%E0%B3%8D" title="ಯು.ಆರ್.ಎಲ್" lang="kn" hreflang="kn">ಕನ್ನಡ</a></li>
+			<li class="interwiki-ko"><a href="//ko.wikipedia.org/wiki/URL" title="URL" lang="ko" hreflang="ko">한국어</a></li>
+			<li class="interwiki-ky"><a href="//ky.wikipedia.org/wiki/URL" title="URL" lang="ky" hreflang="ky">Кыргызча</a></li>
+			<li class="interwiki-lb"><a href="//lb.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="lb" hreflang="lb">Lëtzebuergesch</a></li>
+			<li class="interwiki-lv"><a href="//lv.wikipedia.org/wiki/Vienotais_resursu_vietr%C4%81dis" title="Vienotais resursu vietrādis" lang="lv" hreflang="lv">Latviešu</a></li>
+			<li class="interwiki-mhr"><a href="//mhr.wikipedia.org/wiki/URL" title="URL" lang="mhr" hreflang="mhr">Олык марий</a></li>
+			<li class="interwiki-mk"><a href="//mk.wikipedia.org/wiki/URL" title="URL" lang="mk" hreflang="mk">Македонски</a></li>
+			<li class="interwiki-mn"><a href="//mn.wikipedia.org/wiki/URL" title="URL" lang="mn" hreflang="mn">Монгол</a></li>
+			<li class="interwiki-ms"><a href="//ms.wikipedia.org/wiki/URL" title="URL" lang="ms" hreflang="ms">Bahasa Melayu</a></li>
+			<li class="interwiki-nl"><a href="//nl.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="nl" hreflang="nl">Nederlands</a></li>
+			<li class="interwiki-nn"><a href="//nn.wikipedia.org/wiki/URL" title="URL" lang="nn" hreflang="nn">Norsk (nynorsk)‎</a></li>
+			<li class="interwiki-no"><a href="//no.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="no" hreflang="no">Norsk (bokmål)‎</a></li>
+			<li class="interwiki-pl"><a href="//pl.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="pl" hreflang="pl">Polski</a></li>
+			<li class="interwiki-pt"><a href="//pt.wikipedia.org/wiki/URL" title="URL" lang="pt" hreflang="pt">Português</a></li>
+			<li class="interwiki-ro"><a href="//ro.wikipedia.org/wiki/Localizator_uniform_de_resurse" title="Localizator uniform de resurse" lang="ro" hreflang="ro">Română</a></li>
+			<li class="interwiki-simple"><a href="//simple.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="simple" hreflang="simple">Simple English</a></li>
+			<li class="interwiki-sk"><a href="//sk.wikipedia.org/wiki/Jednotn%C3%BD_vyh%C4%BEad%C3%A1va%C4%8D_zdrojov" title="Jednotný vyhľadávač zdrojov" lang="sk" hreflang="sk">Slovenčina</a></li>
+			<li class="interwiki-sl"><a href="//sl.wikipedia.org/wiki/URL" title="URL" lang="sl" hreflang="sl">Slovenščina</a></li>
+			<li class="interwiki-sr"><a href="//sr.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1_%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0" title="Веб адреса" lang="sr" hreflang="sr">Српски / srpski</a></li>
+			<li class="interwiki-sv"><a href="//sv.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="sv" hreflang="sv">Svenska</a></li>
+			<li class="interwiki-ta"><a href="//ta.wikipedia.org/wiki/%E0%AE%89%E0%AE%B0%E0%AE%B2%E0%AE%BF" title="உரலி" lang="ta" hreflang="ta">தமிழ்</a></li>
+			<li class="interwiki-te"><a href="//te.wikipedia.org/wiki/%E0%B0%AF%E0%B1%82%E0%B0%A8%E0%B0%BF%E0%B0%AB%E0%B0%BE%E0%B0%82_%E0%B0%B0%E0%B0%BF%E0%B0%B8%E0%B1%8B%E0%B0%B0%E0%B1%8D%E0%B0%B8%E0%B1%8D_%E0%B0%B2%E0%B1%8A%E0%B0%95%E0%B1%87%E0%B0%9F%E0%B0%B0%E0%B1%8D" title="యూనిఫాం రిసోర్స్ లొకేటర్" lang="te" hreflang="te">తెలుగు</a></li>
+			<li class="interwiki-tg"><a href="//tg.wikipedia.org/wiki/URL" title="URL" lang="tg" hreflang="tg">Тоҷикӣ</a></li>
+			<li class="interwiki-th"><a href="//th.wikipedia.org/wiki/%E0%B8%A2%E0%B8%B9%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%AD%E0%B8%A5" title="ยูอาร์แอล" lang="th" hreflang="th">ไทย</a></li>
+			<li class="interwiki-tr"><a href="//tr.wikipedia.org/wiki/URL" title="URL" lang="tr" hreflang="tr">Türkçe</a></li>
+			<li class="interwiki-uk"><a href="//uk.wikipedia.org/wiki/%D0%A3%D0%BD%D1%96%D1%84%D1%96%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9_%D0%BB%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D1%80_%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%96%D0%B2" title="Уніфікований локатор ресурсів" lang="uk" hreflang="uk">Українська</a></li>
+			<li class="interwiki-ur"><a href="//ur.wikipedia.org/wiki/%DB%8C%DA%A9%D8%B3%D8%A7%DA%BA_%D9%88%D8%B3%DB%8C%D9%84%DB%8C_%D8%AA%D8%B9%DB%8C%D9%86%DA%AF%D8%B1" title="یکساں وسیلی تعینگر" lang="ur" hreflang="ur">اردو</a></li>
+			<li class="interwiki-vec"><a href="//vec.wikipedia.org/wiki/URL" title="URL" lang="vec" hreflang="vec">Vèneto</a></li>
+			<li class="interwiki-vi"><a href="//vi.wikipedia.org/wiki/URL" title="URL" lang="vi" hreflang="vi">Tiếng Việt</a></li>
+			<li class="interwiki-yi"><a href="//yi.wikipedia.org/wiki/URL" title="URL" lang="yi" hreflang="yi">ייִדיש</a></li>
+			<li class="interwiki-yo"><a href="//yo.wikipedia.org/wiki/Uniform_Resource_Locator" title="Uniform Resource Locator" lang="yo" hreflang="yo">Yorùbá</a></li>
+			<li class="interwiki-zh"><a href="//zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6" title="统一资源定位符" lang="zh" hreflang="zh">中文</a></li>
+			<li class="interwiki-zh-yue"><a href="//zh-yue.wikipedia.org/wiki/URL" title="URL" lang="zh-yue" hreflang="zh-yue">粵語</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /LANGUAGES -->
+			</div>
+			<!-- /panel -->
+		</div>
+		<!-- footer -->
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Последнее изменение этой страницы: 09:28, 13 декабря 2012.</li>
+											<li id="footer-info-copyright">Текст доступен по <a rel="license" href="//ru.wikipedia.org/wiki/Википедия:Текст_лицензии_Creative_Commons_Attribution-ShareAlike_3.0_Unported">лицензии Creative Commons Attribution-ShareAlike</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>; в отдельных случаях могут действовать дополнительные условия.
+<span class="noprint">Подробнее см. <a href="//wikimediafoundation.org/wiki/Terms_of_Use/ru">Условия использования</a>.</span><br/>
+Wikipedia&reg; — зарегистрированный товарный знак некоммерческой организации <a href="//wikimediafoundation.org/wiki/Приёмная">Wikimedia Foundation, Inc.</a><br /></li><li class="noprint"><a class='internal' href="//ru.wikipedia.org/wiki/Википедия:Контакты">Свяжитесь с нами</a></li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="wikimedia:Политика конфиденциальности">Политика конфиденциальности</a></li>
+											<li id="footer-places-about"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" title="Википедия:Описание">Описание Википедии</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Википедия:Отказ от ответственности">Отказ от ответственности</a></li>
+											<li id="footer-places-mobileview"><a href="http://ru.m.wikipedia.org/w/index.php?title=URL&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Мобильная версия</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.21wmf5/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script src="//bits.wikimedia.org/ru.wikipedia.org/load.php?debug=false&amp;lang=ru&amp;modules=skins.vector&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mobile.desktop","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.collapserefs","ext.gadget.directLinkToCommons","ext.gadget.referenceTooltips","mw.MwEmbedSupport.style","ext.vector.collapsibleNav","ext.vector.collapsibleTabs","ext.vector.editWarning","mw.PopUpMediaTransform","ext.flaggedRevs.advanced"], null, true);
+}</script>
+<script src="/w/index.php?title=MediaWiki:Gadget-referenceTooltips.js&amp;action=raw&amp;ctype=text/javascript&amp;48172597"></script>
+<script src="//bits.wikimedia.org/ru.wikipedia.org/load.php?debug=false&amp;lang=ru&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<!-- Served by mw29 in 0.157 secs. -->
+	</body>
+</html>
+
+//END_OF_DOCUMENT
+ </div>

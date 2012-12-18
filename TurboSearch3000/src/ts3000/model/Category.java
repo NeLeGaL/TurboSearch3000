@@ -4,14 +4,27 @@
  */
 package ts3000.model;
 
-/**
- *
- * @author Андрей
- */
+
 public class Category {
-    public String getName();
+    public String getName() {
+    	return Name;
+    }
     
-    public int getSize();
+    public int getSize() {
+    	return Size;
+    }
     
-    public String getAnnotation();
+    public String getAnnotation() {
+    	return Annotation;
+    }
+    
+    public Category(String name, String annotation, int size) {
+    	this.Name = name;
+    	this.Annotation = annotation;
+    	this.Size = size;
+    }
+    
+    private String Name;
+    private String Annotation;
+    private int Size;
 }
