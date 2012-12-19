@@ -10,27 +10,19 @@ import java.util.concurrent.Semaphore;
 public class ExactIndexFindStrategy implements IndexFindStrategy {
 
 	@Override
-	public void indexIt(List<Document> listOfDocuments,
-			Map<String, HashSet<Integer>> grams, Semaphore synchSemaphore) {
-		
+	public Map<String, HashSet<Integer>> indexIt(List<Document> listOfDocuments) {
 		Map<String, HashSet<Integer>> newGrams = new HashMap<String, HashSet<Integer>>();
 		for (int i = 0; i < listOfDocuments.size(); ++i) {
 			indexOneDocument(listOfDocuments.get(i).getPlainText(), i, newGrams);
 		}
 		
-		try {
-			synchSemaphore.acquire();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		grams = newGrams;
-		synchSemaphore.release();
+		return newGrams;
 	}
 
 	@Override
 	public HashSet<Integer> find(String query, Map<String, HashSet<Integer>> grams, Semaphore synchSemaphore) {
 		StringTokenizer tokenizer = new StringTokenizer(query, IndexatorAndFinder.DELIMETERS);
-		String word = tokenizer.nextToken();
+		String word = tokenizer.nextToken().toLowerCase();
 		
 		try {
 			synchSemaphore.acquire();
@@ -44,11 +36,12 @@ public class ExactIndexFindStrategy implements IndexFindStrategy {
 			if (ans != null) 
 				ans.retainAll(grams.get(word.toLowerCase()));
 			else {
-				ans = grams.get(word.toLowerCase());
+				break;
 			}
 		}
 		synchSemaphore.release();
 		
+		if (ans == null) return new HashSet<Integer>();
 		return ans;
 	}
 	

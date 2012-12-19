@@ -1,5 +1,6 @@
 package ts3000.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -15,16 +16,40 @@ class IndexatorAndFinder {
 	private IndexFindStrategy strategy;
 	
 	public IndexatorAndFinder(String filename, IndexFindStrategy strategy) {
-		//fileWorker creation
 		this.strategy = strategy;
+		fileWorker = new FileWorker(this);
+		fileWorker.loadFile(filename);
 	}
 	
-	List<Document> processQuery(String query) {
+	ArrayList<Document> processQuery(String query) {
 		return fileWorker.getListOfDocuments(strategy.find(query, grams, synchSemaphore));
 	}
 	
-	void indexIt(List<Document> listOfDocuments) {
-		strategy.indexIt(listOfDocuments, grams, synchSemaphore);
+	void indexIt(ArrayList<Document> listOfDocuments) {
+		Map<String, HashSet<Integer>> result;
+		
+		result = strategy.indexIt(listOfDocuments);
+		
+		try {
+			synchSemaphore.acquire();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		grams = result;
+		
+		synchSemaphore.release();
 	}
 		
+	public ArrayList<Document> getDocsByCategory(String category) {
+    	return fileWorker.getDocsByCategory(category);
+    }
+        
+    public ArrayList<Category> getCategories() {
+    	return fileWorker.getCategories();
+    }
+        
+    public Document getDocument(String category, String title) {
+    	return fileWorker.getDocument(category, title);
+    }
 }

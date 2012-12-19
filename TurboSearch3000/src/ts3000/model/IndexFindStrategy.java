@@ -6,6 +6,6 @@ import java.util.Map;
 import java.util.concurrent.Semaphore;
 
 public interface IndexFindStrategy {
-	void indexIt(List<Document> listOfDocuments, Map<String, HashSet<Integer>> grams, Semaphore synchSemaphore);
+	Map<String, HashSet<Integer>> indexIt(List<Document> listOfDocuments);
 	HashSet<Integer> find(String query, Map<String, HashSet<Integer>> grams, Semaphore synchSemaphore);
 }
