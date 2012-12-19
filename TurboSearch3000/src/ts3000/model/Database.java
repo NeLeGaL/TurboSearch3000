@@ -17,11 +17,11 @@ public class Database {
 	private static Logger DatabaseLogger = Logger.getLogger(Database.class);
 	
 	public static void main(String ... args) {
-		BasicConfigurator.configure();
 		Database db = new Database("documents.txt");
 	}
 	
 	public Database(String filename) {
+		BasicConfigurator.configure();
 		initDatabase(filename);
 	}
 	

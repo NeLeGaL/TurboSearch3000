@@ -10,6 +10,7 @@
  */
 package app;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.swing.JOptionPane;
@@ -84,7 +85,12 @@ public class SearchPanel extends javax.swing.JPanel {
 }//GEN-LAST:event_tbxSearchFieldActionPerformed
 
     private void loadDocs(String query) {
-
+    	ArrayList<Document> result = parentWindow.database.proccessQuery(query);
+    	gotDocs =  new Document[result.size()];
+    	int iteration = 0;
+    	for (Document doc : result) {
+    		gotDocs[iteration++] = doc;
+    	}
     }
     
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed

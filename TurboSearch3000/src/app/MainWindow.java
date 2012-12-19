@@ -14,13 +14,15 @@ import java.awt.Color;
 import java.awt.TrayIcon.MessageType;
 import javax.swing.JOptionPane;
 
+import ts3000.model.Database;
+
 /**
  *
  * @author Андрей
  */
 public class MainWindow extends javax.swing.JApplet {
-
     int resCount = 0;
+    protected Database database;
     
     public void addResult()
     {
@@ -45,6 +47,7 @@ public class MainWindow extends javax.swing.JApplet {
                 }
             });
             searchPanel.parentWindow = this;
+            database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
