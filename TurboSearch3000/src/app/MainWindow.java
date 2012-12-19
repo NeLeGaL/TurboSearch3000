@@ -47,6 +47,7 @@ public class MainWindow extends javax.swing.JApplet {
                 }
             });
             searchPanel.parentWindow = this;
+            searchResults.parentWindow = this;
             database = new Database("C:\\Users\\Андрей\\Documents\\GitHub\\TurboSearch3000\\TurboSearch3000\\documents.txt");
             //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
         } catch (Exception ex) {
@@ -75,6 +76,7 @@ public class MainWindow extends javax.swing.JApplet {
         searchResults = new app.SearchResultField();
         historyField = new app.HistoryField();
         categoriesField = new app.CategoriesField();
+        viewerPanel = new app.HTMLViewer();
 
         setBackground(new java.awt.Color(0, 255, 255));
 
@@ -82,7 +84,7 @@ public class MainWindow extends javax.swing.JApplet {
 
         menuPanel.setBackground(new java.awt.Color(230, 230, 230));
 
-        searchDocumentLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        searchDocumentLabel.setFont(new java.awt.Font("Tahoma", 0, 14));
         searchDocumentLabel.setForeground(new java.awt.Color(0, 0, 255));
         searchDocumentLabel.setText("Search document");
         searchDocumentLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -197,7 +199,7 @@ public class MainWindow extends javax.swing.JApplet {
                 .addComponent(allDocumentsLabel)
                 .addGap(18, 18, 18)
                 .addComponent(historyLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 247, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 403, Short.MAX_VALUE)
                 .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(searchButton)
@@ -234,26 +236,33 @@ public class MainWindow extends javax.swing.JApplet {
                 .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contentPanelLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchResults, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contentPanelLayout.createSequentialGroup()
                         .addComponent(historyField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(categoriesField, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(searchResults, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         contentPanelLayout.setVerticalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contentPanelLayout.createSequentialGroup()
                 .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchResults, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(categoriesField, 0, 0, Short.MAX_VALUE)
-                    .addComponent(historyField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, Short.MAX_VALUE))
-                .addContainerGap(347, Short.MAX_VALUE))
+                    .addGroup(contentPanelLayout.createSequentialGroup()
+                        .addComponent(searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(categoriesField, 0, 0, Short.MAX_VALUE)
+                            .addComponent(historyField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, Short.MAX_VALUE)))
+                    .addGroup(contentPanelLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(searchResults, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -400,6 +409,7 @@ public class MainWindow extends javax.swing.JApplet {
         historyField.setVisible(false);
         categoriesField.setVisible(false);
         searchPanel.setVisible(true);
+        viewerPanel.setVisible(false);
     }
     
     protected void setSearchResults()
@@ -420,6 +430,7 @@ public class MainWindow extends javax.swing.JApplet {
         historyField.setVisible(false);
         categoriesField.setVisible(false);
         searchPanel.setVisible(false);
+        viewerPanel.setVisible(false);
     }
     
     protected void setHistoryPanel()
@@ -440,6 +451,7 @@ public class MainWindow extends javax.swing.JApplet {
         historyField.setVisible(true);
         categoriesField.setVisible(false);
         searchPanel.setVisible(false);
+        viewerPanel.setVisible(false);
     }
     
     protected void setCategoriesPanel()
@@ -460,6 +472,28 @@ public class MainWindow extends javax.swing.JApplet {
         historyField.setVisible(false);
         categoriesField.setVisible(true);
         searchPanel.setVisible(false);
+        viewerPanel.setVisible(false);
+    }
+    
+    protected void setViewerPanel()
+    {
+        javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
+        contentPanelLayout.setHonorsVisibility(true);
+        contentPanel.setLayout(contentPanelLayout);
+        contentPanelLayout.setHorizontalGroup(
+            contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(viewerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+        );
+        contentPanelLayout.setVerticalGroup(
+            contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(viewerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+        );
+        
+        searchResults.setVisible(false);
+        historyField.setVisible(false);
+        categoriesField.setVisible(false);
+        searchPanel.setVisible(false);
+        viewerPanel.setVisible(true);
     }
     
     private boolean searchRes = false;
@@ -504,5 +538,6 @@ public class MainWindow extends javax.swing.JApplet {
     private javax.swing.JTextField searchField;
     protected app.SearchPanel searchPanel;
     protected app.SearchResultField searchResults;
+    protected app.HTMLViewer viewerPanel;
     // End of variables declaration//GEN-END:variables
 }

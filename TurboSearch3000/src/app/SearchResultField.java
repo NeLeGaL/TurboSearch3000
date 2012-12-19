@@ -12,6 +12,9 @@ package app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import javax.swing.JOptionPane;
 import ts3000.model.Document;
 
 /**
@@ -29,6 +32,7 @@ public class SearchResultField extends javax.swing.JPanel {
     
     private int pages = 0;
     private int currentPage;
+    protected MainWindow parentWindow;
     
     private void makeVisibleByPage(int pageNum) {
         if (pageNum < pages - 1) {
@@ -150,7 +154,30 @@ public class SearchResultField extends javax.swing.JPanel {
             }
         });
 
+        searchResult2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult2MouseClicked(evt);
+            }
+        });
+
+        searchResult3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult3MouseClicked(evt);
+            }
+        });
+
+        searchResult4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult4MouseClicked(evt);
+            }
+        });
+
         cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date" }));
+        cmbSortBy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbSortByActionPerformed(evt);
+            }
+        });
 
         lblSortBy.setText("sort by:");
 
@@ -243,8 +270,68 @@ public class SearchResultField extends javax.swing.JPanel {
     }//GEN-LAST:event_lnkNextPageMouseClicked
 
     private void searchResult1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseClicked
-        
+        parentWindow.setViewerPanel();
+        parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+0));
     }//GEN-LAST:event_searchResult1MouseClicked
+
+    private class DocComparator implements Comparator<Document> {
+        
+        public int state = 0; // 0 for title-asc sort, 1 for title-desc sort, 2 for date sort
+        
+        public DocComparator() { }
+        
+        public DocComparator(int state) {
+            this.state = state;
+        }
+        
+        @Override
+        public int compare(Document o1, Document o2) {
+            if (state == 1)
+                return o2.getTitle().compareTo(o1.getTitle());
+            if (state == 2)
+                return o2.getDate().compareTo(o2.getDate());
+            return o1.getTitle().compareTo(o2.getTitle());
+        }
+    }
+    
+    private void cmbSortByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSortByActionPerformed
+        
+        try {
+            DocComparator comp = null;
+
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("name ascending")) {
+                comp = new DocComparator(0);
+            }
+
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("name descending")) {
+                comp = new DocComparator(1);
+            }
+
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("date")) {
+                comp = new DocComparator(2);
+            }
+
+            Collections.sort(docs, comp);
+            setPage(0);
+        } catch (Exception ex) {
+            
+        }
+    }//GEN-LAST:event_cmbSortByActionPerformed
+
+    private void searchResult2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseClicked
+        parentWindow.setViewerPanel();
+        parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+1));
+    }//GEN-LAST:event_searchResult2MouseClicked
+
+    private void searchResult3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseClicked
+        parentWindow.setViewerPanel();
+        parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+2));
+    }//GEN-LAST:event_searchResult3MouseClicked
+
+    private void searchResult4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseClicked
+        parentWindow.setViewerPanel();
+        parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+3));
+    }//GEN-LAST:event_searchResult4MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JComboBox cmbSortBy;

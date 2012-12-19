@@ -42,11 +42,19 @@ public class SearchPanel extends javax.swing.JPanel {
         tbxSearchField = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
 
-        tbxSearchField.setFont(new java.awt.Font("Tahoma", 0, 18));
+        tbxSearchField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tbxSearchField.setText("search documents...");
         tbxSearchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbxSearchFieldActionPerformed(evt);
+            }
+        });
+        tbxSearchField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tbxSearchFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tbxSearchFieldFocusLost(evt);
             }
         });
 
@@ -98,6 +106,18 @@ public class SearchPanel extends javax.swing.JPanel {
         parentWindow.searchResults.setSource(gotDocs);
         parentWindow.setSearchResults();
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void tbxSearchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tbxSearchFieldFocusGained
+        if (tbxSearchField.getText().equals("search documents...")) {
+            tbxSearchField.setText("");
+        }
+    }//GEN-LAST:event_tbxSearchFieldFocusGained
+
+    private void tbxSearchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tbxSearchFieldFocusLost
+        if (tbxSearchField.getText().equals("")) {
+            tbxSearchField.setText("search documents...");
+        }
+    }//GEN-LAST:event_tbxSearchFieldFocusLost
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JButton btnSearch;
