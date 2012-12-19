@@ -124,8 +124,8 @@ public class Database {
                 
         
 	// one word query - just for now
-	public Document[] proccessQuery(String query) {
-		return null;
+	public ArrayList<Document> proccessQuery(String query) {
+		return documents;
 	}
 
 	private HashMap< String, HashMap<String, Document> > categoryDocuments;
