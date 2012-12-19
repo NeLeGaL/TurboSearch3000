@@ -66,40 +66,44 @@ public class SearchResultField extends javax.swing.JPanel {
             }
             
             if (howMuch >= 1) {
-                searchResult1.setCaption(docs.get(newPage*4 + 0).getTitle());
-                String desc = docs.get(newPage*4 + 0).getAnnotation();
+                Document doc = docs.get(newPage*4 + 0);
+                searchResult1.setCaption(doc.getTitle());
+                String desc = doc.getAnnotation();
                 if (desc.length() >= 50) {
                     desc = desc.substring(0, 50) + "...";
                 }
                 searchResult1.setDescription(desc);
-                searchResult1.setPath(docs.get(newPage*4 + 0).getTitle() + "/");
+                searchResult1.setPath("category - " + doc.getCategory());
             }
             if (howMuch >= 2) {
-                searchResult2.setCaption(docs.get(newPage*4 + 1).getTitle());
-                String desc = docs.get(newPage*4 + 1).getAnnotation();
+                Document doc = docs.get(newPage*4 + 1);
+                searchResult2.setCaption(doc.getTitle());
+                String desc = doc.getAnnotation();
                 if (desc.length() >= 50) {
                     desc = desc.substring(0, 50) + "...";
                 }
                 searchResult2.setDescription(desc);
-                searchResult2.setPath(docs.get(newPage*4 + 1).getTitle() + "/");
+                searchResult2.setPath("category - " + doc.getCategory());
             }
             if (howMuch >= 3) {
-                searchResult3.setCaption(docs.get(newPage*4 + 2).getTitle());
-                String desc = docs.get(newPage*4 + 2).getAnnotation();
+                Document doc = docs.get(newPage*4 + 2);
+                searchResult3.setCaption(doc.getTitle());
+                String desc = doc.getAnnotation();
                 if (desc.length() >= 50) {
                     desc = desc.substring(0, 50) + "...";
                 }
                 searchResult3.setDescription(desc);
-                searchResult3.setPath(docs.get(newPage*4 + 2).getTitle() + "/");
+                searchResult3.setPath("category - " + doc.getCategory());
             }
             if (howMuch >= 4) {
-                searchResult4.setCaption(docs.get(newPage*4 + 3).getTitle());
-                String desc = docs.get(newPage*4 + 3).getAnnotation();
+                Document doc = docs.get(newPage*4 + 3);
+                searchResult4.setCaption(doc.getTitle());
+                String desc = doc.getAnnotation();
                 if (desc.length() >= 50) {
                     desc = desc.substring(0, 50) + "...";
                 }
                 searchResult4.setDescription(desc);
-                searchResult4.setPath(docs.get(newPage*4 + 3).getTitle() + "/");
+                searchResult4.setPath("category - " + doc.getCategory());
             }
             
             return true;
@@ -139,6 +143,12 @@ public class SearchResultField extends javax.swing.JPanel {
         lblCurPage = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
+
+        searchResult1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult1MouseClicked(evt);
+            }
+        });
 
         cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date" }));
 
@@ -231,6 +241,10 @@ public class SearchResultField extends javax.swing.JPanel {
         
         setPage(currentPage + 1);
     }//GEN-LAST:event_lnkNextPageMouseClicked
+
+    private void searchResult1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseClicked
+        
+    }//GEN-LAST:event_searchResult1MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JComboBox cmbSortBy;
