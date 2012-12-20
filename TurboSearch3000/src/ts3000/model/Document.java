@@ -33,7 +33,9 @@ public class Document {
     {
     	this.title = title;
         this.annotation = annotation;
+        this.category = category;
         this.htmlText = text;
+        this.date = date;
         this.plainText = Jsoup.parse(htmlText).text();
     }
 	

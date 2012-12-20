@@ -570,3 +570,89 @@ mw.loader.load(["mobile.desktop","mediawiki.user","mediawiki.page.ready","mediaw
 
 //END_OF_DOCUMENT
  </div>
+
+<div id="Social networks">  	
+	<h2 id="docTitle" style="">vk.com</h2>
+	<div id="docAnnotation" style="">Main page of the least popular social network</div> 	
+	<div id="docDate" style=""> Sat, 12 Aug 1995 13:30:00 GMT </div>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="MobileOptimized" content="176" />
+<base id="base">
+<title>Вход</title>
+<script type="text/javascript">
+<!--
+(function(g,e,a,c,b){var k=e.screen,d;d=!1;try{d=new XMLHttpRequest}catch(m){try{d=new ActiveXObject("Msxml2.XMLHTTP")}catch(n){try{d=new ActiveXObject("Microsoft.XMLHTTP")}catch(o){d=!1}}}d=d?c:b;document.write('<input id="up_helper" type="file" style="display:none" />');var f=document.getElementById("up_helper"),l="file"==f.type&&!f.disabled?c:b;f.parentNode.removeChild(f);var f="ontouchstart"in window?c:b,h;try{h=typeof navigator.geolocation!==a?c:typeof window.google!==a&&typeof google.gears!==a?c:typeof device!==a&&typeof device.getServiceObject!==a?c:typeof Mojo!==a&&"Mojo.Service.Request"!==typeof Mojo.Service.Request?c:b}catch(p){h=b}var i;a:{try{var j=e.Audio?new Audio:g.createElement("audio");if(j.canPlayType&&j.canPlayType("audio/mpeg")&&"no"!=j.canPlayType("audio/mpeg")){i=c;break a}}catch(q){}i=b}a=(g.cookie.match(/(^|;\s+)remixmdevice=([^;]+)/)||[])[2];e=[k.width||b,k.height||b,e.devicePixelRatio||b,d+l+f+h+i].join("/");if(!a||a!=e)g.cookie="remixmdevice="+e+"; expires="+(new Date((new Date).getTime()+31536E6)).toUTCString()+"; path=/",location.replace(location.toString())})(document,window,"undefined","!","-");(function(a){var c=a.hash||"",b=c.substr(2);"#/"==c.substr(0,2)&&(b.match(/^\/*away(\.php)?([^a-z0-9\.]|$)/)&&(b=""),a.replace(a.protocol+"//"+a.host+"/"+b))})(location);
+//-->
+</script>
+<link type="text/css" rel="stylesheet" href="/css/s_m.css?190"></link><link type="text/css" rel="stylesheet" media="only screen" href="/css/s_r.css?74"></link>
+<link rel="shortcut icon" href="/images/faviconnew.ico"></link>
+</head>
+<body id="vk" class="nt hover">
+<div id="vk_head" class="mhead"><div class="btn"><div class="b">&nbsp;</div></div></div>
+<div id="vk_wrap">
+<div id="l"></div>
+<div id="m"><div id="mhead" class="mhead"><div class="btn notify index"></div>
+<div class="btn logo"><a href="/" class="b"><i></i></a></div></div>
+<div id="mcont" class="mcont"><div class="pcont login bl_cont">
+<div class="panel prof_panel">
+<div>Мобильная версия поможет Вам оставаться В Контакте, даже если Вы далеко от компьютера.</div>
+</div>
+<div class="cont">
+<form method="post" action="https://login.vk.com/?act=login&_origin=http://m.vk.com&ip_h=55968c766acab836d8&role=pda&utf8=1">
+<dl>
+<dt>Телефон или email:</dt>
+<dd class="iwrap"><input type="text" name="email" class="text" value="" /></dd>
+</dl>
+<dl>
+<dt>Пароль:</dt>
+<dd class="iwrap"><input type="password" name="pass" class="text" /></dd>
+</dl>
+<dl>
+<dd>
+<div class="near_box">
+<input class="btn" type="submit" value="Войти" />
+<div class="near_btn"><a href="/login?act=restore">Забыли пароль?</a></div>
+</div>
+</dd>
+</dl>
+</form>
+<dl>
+<dd><a class="join_btn" href="/join">Зарегистрироваться</a></dd>
+</dl>
+</div>
+</div></div>
+<div id="mfoot" class="mfoot"><ul class="main_menu">
+<li><a href="/settings?act=change_regional&hash=50cfb379b4f2984bf6&lang_id=3">English</a></li><li><a href="/settings?act=change_regional&hash=50cfb379b4f2984bf6&lang_id=1">Українська</a></li>
+<li><a href="/settings">all languages »</a></li>
+</ul>
+<ul class="main_menu footer_menu">
+<li><a href="http://vk.com/?_fm=1">Полная версия</a></li>
+</ul>
+</div>
+<script id="page_script" type="text/javascript">
+<!--
+!window.__jsInited&&(function(){window.langConfig={"id":0,"numDel":"<span class=\"num_delim\"> <\/span>","numDelS":" ","numDec":",","prepTags":["{prep_with}","{prep_With}","{prep_about}","{prep_About}"],"prep":[["{prep_with},{prep_With}","С*,З*","со,Со"],["{prep_with},{prep_With}","*,Са*,Се*,Сё*,Си*,Со*,Су*,Сэ*,Сю*,Ся*,За*,Зе*,Зё*,Зи*,Зо*,Зу*,Зэ*,Зю*,Зя*","с,С"],["{prep_about},{prep_About}","А*,О*,У*,И*,Э*","об,Об"],["{prep_about},{prep_About}","*","о,О"]],"parent":0,"timeSys":["24hour"],"yearOffset":0,"flexLast":false,"revOrder":false,"RTL":false,"numRules":{"int":[[100,[11,12,13,14],3],[10,[1],1],[10,[2,3,4],2],["*",0,3]],"float":2},"sexRules":[[1,2],["*",1]],"larr":"&larr;","rarr":"&rarr;"};extend(lang,{"mobile_online":"онлайн","mobile_wall_post_replies_title":"Комментарии","mobile_group_head_title":"Группа","mobile_public_head_title":"Страница","mobile_event_head_title":"Мероприятие","mobile_photos_photo_head_title":"Фотография","mobile_menu_player_head_title":"Музыка","mobile_audio_player_not_support":"Устройство не поддерживает воспроизведение встроенного аудио","mobile_audio_search_btn":"Искать","mobile_audio_search_placeholder":"Введите название..","mobile_audio_search_not_found":"По запросу «<b>%s<\/b>» не найдено ни одной аудиозаписи","mobile_audio_no_audio":"Нет ни одной аудиозаписи.","mobile_mail_typing":["","{user} пишет..","{user} пишет.."],"mobile_mail_multi_typing":"{users} и {last_user} пишут..","mobile_mail_chat_no_selected_peers":"Выберите участников","mobile_mail_chat_no_selected_names":"Нет участников","mobile_mail_chat_selected_peers":["","Выбран %s участник","Выбрано %s участника","Выбрано %s участников"]});window.vk={"id":0,"__debug":false};window.__jsInited=true;})();
+//-->
+</script>
+<img width="1" height="1" src="//counter.yadro.ru/hit?uhttp%3A%2F%2Fm.vk.com%2Flogin;r;42365478" alt="" align="left" />
+<img width="1" height="1" src="//b.scorecardresearch.com/p?c1=2&c2=13765216&c3=&c4=http%3A%2F%2Fm.vk.com%2Flogin&c5=&c9=c15=&cv=2.0&cj=1&rn=42365478" alt="" align="left" /></div>
+</div>
+<script type="text/javascript">
+<!--
+parent&&parent!=window&&(document.getElementsByTagName('body')[0].innerHTML='');
+//-->
+</script>
+</body>
+</html>
+//END_OF_DOCUMENT
+ </div>
+
+

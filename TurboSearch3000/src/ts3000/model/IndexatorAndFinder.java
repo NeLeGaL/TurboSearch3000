@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 import java.util.concurrent.Semaphore;
 
 class IndexatorAndFinder {
-	static final String DELIMETERS = "\t\n .<>,!&?$%#@()[]{}";
+	static final String DELIMETERS = "\t\n .<>,!&?$%#@()[]{}-";
 	private FileWorker fileWorker;
 	private Map<String, HashSet<Integer>> grams = new HashMap<String, HashSet<Integer>>();
 	private Semaphore synchSemaphore = new Semaphore(1);

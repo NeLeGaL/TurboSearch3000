@@ -51,7 +51,7 @@ public class MainWindow extends javax.swing.JApplet {
             viewerPanel.parentWindow = this;
             categoriesField.parentWindow = this;
             historyField.parentWindow = this;
-            database = new Database("C:\\Users\\Андрей\\Documents\\GitHub\\TurboSearch3000\\TurboSearch3000\\documents.txt");
+            database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
             //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
         } catch (Exception ex) {
             ex.printStackTrace();

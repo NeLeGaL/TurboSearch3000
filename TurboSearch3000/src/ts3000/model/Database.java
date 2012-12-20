@@ -23,7 +23,7 @@ public class Database {
 	
 	public Database(String filename) {
 		BasicConfigurator.configure();
-		indexatorAndFinder = new IndexatorAndFinder(filename, new ExactIndexFindStrategy());
+		indexatorAndFinder = new IndexatorAndFinder(filename, new StammerIndexFindStrategy());
 	}
 	
 	public ArrayList<Document> getDocsByCategory(String category) {

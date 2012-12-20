@@ -21,8 +21,9 @@ public class StammerIndexFindStrategy implements IndexFindStrategy {
 
 	@Override
 	public HashSet<Integer> find(String query,
-			Map<String, HashSet<Integer>> grams, Semaphore synchSemaphore) {
+		Map<String, HashSet<Integer>> grams, Semaphore synchSemaphore) {
 		StringTokenizer tokenizer = new StringTokenizer(query, IndexatorAndFinder.DELIMETERS);
+		if (!tokenizer.hasMoreTokens()) return new HashSet<Integer>();
 		String word = tokenizer.nextToken().toLowerCase();
 		
 		try {
@@ -34,11 +35,9 @@ public class StammerIndexFindStrategy implements IndexFindStrategy {
 		
 		while (tokenizer.hasMoreTokens()) {
 			word = tokenizer.nextToken();
-			if (ans != null) 
-				ans.retainAll(processOneQueryWord(word, grams));
-			else {
-				break;
-			}
+			HashSet<Integer> newGrams = processOneQueryWord(word, grams);
+			
+			ans.retainAll(processOneQueryWord(word, grams));
 		}
 		synchSemaphore.release();
 		
@@ -47,7 +46,7 @@ public class StammerIndexFindStrategy implements IndexFindStrategy {
 	}
 	
 	private HashSet<Integer> processOneQueryWord(String word, Map<String, HashSet<Integer>> grams) {
-		HashSet<Integer> ans = null;
+		HashSet<Integer> ans = new HashSet<Integer>();
 		int x = 0;
 		
 		if (word.length() >= 3 && word.length() <= 5) 
@@ -60,11 +59,9 @@ public class StammerIndexFindStrategy implements IndexFindStrategy {
 			x = 3;
 		
 		for (int i = 0; i <= x; ++i) {
-			if (ans != null) {
-				ans.addAll(grams.get(word.substring(0, word.length() - i)));
-			}
-			else {
-				ans = grams.get(word.substring(0, word.length() - i));
+			HashSet<Integer> addGrams = grams.get(word.substring(0, word.length() - i));
+			if (addGrams != null) {
+				ans.addAll(addGrams);
 			}
 		}
 		return ans;

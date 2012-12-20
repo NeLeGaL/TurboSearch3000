@@ -22,6 +22,7 @@ public class ExactIndexFindStrategy implements IndexFindStrategy {
 	@Override
 	public HashSet<Integer> find(String query, Map<String, HashSet<Integer>> grams, Semaphore synchSemaphore) {
 		StringTokenizer tokenizer = new StringTokenizer(query, IndexatorAndFinder.DELIMETERS);
+		if (!tokenizer.hasMoreTokens()) return new HashSet<Integer>();
 		String word = tokenizer.nextToken().toLowerCase();
 		
 		try {
@@ -32,10 +33,13 @@ public class ExactIndexFindStrategy implements IndexFindStrategy {
 		HashSet<Integer> ans = grams.get(word);
 		
 		while (tokenizer.hasMoreTokens()) {
-			word = tokenizer.nextToken();
-			if (ans != null) 
+			word = tokenizer.nextToken().toLowerCase();
+			System.err.println(word);
+			HashSet<Integer> newGrams = grams.get(word);
+			if (ans != null && newGrams != null) 
 				ans.retainAll(grams.get(word.toLowerCase()));
 			else {
+				ans = null;
 				break;
 			}
 		}

@@ -2,9 +2,11 @@ package ts3000.model;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -48,7 +50,7 @@ class FileWorker {
 		categories = new ArrayList<Category>();
 		
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(new File(filename)));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
 			
 			String line;
 			while ((line = br.readLine()) != null) {
