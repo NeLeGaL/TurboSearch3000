@@ -1,0 +1,1023 @@
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<link href="skins/style.css" rel="stylesheet" type="text/css" media="screen" />
+<title>Низкоуровневое программирование современных видеокарт | Программирование | КОМПЬЮТЕРЫ И ИНТЕРНЕТ | LIBRARY.BY</title>
+</head>
+<body>
+
+
+<noindex>
+<!-- (C)2009 Gemius SA - gemiusAudience / library.by / Home Page -->
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var pp_gemius_identifier = new String('B8AwO2Oxky1mluYwpidfQvWp.j5dE_8aF.BCJ7XocXb.B7');
+var pp_gemius_hitcollector = 'gaby.hit.gemius.pl';
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://library.by/xgemius.js"></script>
+</noindex>
+
+
+<table cellSpacing="0" cellPadding="0" width="100%" border="0">
+  <tr>
+    <td class="headerback" align="right" height="20" colspan="2"><table cellSpacing="0"
+    cellPadding="0" width="100%" border="0">
+<tbody>
+      <tr>
+        <td bgcolor="#004080" height="30">
+
+
+
+<noindex>
+<div align="left">
+<script type="text/javascript"><!--
+google_ad_client = "pub-8035502200157879";
+/* LIBRARY.BY - TOP */
+google_ad_slot = "5541694481";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</noindex>
+
+
+
+
+
+</td>
+        <td bgcolor="#004080"></td>
+        <td align="right" bgcolor="#004080">
+
+
+
+
+<p><strong><small><font face="Lucida Sans Unicode"><noindex><a href="http://forumist.ru"
+style="color: rgb(192,192,192); text-decoration: overline" rel="nofollow" title="Forumist.ru">Форум</a></noindex><font
+color="#C0C0C0"> | <a
+href="http://library.by/add/register.htm" title="Получить статус автора и комментатора в БЦБ!"
+style="color: rgb(192,192,192); text-decoration: overline" target="_top">Регистрация</a>
+ | <a
+href="http://library.by/reklama/" title="Реклама в сфере образования"
+style="color: rgb(192,192,192); text-decoration: overline" target="_top">Реклама</a>
+ | <a
+href="http://library.by/about/" title="О библиотеке"
+style="color: rgb(192,192,192); text-decoration: overline" target="_top">О библиотеке</a>
+
+</font></small></strong></p>
+
+
+
+
+
+
+
+</td>
+      </tr>
+</tbody>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="38"  valign="top"><a href="http://www.library.by" target="_top"><img
+    src="../logo.gif"
+    alt="Белорусская цифровая библиотека LIBRARY.BY"
+    border="0" WIDTH="250" HEIGHT="60"></a></td>
+
+
+    <td height="38">
+
+
+
+
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" >
+    <tr>
+      <td width="50%">
+
+
+
+
+  <table border="0" cellpadding="10" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" >
+    <tr>
+      <td width="100%">
+
+
+<script type="text/javascript"><!--<![CDATA[
+/* (c)AdOcean 2003-2010 */
+if(location.protocol.substr(0,4)=='http')document.write(unescape('%3C')+'script id="smartcode.library.by.468x60" src="'+location.protocol+'//by.adocean.pl/_'+(new Date()).getTime()+'/ad.js?id=A9SqxxpNAwWBBMNQe30KPQme.FYw5.BWKL08KWX4K4r.a7/x='+screen.width+'/y='+screen.height+'" type="text/javascript"'+unescape('%3E%3C')+'/script'+unescape('%3E'));
+//]]>--></script>
+
+<script type="text/javascript"><!--<![CDATA[
+/* (c)AdOcean 2003-2010 */
+if(location.protocol.substr(0,4)=='http')document.write(unescape('%3C')+'script id="smartcode.library.by.100_60" src="'+location.protocol+'//by.adocean.pl/_'+(new Date()).getTime()+'/ad.js?id=nyeqzllhAv4De8O57K8EqmB5En6vOL34Y7Et3_YxUjX.17/x='+screen.width+'/y='+screen.height+'" type="text/javascript"'+unescape('%3E%3C')+'/script'+unescape('%3E'));
+//]]>--></script>
+
+
+</td>
+    </tr>
+  </table>
+
+
+
+
+</td>
+      <td width="50%" valign="top"><p align="right"><a href="http://library.by" target="_top"><img
+    src="../logo_library.gif"
+    alt="Белорусская цифровая библиотека - крупнейшая интернет-библиотека Республики Беларусь"
+    border="0" WIDTH="500" HEIGHT="60"></a></td>
+    </tr>
+  </table>
+
+
+
+
+
+
+
+
+
+</td>
+  </tr>
+  <tr>
+    <td height="10" bgcolor="#5BADFF">
+
+</td>
+    <td height="10" bgcolor="#5BADFF">
+
+
+
+</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="logo"><big>Вы находитесь в рубрике <a href="readme.php" title="КОМПЬЮТЕРЫ И ИНТЕРНЕТ"><u>КОМПЬЮТЕРЫ И ИНТЕРНЕТ</u></a> | <a href="http://library.by/search/" title="Поиск по библиотеке"><u>Система поиска</u></a> | <a href="http://library.by/add/" title="Добавить публикацию в рубрику КОМПЬЮТЕРЫ И ИНТЕРНЕТ"><u>Добавить публикацию</u></a> | <a href="http://library.by/" title="На главную страницу библиотеки"><u>Сменить рубрику?</u></a></big></div>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="30">
+  <tr>
+    <td width="100%" bgcolor="#EEEEEE" colspan="2">&nbsp; <strong>ПОПУЛЯРНОЕ:</strong>&nbsp; <a
+    href="http://www.library.by/portalus/modules/beleconomics/readme.php"
+    style="text-decoration: underline" title="Экономика Беларуси">Экономика РБ</a>&nbsp;&nbsp; <a
+    href="http://www.library.by/portalus/modules/belorussianlaw/readme.php"
+    style="text-decoration: underline" title="Право Беларуси">Право РБ</a>&nbsp;&nbsp; <a
+    href="http://www.library.by/portalus/modules/philosophy/readme.php"
+    style="text-decoration: underline" title="Философия">Философия</a>&nbsp;&nbsp;&nbsp; <a
+    href="http://www.library.by/portalus/modules/psychology/readme.php"
+    style="text-decoration: underline" title="Психология">Психология</a>&nbsp;&nbsp; <a
+    href="http://www.library.by/portalus/modules/belarus/readme.php"
+    style="text-decoration: underline" title="История Беларуси">История Беларуси</a>&nbsp;&nbsp; <a
+    href="http://www.library.by/portalus/modules/culture/readme.php"
+    style="text-decoration: underline" title="Культура Беларуси">Культура, искусство</a>&nbsp;&nbsp; <a
+    href="http://www.library.by/portalus/modules/interesting/readme.php" style="text-decoration: underline"><strong>Всё обо всём</strong></a>&nbsp;&nbsp; <a
+    href="http://referatus.by/services-disser-to-email.html" style="text-decoration: underline; color: #FF0000" title="Доставка диссертаций"><strong>Доставка диссертаций по РБ!</strong></a></td>
+  </tr>
+  <tr>
+    <td width="40%" bgcolor="#D2E9FF" height="5"><small><small></small></small></td>
+    <td width="60%"><small><small></small></small></td>
+  </tr>
+</table>
+
+
+<div id="left">
+<p class="links">
+<strong><a href="readme.php" title="Последние публикации по теме КОМПЬЮТЕРЫ И ИНТЕРНЕТ"><img src="../images/arrow_list.gif" width="10" height="9"
+alt="Вверх" align="bottom" hspace="3">Новинки рубрики</strong></a><br>
+</p>
+
+
+
+
+<p class="links">
+<br>
+<b><big>КОМПЬЮТЕРЫ И ИНТЕРНЕТ:</big></b>
+<br>
+(<a href="http://library.by/" title="Перейти к списку рубрик (на главную)"><u><small>Сменить рубрику</u></small></a>)
+
+<br><br><a href="?category=1">Программирование</a><br /><a href="?category=2">Интернет</a><br /><a href="?category=3">Учебные пособия</a><br /><a href="?category=5">HARD-оборудование</a><br /><a href="?category=11">Журнал &quot;Internet Zone&quot;</a><br /><a href="?category=12">Журнал &quot;ProtoPlex&quot;</a><br /><a href="?category=13">Журнал &quot;AboutPC&quot;</a><br /><a href="?category=14">Журнал &quot;CompDocs&quot;</a><br /><a href="?category=15">Журнал &quot;Soft&amp;Script&quot;</a><br /><a href="?category=16">Журнал &quot;Computer Life&quot;</a><br /><a href="?category=17">Журнал &quot;SurfMan&quot;</a><br /><a href="?category=18">Журнал &quot;WebGod&quot;</a><br /><a href="?category=19">Журнал &quot;CompoSoft&quot;</a><br /><a href="?category=20">Журнал &quot;Design House&quot;</a><br /><a href="?category=21">Журнал &quot;EXE&quot;</a><br /><a href="?category=22">Журнал &quot;Free-Tech&quot;</a><br /><a href="?category=23">Журнал &quot;altWebDeveloper&quot;</a><br /><a href="?category=24">Журнал &quot;GrimFiles&quot;</a><br /><a href="?category=25">Журнал &quot;Hard City&quot;</a><br /><a href="?category=26">Журнал &quot;LeenerS&quot;</a><br /><a href="?category=27">Журнал &quot;PC4ever&quot;</a><br /><a href="?category=28">Журнал &quot;Мир ПК&quot;</a><br /><a href="?category=29">Журнал &quot;PHPInside&quot;</a><br /><a href="?category=30">Журнал &quot;Quick Zone&quot;</a><br /><a href="?category=31">Журнал &quot;Wmaster&quot;</a><br /><a href="?category=32">Журнал &quot;ZERO&quot;</a><br /><a href="?category=33">Электронный бизнес</a><br />
+
+
+<a href="show_archives.php" title="Архив статей по теме КОМПЬЮТЕРЫ И ИНТЕРНЕТ"><b>+ архивные материалы</b></a>
+<a href="referat_readme.php" title="Рефераты по теме КОМПЬЮТЕРЫ И ИНТЕРНЕТ"><b>+ рефераты & дипломы</b></a>
+<br>
+
+
+
+
+
+
+</p>
+
+<p>
+<b>Свежие публикации:</b>
+
+<br><div align="center"><center><table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="5"></td>
+    <td><small>Календарь \ в этом месяце:</small><br>
+<span class="monthhead">Декабрь 2012</span><table id="calendar"><thead><th class="weekday">Пн</th><th class="weekday">Вт</th><th class="weekday">Ср</th><th class="weekday">Чт</th><th class="weekday">Пт</th><th class="weekdaypr">Сб</th><th class="weekdaypr">Вс</th></thead><tr><td colspan="5">&nbsp;</td><td class="daypr">01</td><td class="daypr">02</td></tr><tr><td class="day">03</td><td class="day"><a href="/portalus/modules/computers/readme.php?subaction=showdate&amp;id=1354572000&amp;archive=&amp;start_from=&amp;ucat=&amp;" title="Все посты за 04 декабря 2012">04</a></td><td class="day">05</td><td class="day">06</td><td class="day">07</td><td class="daypr">08</td><td class="daypr">09</td></tr><tr><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day"><a href="/portalus/modules/computers/readme.php?subaction=showdate&amp;id=1355349600&amp;archive=&amp;start_from=&amp;ucat=&amp;" title="Все посты за 13 декабря 2012">13</a></td><td class="day">14</td><td class="daypr">15</td><td class="daypr">16</td></tr><tr><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="daypr">22</td><td class="daypr">23</td></tr><tr><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="daypr">29</td><td class="daypr">30</td></tr><tr><td class="day">31</td><td colspan="6">&nbsp;</td></tr></table></td>
+  </tr>
+</table></div></center>
+
+<p class="links">
+<a href="readme.php" title="Последние 10 публикаций по теме КОМПЬЮТЕРЫ И ИНТЕРНЕТ"><img src="../images/arrow_list.gif" alt="Последние 10 статей" align="bottom" hspace="3"><u>Последние <b>10</b> статей</u></a>
+<br><br>
+</p>
+
+
+<p class="links">
+<b>АРХИВНЫЕ ФОНДЫ:</b>
+<br>
+<br>
+
+<img src="../images/clock.gif" width="13" height="11"
+alt="!" align="bottom" hspace="3">Архивные фонды - это спецфонды Библиотеки, которые <b>не доступны</b> в Читальном зале.<br><br>
+
+<b>Последние 10 архивов рубрики КОМПЬЮТЕРЫ И ИНТЕРНЕТ:</b><br><br>
+<a href="/portalus/modules/computers/readme.php?subaction=list-archive&amp;archive=1126440877&amp;">28.09.2004 - 28.09.2004</a><br /><a href="/portalus/modules/computers/readme.php?subaction=list-archive&amp;archive=1153805645&amp;">23.07.2006 - 23.07.2006</a><br /><a href="/portalus/modules/computers/readme.php?subaction=list-archive&amp;archive=1289294027&amp;">04.11.2010 - 04.11.2010</a><br /><a href="/portalus/modules/computers/readme.php?subaction=list-archive&amp;archive=1154510150&amp;">02.08.2006 - 02.08.2006</a><br /><br>
+<a href="show_archives.php" title="Все архивы по теме КОМПЬЮТЕРЫ И ИНТЕРНЕТ"><img src="../plus.gif" width="9" height="9" alt="Рекомендуем посетить" align="bottom" hspace="3">ВСЕ архивы рубрики...</a>
+<br><br>
+<img src="../images/arrow_list.gif" alt="Рекомендуем посетить" align="bottom" hspace="3"><a href="http://library.by/search/" title="Поиск по библиотеке"><u>Система поиска</u></a>
+<br><br>
+</p>
+
+
+
+<p class="links">
+<b>МЕНЮ ДЛЯ АВТОРОВ:</b><br><br>
+<a href=cpanel.htm><img src="../author.gif" width="10" height="10"
+alt="Авторам раздела" align="bottom" hspace="3">Добавить статью</a><br>
+<a href=cpanel.htm><img src="../author.gif" width="10" height="10"
+alt="Авторам раздела" align="bottom" hspace="3">Редактировать статьи</a><br>
+
+
+<br><u>НОВИЧКАМ</u>: Хотите стать нашим автором и публиковать свои материалы в Библиотеке?
+<a href=http://library.by/add/register.htm><strong><u> ЗАРЕГИСТРИРОВАТЬСЯ!</u></strong></a><br><br>
+</p>
+
+
+
+
+
+<p class="links"><a href="http://library.by/portalus/modules/computers/rss.php"><img src="../xml.gif" width="25" height="11"
+alt="Новинки данного раздела БВБ на Вашем сайте!" align="bottom" hspace="3">Экспорт новинок</a>
+
+</br></br>
+<small><a href="#" style="text-decoration: overline" title="КОМПЬЮТЕРЫ И ИНТЕРНЕТ">наверх</a></small>
+
+</p></br>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div id=content>
+
+<div align="left">
+<table border="0" cellpadding="0" cellspacing="0" width="800">
+  <tr>
+    <td width="520">
+<p>
+
+<noindex>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-8035502200157879";
+/* 468x60, создано 19.08.08 \ black-black */
+google_ad_slot = "1777905124";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</noindex>
+
+</p>
+
+</td>
+    <td width="280"><div align="right">
+<table border="0" cellpadding="0" cellspacing="0" width="250">
+  <tr>
+    <td width="100%" bgcolor="#808080"><p align="center"><a href="http://library.by/add/" title="Добавить свою научную публикацию в коллекцию LIBRARY.BY" style="color: #FFFFFF"><b>+ <u>добавить публикацию!</u></b></a></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF"><p align="center"><strong><a
+    href="readme.php"
+    style="text-decoration: underline" title="Последние 10 статей из рубрики КОМПЬЮТЕРЫ И ИНТЕРНЕТ">Новинки рубрики</a> | <a
+    href="http://library.by/search/"
+    style="text-decoration: underline" title="Поиск по библиотеке">Поиск</a></strong></td>
+  </tr>
+</table></div></td>
+  </tr>
+</table></div>
+
+
+
+
+
+
+
+
+
+
+<p>
+
+<br>
+<b><big><font color="#008000">АКТУАЛЬНО:</font> <a href="http://referatus.by/" style="color: #FF0000" title="Написание контрольных, курсовых, дипломных работ НА ЗАКАЗ! Гарантия сдачи!"><u>Написание контрольных, курсовых, дипломных работ НА ЗАКАЗ! Гарантия сдачи!</u></a></big></b>
+<br>
+</br><small><u>НА ПРАВАХ РЕКЛАМЫ</u>: 
+
+
+</small>
+
+
+
+
+
+</br>
+
+<p>
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+  <tr>
+    <td width="100%" bgcolor="#808080" height="10"></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#000000">
+
+<noindex>
+<!-- START Code -->
+<p align="center">
+<SCRIPT type="text/javascript" SRC="http://dreamstart.ru/adpeeps.php?bfunction=showad&uid=100000&bmode=off&bzone=default&bsize=700x200&btype=3&bpos=default&ver=2.0&btotal=1&btarget=_blank&bborder=0">
+</SCRIPT>
+<NOSCRIPT>
+<a href="http://dreamstart.ru/adpeeps.php?bfunction=clickad&uid=100000&bmode=off&bzone=default&bsize=700x200&btype=1&bpos=default&ver=2.0" target="_blank" rel="nofollow">
+<img src="http://dreamstart.ru/adpeeps.php?bfunction=showad&uid=100000&bmode=off&bzone=default&bsize=700x200&btype=1&bpos=default&ver=2.0" width="700" height="200" alt="Click Here!" border=0></a>
+</NOSCRIPT>
+</p>
+<!-- END  Code -->
+</noindex>
+
+
+</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#808080" height="10"></td>
+  </tr>
+</table>
+
+</p>
+
+</br>
+
+<p><b><big><font face="Lucida Sans Unicode">Низкоуровневое программирование современных видеокарт</font></big></b></p>
+<p><b><small><font color="#8F8F8F"><img src="../opinion.gif" width="16" height="10"
+alt="Автор" align="bottom" hspace="3">ДАТА ПУБЛИКАЦИИ:</b> 15 августа 2008</br><b><img src="../opinion.gif" width="16" height="10"
+alt="Автор" align="bottom" hspace="3">ОПУБЛИКОВАЛ:</b> <u><noindex><a href="mailto:ser99349059@yandex.ru">Есиповский С.Н,</a></noindex></u></br><b><img src="../information.gif" width="16" height="10"
+alt="Автор" align="bottom" hspace="3">РУБРИКА:</b> Программирование</br><b><img src="../information.gif" width="16" height="10"
+alt="Источник (source)" align="bottom" hspace="3">ИСТОЧНИК: </b> (c)</p>
+</small></font>
+
+
+
+
+</br>
+
+
+<p><hr align="right" width="80%" size="1" color="#8F8F8F"></p>
+
+<p align="right">
+
+<a href="cpanel.htm"><img src="../images/paste.gif" width="20"
+height="20" alt="АВТОРУ: Дополнить публикацию" border="0"><img src="../images/cut.gif"
+width="20" height="20" alt="АВТОРУ: Исправить публикацию" border="0"><img
+src="../images/delete.gif" width="20" height="20"
+alt="АВТОРУ: Удалить публикацию" border="0"></a></p>
+
+
+
+
+
+
+
+
+
+<p><b><big><big><u><font face="Lucida Sans Unicode">Есиповский С.Н.</u>, (c)</font></big></big></b></p></br>
+
+
+<noindex></noindex>
+
+
+
+</td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#808080" hight="5"></td>
+  </tr>
+</table></p>
+
+
+
+<div class="article">
+
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="top" width="90%">
+
+
+
+
+
+
+
+<p style="text-align: justify"><font color="#5B5B5B">
+
+
+<div style="float: right;">
+
+
+
+  <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="240">
+
+    <tr>
+      <td>
+
+<script type="text/javascript"><!--<![CDATA[
+/* (c)AdOcean 2003-2010 */
+if(location.protocol.substr(0,4)=='http')document.write(unescape('%3C')+'script id="smartcode.library.by.240_400" src="'+location.protocol+'//by.adocean.pl/_'+(new Date()).getTime()+'/ad.js?id=dZM7FJClOM9JBLMw3G23BAh4jEMocJCzZY5pmCLlEEr.j7/x='+screen.width+'/y='+screen.height+'" type="text/javascript"'+unescape('%3E%3C')+'/script'+unescape('%3E'));
+//]]>--></script>
+
+
+</td>
+    </tr>
+
+    <tr>
+      <td  bgcolor="#FFCC00"></td>
+    </tr>
+  </table>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- google_ad_section_start -->
+
+
+Графика SVGA. Часть первая: программирование современных видеокарт в реальном и виртуальном режимах<br /><br /><br />Содержание<br /><br />Пролог<br />Глава 1. Общая информация о видеокарте<br />Глава 2. Проверка соответствия видеокарты стандарту VBE<br />Глава 3. Видеорежимы и стандарт<br />Глава 4. Информация о видеорежиме<br />Глава 5. Поиск видеорежима<br />Глава 6. Установка видеорежима<br />Глава 7. Окна видеопамяти<br />Глава 8. Подготовительные действия<br />Глава 9. Работа с видеокнами<br />Глава 10. Построение точки на экране<br />Глава 11. Вычисление адреса точки<br />Глава 12. Цвет в коде точки<br />Эпилог<br /><br /><br /><br /><br />Пролог<br /><br /><br />В настоящее время существует достаточно возможностей для создания разнообразных графических приложений на любительском и профессиональном уровне. Однако по-прежнему существует ряд задач, решение которых требует умения работать с видеосистемой на самом низком уровне. К таким задачам, в частности, относится создание драйверов или графических приложений. Разработчики собственных операционных систем и программ также иногда сталкиваются с необходимостью непосредственной работы с регистрами видеокарт. <br />В этой книге кратко рассказывается о способах программирования современных видеоадаптеров. Основной упор сделан на правильном использовании возможностей оборудования, благодаря чему приложение сможет работать на любой видеокарте, т.е. будет переносимым. <br />Совместимость видеокарт существовала не всегда. Были времена, когда приложения, работающие на одной видеокарте, не работали или работали медленно на другой. Решением стал стандарт VBE (VESA BIOS EXTENSION). Его окончательная третья версия вышла в 1998-ом году и с тех пор почти не изменялась. Оригинальный документ VESA vbe.pdf можно легко найти в сети интернет. Благодаря стандартизации появилась возможность создавать графические приложения, совместимые со всеми моделями видеокарт, соответствующих стандарту VBE. <br />В первой части книги будет рассказано о программировании видеокарт в реальном и виртуальном режиме. Такие вопросы, как работа с цветом и рисунками, построение геометрических фигур, а так же работа с DAC-регистрами видеокарты рассматриваться не будут. Все это можно легко найти в соответствующей литературе. <br /><br /><br /><br /><br />Глава 1 <br />Общая информация о видеокарте<br /><br /><br />На любой видеокарте имеется микросхема памяти, именуемая BIOS. Она содержит данные и различные внутренние подпрограммы, необходимые для нормальной работы видеоадаптера в целом. Стандарт VBE предусматривает размещение в BIOS специальных функций (функции VBE), при помощи которых можно непосредственно работать с видеосистемой. <br />Для вызова функции следует задать группу и номер функции в группе. Код группы для функций VBE равен 4Fh, он указывается в регистре AH. Номер функции в группе указывается в регистре AL. Вызов функций осуществляется через прерывание INT 10h. При успешном выполнении функции регистр AH очищается, а в AL возвращается код 4Fh. Любые другие значения в регистре AX говорят о том, что функция либо не выполнена, либо не поддерживается. <br /><br /><br />Функция 00h - запрос общих данных о видеокарте (return VBE controller information) <br /><br />Перед вызовом функции следует создать буфер размером 512 байт, в котором функция сможет разместить информационный блок VbeInfoBlock, содержащий общую информацию о видеокарте. Создание буфера обязательно. Тут следует оговориться. Стандартом VBE 1.х предусматривалось создание буфера размером 256 байт, однако уже в версиях 2.0 и 3.0 рекомендуется создавать буфер размером 512 байт для получения расширенной информации. Учитывая тот факт, что все выпущенные в последнее десятилетие видеоадаптеры поддерживают вторую или третью версию стандарта, то целесообразно использовать последний способ вызова. В начало буфера следует записать четыре символа в ASCII коде, вместе образующих слово "VBE2". Результатом выполнения функции является создание информационной структуры VbeInfoBlock размером 512 байт. Значения её областей приведены в таблице 1. <br /><br /><br />Таблица 1. Структура информационного блока VbeInfoBlock <br /><br />Смещение от            Размер                           Название области<br />начала блока          области	<br /><br />00h - 03h	             4 байта	                    "VESA" (VbeSignature)<br />04h - 05h	             2 байта	                   Версия VBE (VbeVersion)<br />06h - 09h	             4 байта 	        Адрес строки изготовителя(OemStringPtr)<br />0Ah - 0Dh	             32 бита	       Специфические возможности (Capabilities)<br />0Eh - 11h               4 байта	        Адрес списка видеорежимов(VideoModePtr)<br />12h - 13h	             2 байта        	Размер видеопамяти (TotalMemory)<br /><br />	         Информация для VBE 2.0+<br /><br />14h - 15h	              2 байта              OEM версия VBE (OemSoftwareRev)<br />16h - 19h	              4 байта	          Адрес строки производителя                 <br />                                                                 (OemVendorNamePtr)<br />1Ah - 1Dh                4 байта	           Адрес строки имени продукта <br />                                                                  (OemProductNamePtr)<br />1Eh - 21h	              4 байта	           Версия продукта (OemProductRevPtr)<br />22h - 0FFh	             222 байт	Резервная область для списка видеорежимов <br />                                                                         (Reserved)<br />100h - 1FFh             256 байт	         Данные производителя (OemData)<br /><br />Примечание: если перед вызовом функции в начало выделенного буфера не записать строку "VBE2", то информационный блок VbeInfoBlock будет иметь размер 256 байт и только первые шесть областей (до адреса 13h) будут заполнены данными. <br /><br />Область VbeSignature занимает четыре байта и содержит ASCII коды четырех символов, образующих слово "VESA". <br />Область VbeVersion занимает два байта. Старший байт содержит номер версии VBE, младший - её редакцию. <br />Область OemStringPtr занимает четыре байта (два слова) и содержит адрес начала строки текста, содержащей наименование изготовителя. Первое слово содержит смещение, а второе - код сегмента, в котором расположена строка. Строка заканчивается пустым байтом (формат строки ASCIIZ). Более расширенная по содержанию строка будет располагаться в области OemData. Ширина области OemData, а следовательно и длина строки может иметь размер не более 256 байт. <br />Область Capabilities состоит из 32-х независимых битов и содержит данные о поддержке специфических возможностей в графической среде . Из них используются только младшие пять разрядов (флагов), остальные отведены под резерв для будущих расширений. Нулевой и второй бит используются для операций с DAC регистрами. Установка первого бита говорит о том, что видеоконтроллер не совместим с режимом VGA. Третий и четвёртый предназначены для работы со стереоскопическим сигналом. <br />Область VideoModePtr занимает четыре байта (два слова) и содержит адрес строки, содержащей список номеров видеорежимов. Код каждого режима занимает одно слово (16 бит). В этом списке перечисляются все потенциально поддерживаемые адаптером режимы. То, что режим присутствует в списке, не означает, что он может быть установлен. Проверка работоспособности того или иного режима должна возлагаться на приложение. Список режимов так же размещен в области Reserved. <br />Область TotalMemory занимает два байта и указывает объём расположенной на видеокарте памяти в блоках по 64К. <br /><br />Интересные результаты получаются при полном просмотре некоторых адресов, возвращаемых в информационном блоке. Например, для большинства видеокарт адрес одного из диапазонов ввода-вывода (I/O) начинается с сегмента 0C000h (этот сегмент может быть указан в области OemStringPtr). При просмотре этого сегмента в самом его начале могут обнаружиться данные о дате и времени изготовления продукта, номера версии BIOS, расширенное название модели и другое. В операционной системе Windows адреса диапазонов I/O можно узнать на вкладке свойств видеоадаптера. <br />Если требуется, то можно составить простую программу, которая будет выводить данные информационного блока в файл. Визуально анализировать файл можно в любом hex-редакторе, но следует помнить, что, например, адреса строк будут записаны в обратном порядке и читать их нужно справа налево. <br /><br /><br /><br /><br /><br /><br />Глава 2 <br />Проверка соответствия видеокарты стандарту VBE<br /><br /><br />Работу с видеокартой следует начинать с проверки поддержки ею стандарта VESA. Как говорилось выше, перед вызовом функции 00h следует выделить буфер размером 512 байт. Предположим, что буфер создан и имеет имя Vinfo. Адрес буфера должен находиться в регистрах ES:DI. <br /><br /><br />Пример 1. Проверка видеоадаптера <br /><br />STEP_1:<br /><br />;Инициализация регистров ES:DI<br />MOV AX, Vinfo <br />MOV ES, AX <br />XOR DI, DI <br /><br />;Запись в начало буфера строки "VBE2" <br />MOV AX,56h <br />MOV ES:[00h],AX <br />MOV AX,42h <br />MOV ES:[01h],AX <br />MOV AX,45h <br />MOV ES:[02h],AX <br />MOV AX,32h <br />MOV ES:[03h],AX <br /><br />;Вызов функции <br />MOV AX,4F00h<br />INT 10h<br /><br />;Сравнение и переход на соответствующую метку<br />CMP AX,4Fh<br />JZ STEP_2<br />JMP ERROR<br /><br />;Переход ко второму тесту<br />STEP_2: <br /><br />Примечание: если регистры ES:DI уже используются задачей, то перед выполнением примера 1 их значения следует сохранить в стеке. <br /><br /><br />Пример начинается с инициализации регистров ES:DI. Так как регистр ES сегментный, то его значение присваивается через аккумулятор AX. Регистр DI очищается для записи информационного блока с начала сегмента. В итоге в регистрах ES:DI находится адрес буфера Vinfo. В начало буфера посимвольно записывается строка "VBE2", затем вызывается функция через прерывание BIOS. Если функция была выполнена успешно, то в AX возвращается код 4Fh. Это означает, что информационная структура VbeInfoBlock была создана и можно переходить к следующему шагу программы - на метку STEP_2. Если код в AX отличается от 4Fh, то происходит переход на метку ERROR, после которой можно завершить программу или предпринять какие-либо другие действия. <br /><br />В настоящее время области информационной структуры VbeInfoBlock, возвращаемой функцией 00h, почти не представляют практического интереса для прикладных задач, кроме информационного. Области VideoModePtr и Reserved хоть и дают информацию о видеорежимах, но не гарантируют их работоспособность. Доступность видеорежима должна проверяться методом перебора. Анализ области TotalMemory так же вряд ли целесообразен, так как все выпускающиеся видеокарты давно превысили барьер в 16 Мб, что вполне достаточно для установки любого существующего режима. Например, при анализе некоторых видеокарт семейства Radeon в области TotalMemory было указано заниженное значение видеопамяти, чем видеоадаптер имел на самом деле. При работе примера 1 важен статус завершения функции. Если стандарт VBE поддерживается видеокартой, то можно переходить к следующему этапу - проверке поддержки выбранного видеорежима. <br /><br /><br /><br /> <br /><br /><br /><br /><br /><br />Глава 3 <br />Видеорежимы и стандарт<br /><br /><br />До создания специализированной ассоциации стандартизации видеоэлектроники VESA (Video Electronics Standards Association) разработчики видеокарт имели полную свободу действий в плане создания собственных стандартов. Каждая выпускавшаяся модель обладала индивидуальным набором видеорежимов и многие графические приложения могли работать только на видеокартах определенного производителя. Что бы исправить положение, авторы VBE описали номера и характеристики режимов, полный список которых приведен в таблице 2. Это помогло ситуации, однако вскоре, дабы не ограничивать разработчиков, идея стандартизации видеорежимов была фактически отменена. Это означает, что приложение должно самостоятельно выбрать подходящий режим методом перебора, используя функции VBE. На данный момент изготовитель вправе вводить любые собственные номера режимов, чем он и пользуется. Например, при чтении области VideoModePtr или Reserved информационного блока VbeInfoBlock любой видеокарты можно увидеть много новых кодов режимов (таких как 01A2h или 0182h), которые в таблице 2 отсутствуют. В целях совместимости со старыми приложениями номера режимов VBE по-прежнему поддерживаются видеокартами, но не все. Так, видеоадаптеры GeForce уже несколько лет не поддерживают режим 1024 · 768 · 32K (режим 116h), в то время как в Radeon он до сих пор присутствует. <br /><br /><br />Таблица 2. Видеорежимы VBE <br /><br />Номер режима           Разрешение      Количество цветов         Цветовая  схема<br /><br />Текстовые режимы			<br /><br />108h	                  80 · 60	              -	                                     -<br />109h	                132 · 25	              -	                                      -<br />10Ah            	132 · 43	               -	                     -<br />10Bh            	132 · 50	                -	                     -<br />10Ch	                132 · 60                     -	                     -<br /><br />Графические режимы		<br />	<br />100h	               640 · 400	             256	                     -<br />101h	               640 · 480	             256	                     -<br />102h	               800 · 600	              16	                     -<br />103h	               800 · 600                  256	                     -<br />104h	               1024 · 768	                16                    	    -<br />105h	               1024 · 768	               256	                      -<br />106h	              1280 · 1024	                16	                      -<br />107h                        1280 · 1024       	256	                      -<br />10Dh	                320 · 200	               32K	               1:5:5:5 (15 бит)<br />10Eh	                320 · 200	               64K	                 5:6:5 (16 бит)<br />10Fh	                320 · 200	             16.8M	               8:8:8 (32/24 бит)<br />110h	                640 · 480	               32K	                1:5:5:5 (15 бит)<br />111h	                640 · 480      	64K	                 5:6:5 (16 бит)<br />112h	                640 · 480 	              16.8M	                8:8:8 (32/24 бит)<br />113h	                800 · 600	                32K	                 1:5:5:5 (15 бит)<br />114h             	800 · 600      	64K             	5:6:5 (16 бит)<br />115h	                800 · 600	               16.8M          	8:8:8 (32/24 бит)<br />116h            	1024 · 768	                 32K	                 1:5:5:5 (15 бит)<br />117h	                1024 · 768	                  64K	                  5:6:5 (16 бит)<br />118h	                 1024 · 768	 16.8M	                 8:8:8 (32/24)<br />119h	                 1280 · 1024	   32K	               1:5:5:5 (15 бит)<br />11Ah	                 1280 · 1024	   64K	                5:6:5 (16 бит)<br />11Bh	                 1280 · 1024	  16.8M	              8:8:8 (32/24 бит)<br />81FFh	                 Специальный<br />                                      режим	                        -	                        -<br /><br /><br />Каждый режим имеет идентификатор (номер) размером в слово (2 байта), который по специальным таблицам BIOS преобразовывается в 7-значный OEM (Original Equipment Manufacturer) код. Приложение работает с номерами режимов, а соответствующий OEM-код используется видеокартой при установке и получении информации о режиме. Любой видеорежим обладает двумя важными характеристиками: разрешающая способность и количество отображаемых цветов. В таблице 2 для графических режимов разрешающая способность указана в точках и определяет количество пикселей по горизонтали (столбцы) и вертикали (строки). Количество цветов для удобства записывается в краткой форме, их точные значения таковы: <br /><br />Direct color 32К - 32 768 цветов (2^15) Hi-color ;<br />Direct color 64K - 65 536 цветов (2^16) Hi-color ;<br />Direct color 16.8M - 16 777 216 цветов (2^24) True Color ;<br /><br />Цветовая схема или глубина цвета определяет, каким образом в коде точке распределены значения трёх базовых цветов - красного, зелёного и синего (RGB). Видеорежимы Direct color (непосредственный цвет) делятся на режимы среднего цветового разрешения Hi-color и максимального цветового разрешения True Color. Их особенностью является то, что цвет точки записан в коде самой точки и на данный момент эти режимы обеспечивают самое высокое качество изображения. Запись глубины цвета 32/24 бит означает, что для кодирования цвета требуется всего 3 байта (24 бит), но так как обработать три байта одной командой нельзя, то в код точки приходится включать четвертый пустой байт, увеличивая её размер до 32 бит. Кратко о работе с цветом будет сказано в конце книги. <br /><br /><br /><br /> <br /><br /><br /><br />Глава 4 <br />Информация о видеорежиме<br /><br /><br />Перед установкой видеорежима следует убедиться, что его характеристики совпадают с требованиями, необходимыми для запуска и нормальной работы приложения. Для этого предназначена функция VBE 01h - запрос информации о видеорежиме (Return VBE Mode Information), которая создает информационный блок ModeInfoBlock с расширенными данными о режиме. Для размещения блока требуется создать буфер размером 256 байт, адрес которого должен находиться в регистрах ES:DI. Следует помнить, что не существует никаких соглашений относительно номеров видеорежимов и единственный способ корректной работы с ними это использование информационной функции 01h. <br /><br /><br />Таблица 3. Структура информационного блока ModeInfoBlock <br /><br />Смещение от     Размер области                Название области<br />начала блока <br /><br /> Обязательная информация для всех версий VBE<br /><br />00h - 01h	         2 байта	              Атрибуты режима (ModeAttributes)<br />02h	         1 байт	              Атрибуты окна А (WinAAttributes)<br />03h	         1 байт	              Атрибуты окна В (WinBAttributes)<br />04h - 05h	         2 байта	          Размер ячейки окна в КБ (WinGranularity)<br />06h - 07h	        2 байта	               Размер окна в КБ (WinSize)<br />08h - 09h           2 байта	              Адрес начала окна А (WinASegment)<br />0Ah - 0Bh	         2 байта	              Адрес начала окна В (WinВSegment)<br />0Ch - 0Fh	         4 байта	              Адрес подпрограммы BIOS (WinFuncPtr)<br />10h - 11h	          2 байта	           Размер строки в байтах<br />                                                                 (BytesPerScanLine)<br /><br />      Обязательная информация для версий VBE 1.2 и выше<br /><br />12h - 13h	      2 байта	          Горизонтальное разрешение в точках <br />                                     или символах (XResolution)<br />14h - 15h	     2 байта	           Вертикальное разрешение в точках <br />                                      или символах (YResolution)<br />16h	      1 байт	                   Ширина символа в точках (XCharSize)<br />17h	     1 байт                 	Высота символа в точках (YCharSize)<br />18h	     1 байт	         Количество плоскостей видеопамяти  <br />                                                         (NumberOfPlanes)<br />19h	     1 байт	              Количество бит на точку (BitsPerPixel)<br />1Аh	      1 байт	            Количество банков видеопамяти (NumberOfBanks)<br />1Bh	     1 байт	              Модель видеопамяти (MemoryModel)<br />1Ch	     1 байт	                Размер банка в КБ (BankSize)<br />1Dh	     1 байт	          Количество экранных страниц  <br />                                                  (NumberOfImagePages)<br />1Eh	     1 байт	                   Резервный байт (Reserved)<br /><br />		Информация для Direct Color<br /><br />1Fh	      1 байт	          Размер маски красного цвета в битах (RedMaskSize)<br />20h	      1 байт	           Позиция маски красного цвета (RedFieldPosition)<br />21h	      1 байт        	Размер маски зелёного цвета в битах <br />                                                            (GreenMaskSize)<br />22h	     1 байт       	Позиция маски зелёного цвета <br />                                                       (GreenFieldPosition)<br />23h	      1 байт        	Размер маски синего цвета в битах  <br />                                                   (BlueMaskSize)<br />24h	     1 байт	         Позиция маски синего цвета (BlueFieldPosition)<br />25h	    1 байт	           Резерв для маски цвета (RsvdMaskSize)<br />26h	    1 байт	       Резерв для позиции маски цвета (RsvdFieldPosition)<br />27h	      1 байт     	Флаги для режима DirectColor  <br />                                                       (DirectColorModeInfo)<br /><br />Примечание: в данной таблице приведены не все области блока ModeInfoBlock, поскольку оставшаяся часть требуется только при работе со всем пространством видеопамяти в защищенном режиме (режим LFB). <br /><br />Область ModeAttributes описывает наиболее важные характеристики видеорежима.<br />Структура области ModeAttributes:<br /><br />D0=1 Видеорежим поддерживается;<br />D1=1 Резерв;<br />D2=1 Стандартные функции вывода TTY поддерживаются BIOS;<br />D3=1 Цветной режим;<br />D3=0 Монохромный режим;<br />D4=1 Графический режим;<br />D4=0 Текстовый режим; <br />D5=1 Режим не совместим с VGA;<br />D6=1 Невозможна работа с окнами видеопамяти;<br />D7=1 Возможна работа со всем пространством видеопамяти (режим LFB);<br />D8=1 Поддерживается двойной режим сканирования; <br />D9=1 Поддержка чередующегося режима;<br />D10=1 Аппаратная поддержка тройной буферизации;<br />D11=1 Стереоскопический сигнал поддерживается ;<br />D12=1 Поддержка двух стартовых адресов для стереоскопического сигнала;<br />D13-D15 Резерв.<br /><br />Бит D7 используется совместно с битом D6, значения их сочетаний показаны ниже:<br /><br />	                                     D7	       D6<br />Только оконный режим	      0    	        0<br />n/a	                                      0	        1<br />Поддержка обоих режимов	      1	        0<br />Только LFB	                      1	        1<br /><br />Примечание: режим LFB (Linear Frame Buffer) - способ работы с видеопамятью через одно большое окно, расположенное в верхних адресах физической памяти. Используется только в защищённом режиме.<br /><br />Области WinAAttributes и WinВAttributes описывают характеристики окон А и В. Об их назначении и способах работы будет сказано в следующих главах.<br />Значения битов (флагов) областей:<br /><br />D0=1 Доступен механизм переключения окон;<br />D0=0 Доступно одно неперемещаемое окно;<br />D1=1 Окно доступно для чтения;<br />D2=1 Окно доступно для записи;<br />D3 - D7 Резерв;<br /><br />Область WinGranularity определяет размер ячейки окна (зернистость) в КБ. Область WinGranularity может иметь значение не только равное 64 КБ, но, например, 4КБ или 16 КБ.<br />Область WinSize определяет размер видеоокна в КБ. Большинство, если не все видеоадаптеры имеют значение WinSize равное 64 КБ.<br />Области WinASegment и WinВSegment определяют начальные адреса видеосегментов А и В. Адреса видеоокон предназначены только для использования в реальном режиме. Если оконный режим не поддерживается и доступен только LFB, то значения областей будут установлены в нуль. <br />Область WinFuncPtr определяет адрес подпрограммы BIOS, которая входит в состав функции VBE 05h (Display Window Control). Прямой вызов подпрограммы обеспечивает более быстрое выполнение задачи, чем при использовании тяжеловесной функции. Если значение области неопределенно, то следует пользоваться функцией 05h. <br />Область BytesPerScanLine определяет размер строки в байтах для оконного режима. Размер строки может быть больше или равным отображаемой строки на экране.<br />Области XResolution и YResolution определяют ширину и высоту экрана в точках или символах. Для графического режима будет указано количество точек по горизонтали и вертикали. Для текстового режима соответственно указывается количество символов и строк.<br />Область MemoryModel определяет тип организации видеопамяти в данном режиме.<br />Существуют следующие виды организации видеопамяти: <br /><br />00h - Текстовый режим;<br />01h - Графический режим CGA;<br />02h - Графический режим Hercules;<br />03h - Режим плоскостей;<br />04h - Режим packed pixel;<br />05h - Режим Non-chain 4, 256 color;<br />06h - Режим Direct Color;<br />07h - Режим YUV;<br />08h - 0Fh;<br />10h - FFh. <br /><br />Области RedMaskSize, GreenMaskSize и BlueMaskSize определяют количество бит, необходимое для кодирования одного из трех цветов RGB. Для YUV модели видеопамяти красный цвет соответствует V, зеленый - Y, а синий - U.<br />Области RedFieldPosition, GreenFieldPosition и BlueFieldPosition содержат смещение от младшего бита кода точки и определяют младший бит соответствующего цвета. <br />Шесть вышеуказанных областей как раз и определяют цветовую схему, указанную в таблице 2 для видеорежимов VBE.<br />Более подробно об областях будет сказано по мере изложения материала. <br /><br /><br /><br /><br /><br /><br />Глава 5<br />Поиск видеорежима<br /><br /><br />Как было сказано ранее, перед установкой видеорежима следует убедиться, что требуемый режим поддерживается видеокартой и может быть установлен на ней. Так как сама идея стандартизации номеров режимов фактически отменена, то единственный способ получить код режима заключается в его поиске методом перебора по основным характеристикам. К таким характеристикам относятся экранное разрешение и количество отображаемых цветов. Приложению нужно по порядку запрашивать данные об имеющихся видеорежимах и сверять заданные характеристики с соответствующими параметрами информационного блока ModeInfoBlock. Если характеристики совпадают, то номер сохраняется в переменной для дальнейшего использования. Если требуемый режим не найден, то можно завершить программу либо попытаться найти другой подходящий режим. <br /><br /><br /><br />Создадим четыре переменные: Horsize, Versize, Pixelcolor и Vmode - соответственно, размер строки в точках (горизонтальное разрешение), количество строк (вертикальное разрешение), размер точки в битах (глубина цвета) и номер видеорежима. Первые три переменные служат для записи характеристик режима, номер которого нужно найти. Переменные Vmode, Horsize и Versize имеют размер слова, а переменная Pixelcolor - размер байта. <br /><br />Перед вызовом функции 01h в регистр СХ помещается номер режима, а в регистры ES:DI заносится адрес буфера размером 256 байт. В примере 2 используется прежний буфер Vinfo. Если же приложение будет использовать данные блока VbeInfoBlock, то его адрес следует сохранить в стеке, а затем создать новый буфер для размещения блока ModeInfoBlock, адрес которого нужно занести в регистры ES:DI. <br /><br />Пример 2. Поиск номера видеорежима <br /><br />STEP_2:<br /><br />;Характеристики искомого видеорежима<br />MOV Horsize,640<br />MOV Versize,480<br />MOV Pixelcolor,16<br /><br />;Начальный номер видеорежима<br />MOV Vmode,00h<br /><br />;Начало цикла поиска видеорежима<br />STEP_3:<br />MOV AX,4F01h<br />MOV CX,Vmode<br />INT 10h<br /><br />;Сравнение количества точек в строке<br />MOV AX,ES:[DI+12h]<br />CMP AX,Horsize<br />JZ POISK_1:<br />JMP POISK_0<br /><br />;Сравение количества строк<br />POISK_1: <br />MOV AX,ES:[DI+14h]<br />CMP AX,Versize<br />JZ POISK_2:<br />JMP POISK_0<br /><br />;Сравнение размера точки<br />POISK_2:<br />MOV AL,ES:[DI+19h]<br />CMP AL,Pixelsize<br />JZ STEP_4<br /><br />POISK_0:<br />INC Vmode<br />MOV AX,00h<br />CMP AX,Vmode<br />JZ ERROR1 <br />JMP STEP_3<br /><br />;Режим найден, выход из поиска<br />STEP_4:<br /><br />Примечание: пример 2 должен выполняться после примера 1. <br />Примечание: так как команда пересылки MOV не может непосредственно перемещать данные из одной ячейки памяти в другую, то в качестве посредника используется регистр АХ (аккумулятор). <br /><br />Перед поиском видеорежима задаются его характеристики, в данном случае произвольно выбран режим с экранным разрешением 640 на 480 пикселей и размером кода точки 16 бит (Hi-color). Далее производить проверку можно двумя способами: либо пользоваться данными из области VideoModePtr блока VbeInfoBlock, либо по порядку проверять все существующие и несуществующие номера режимов. Ради удобства выбран последний способ. Переменная Vmode обнуляется для сканирования режимов с самого начала. Так как номер каждого видеорежима занимает 16 бит, то всего может быть не более чем 65536 режимов. В регистр CX заносится первый по счету номер видеорежима (в примере он равен нулю) и вызывается функция 01h. <br /><br />Если режим поддерживается, то сегмент по адресу ES:DI заполняется данными о нем, если не поддерживается, то области сегмента очищаются. Проверка соответствия режима происходит по трем условиям. Если все или хотя бы одно условие не выполняется, то происходит переход на метку POISK_0, после которой номер видеорежима увеличивается на единицу и проверяется его порядковое значение. Если был исследован последний 65536-ой режим, то значение двухбайтовой переменной Vmode станет равным нулю и произойдет переход на метку ERROR_1. Это означает, что режим с требуемыми характеристиками найти не удалось. <br /><br />Адрес буфера с данными о видеорежиме находится в регистрах ES:DI, причем регистр смещения DI обнулён, благодаря чему информационный блок ModeInfoBlock записывается с самого начала выделенного буфера. Для того, чтобы получить доступ к нужным полям блока, нужно просто изменять смещение, как это и сделано в примере 2. Смещения полей блока ModeInfoBlock указаны в таблице 3. Сначала происходит сравнение значения областей XResolution и YResolution со значениями переменных Horsize и Versize. При сравнении области BitsPerPixel и переменной Pixelsize используется только младшая часть регистра AX, так как сравниваемые значения имеют размер байта. <br /><br />Если на каком то этапе выполнения примера 2 все три проверки прошли успешно, то произойдёт переход на метку STEP_4, а в переменной Vmode будет записан номер видеорежима. Приведенный список из трех условий не претендует на полноту, но в большинстве случаев их вполне достаточно. При необходимости можно включить в текст примера проверку состояния битов области атрибутов режима ModeAttributes. Что бы заранее свести к минимуму возникновение такой ситуации, когда режим не будет найден, следует задавать широкоупотребимые в настоящее время параметры. Например, желательно устанавливать глубину цвета 16 или 24 бит, а экранное разрешение выше 640 · 480 пикселей. <br /><br /><br /><br /><br /><br />Глава 6<br />Установка видеорежима<br /><br /><br />После того, как по заданным характеристикам видеорежима был найден соответствующий ему номер, можно приступать к его установке. Для этого служит функция 02h - установка VBE режима (Set VBE Mode). Если режим установить невозможно, то BIOS оставляет текущий режим без изменения и возвращает код ошибки. Пример 3 должен выполняться после примера 2. <br /><br /><br />Пример 3. Установка видеорежима <br /><br />STEP_4:<br /><br />;Задание кода режима и установка флагов<br />MOV BX,Vmode <br />BTR BX,11 <br />BTR BX,14 <br />BTR BX,15 <br /><br />;Вызов функции VBE<br />MOV AX,4F02h <br />INT 10h<br /><br />;Проверка статуса возврата функции<br />CMP AX,4Fh <br />JZ STEP_5 <br />JMP ERROR2 <br /><br />;Режим успешно установлен<br />STEP_5: <br /><br /><br />Перед вызовом функции следует выполнить некоторые подготовительные действия. В регистр BX заносится номер режима (Vmode) и сбрасываются три его бита - D11, D14 и D15. Бит D15 обнуляется для предварительного очищения видеопамяти. Стандартом VBE оговаривается, что в некоторых случаях память не может быть очищена, поэтому приложение должно обладать для этого собственными средствами. Если бит D15 установлен, то память не очищается и на экране может появиться случайное хаотичное изображение. Бит D14 обнуляется для установки оконной модели видеопамяти. Бит D11 определяет свойства частоты обновления экрана. Для задания частоты обновления по умолчанию (обычно 60 Гц) бит D11 должен быть равен нулю.<br />Разумеется, вместо переменной Vmode можно сразу подставить непосредственное значение кода видеорежима (например, 111h или 114h) взятое из таблицы 3, однако такой способ установки режима давно устарел и имеет два недостатка. Во-первых, подобным образом невозможно установить режим разрешением выше 1280 · 1024 пикселей; во-вторых, это не рекомендуется самим стандартом VBE. <br /><br />Если установка режима прошла благополучно, то в AX возвращается статус завершения функции 4Fh, видеокарта инициализирует заданный режим (обычно появляется черный экран) и происходит переход на метку STEP_5, после которой продолжается выполнение программы. <br />При необходимости, номер установленного видеорежима можно узнать с помощью функции 03h - возврат текущего режима (Return Current VBE ModeVBE). После вызова этой функции в регистре BX возвращается код текущего режима, а в АХ - статус завершения функции. Тот же номер режима хранится в переменной Vmode (пример 2). <br />Для того, что бы выводить точки на экран, одной установки режима недостаточно. Следует еще выполнить ряд подготовительных действий для работы с окнами видеопамяти, о чем будет рассказано далее. <br /><br /><br /><br /><br /><br /><br /><br /><br />Глава 7 <br />Окна видеопамяти<br /><br /><br />В реальном режиме работы микропроцессора командам доступно ограниченное пространство адресов размером немного большим 1 Мбайта. Для обращения к любому байту этого пространства необходимо знать базу (segment) и смещение (offset). Эти два компонента адреса указываются в шестнадцатеричных регистрах - сегментном и индексном. Сегментный регистр указывает на номер параграфа, с которого начинается сегмент, а индексный регистр указывает смещение от начала сегмента. Параграф представляет собой блок памяти длиной 16 байт, выровненный по 16-ти байтной границе. Для работы с видеопамятью внутренние схемы всех видеокарт настроены на диапазоны адресов, совпадающих с адресным пространством микропроцессора, обычно они равны A0000h...AFFFFh для графических и B8000h...BFFFFh для текстовых режимов. Как видно, таким образом можно работать только с 64Кб видеопамяти, что явно недостаточно для режимов Direct Color. Объём видеопамяти современных видеоадаптеров гораздо больше 64Кб, поэтому для доступа к этой памяти был разработан механизм переключения окон.<br />Суть способа состоит в том, что на видеопамять накладывается виртуальный сегмент размером 64Кб, называемый видеоокном. С помощью специальной функции VBE можно перемещать это видеоокно по видеопамяти, тем самым обеспечивая доступ ко всей памяти видеоадаптера. Номер видеоокна нумеруется с нуля и хранится в специальном регистре видеокарты. Подобный механизм позволяет записывать и считывать данные из видеопамяти через узкое окошко размером 64Кб, причем значение сегментного регистра будет неизменным (обычно A0000h), а значения индексного регистра и номера видеоокон будут изменяться приложением в процессе выполнения задачи. <br /><br />Функция 05h - управление видеоокном (Display Window Control)<br /><br />Данная функция предназначена для перемещения видеоокна по видеопамяти и получения информации о его местонахождении. Стандартом VBE предусматривается наличие у видеоадаптеров двух видеоокон - А и В. Информация о них содержится в областях WinAAttributes и WinВAttributes структуры ModeInfoBlock (таблица 3). Одно из видеоокнон используется только для чтения, другое - только для записи. Видеоадаптер самостоятельно выбирает нужное окно в зависимости от требуемого действия и приложению следует только вовремя переключать номера окон. <br /><br />Параметры вызова функции 05h: <br /><br />Вход: АХ=4F05h код группы и функции VBE<br />BH = 00h Установить окно<br />BH = 01h Запросить номер окна<br />BL = 00h Окно A<br />BL = 01h Окно B<br />DX = Номер видеоокна (только при установке окна)<br /><br />Выход: АХ= код возврата VBE<br />DX = Номер видеоокна (только при запросе номера окна)<br /><br />Стандартом VBE не рекомендуется непосредственно пользоваться функцией 05h для установки видеоокон, так как при её вызове происходит выполнение множества вспомогательных действий, замедляющих процесс выполнения программы. Для установки окон следует пользоваться отдельной подпрограммой BIOS, которая выполняет основные действия функции 05h, минуя прерывание INT 10h. Адрес этой процедуры указан в области WinFuncPtr структуры ModeInfoBlock (таблица 3), её входные и выходные параметры идентичны функции 05h. <br />При выводе изображения на экран видеоадаптер считывает только ту часть видеопамяти, которая необходима для заполнения рабочей области экрана. Остальное пространство видеопамяти не используется. Например, для режима разрешением 1024 · 768 пикселей и глубиной цвета 24 бит требуется около 3Мб видеопамяти, что на фоне общего объёма памяти современных видеокарт величина небольшая. Для того, что бы сделать эту память полезной, на практике иногда используется приём деления видеопамяти на страницы. Отображаемая страница называется активной, а невидимая - пассивной. Можно заранее подготавливать изображение на пассивной странице, а затем резко делать её активной. Стандартом VBE ничего не говорится о страницах видеопамяти и специальный способ переключения страниц отсутствует. Однако существует функция VBE 07h (Set/Get Display Start), которая позволяет перенести начало рабочей области видеопамяти (Display start) в заданную точку, что может служить механизмом переключения страниц. <br />Подобный способ работы с видеопамятью вряд ли дает выигрыш в быстродействии, но позволяет реализовать некоторые эффекты, недоступные при обычном способе. Рациональность использования видеостраниц должна решаться программистом в зависимости от требований задачи. <br /><br /><br /><br /> <br /><br /><br /><br />Глава 8 <br />Подготовительные действия<br /><br /><br />Для работы с видеоокнами и адресами точек следует выполнить ряд подготовительных действий, заключающихся в считывании из структуры ModeInfoBlock (таблица 3) необходимых данных. <br />Создадим следующие переменные: <br /><br />WinA (2 байта) - Сегментный адрес видеоокна "А"<br />WinB (1 байт) - Атрибуты окна "В"<br />DWC (4 байта) - Адрес процедуры BIOS<br />Sline (2 байта) - Размер строки в байтах<br />Spixel (2 байта) - Размер точки в байтах<br /><br /><br />Пример 4. Подготовительные действия<br /><br />;Адрес начала видеоокна "A"<br />MOV AX,ES:[DI+08h] <br />MOV WinA,AX<br /><br />;Атрибуты видеокна "B"<br />MOV AL,ES:[DI+03h]<br />MOV WinB,AL<br /><br />;Адрес подпрограммы BIOS<br />MOV EAX,ES:[DI+0Ch]<br />MOV DWC,EAX<br /><br />;Размер строки в байтах<br />MOV AX,ES:[DI+10h] <br />MOV Sline,AX <br /><br />;Вычисляем размер точки в байтах<br />XOR DX,DX <br />MOV BX,Horsize <br />DIV BX <br />MOV Spixel,AX <br /><br />;Подготовка окон<br />MOV AX,WinA <br />MOV ES,AX <br />XOR DI,DI <br /><br />;Переход в цикл программы<br />JMP MAIN <br /><br />;Участок подпрограмм <br /><br />;Тело программы<br />MAIN:<br /><br />Примечание: не имеет значения, когда будет выполняться пример 4 - после примера 2 либо после примера 3. <br /><br />Как говорилось в предыдущей главе, для работы с видеоокнами используется сегментный способ адресации к окну. Поэтому из области WinASegment в переменную WinA читается значение сегмента, который определяет адрес начала видеоокна А. <br />В переменную WinB записываются атрибуты окна B. Используется только младшая часть регистра АХ, так как область WinBAttributes имеет размер байта. <br />Адрес подпрограммы BIOS, которая входит в состав функции VBE 05h (глава 7), состоит из сегмента и смещения и имеет размер двойного слова, поэтому он записывается в переменную DWC через 32-разрядный регистр ЕАХ.<br />Значение размера точки в байтах понадобится при вычислении адреса точки, а так как в информационном блоке ModeInfoBlock эта величина явно не указана, то её следует вычислить. Для нахождения размера точки следует разделить размер строки в байтах (Sline) на её длину в точках (Horsize). Команда деления DIV требует, что бы делимое находилось в регистрах DX:AX (DX - старшая часть, AX - младшая часть), а делитель - в регистре общего назначения, например BX. Остаток деления помещается в АХ, а частное - в DX. В регистре AX уже находится значение Sline, а регистр DX очищается. В итоге в DX:AX находится значение размера строки в байтах. В регистр BX заносится горизонтальное разрешение в точках Horsize. Результатом деления всегда будет целое число, оно сохраняется в регистре DX, а остаток равен нулю.<br />Работа с видеопамятью осуществляется через регистры ES:DI, поэтому когда все необходимые данные из области ModeInfoBlock считаны, в регистр ES заносится адрес начала видеоокна A, а смещение DI очищается. После установки видеоокна по адресу ES:DI будет находится видеосегмент размером 64 Кб, с которым можно работать как с обычным сегментом оперативной памяти (т.е. считывать и записывать в него данные). <br />В зависимости от требований задачи список подготовительных действий может быть гораздо шире. <br /><br /><br /> <br /><br />Глава 9 <br />Работа с видеоокнами<br /><br /><br />Одним из распространённых и повторяющихся действий, которое придётся выполнять приложению при работе с сегментами видеопамяти является установка окна. В регистрах ES:DI уже содержится адрес видеоокна А (пример 4), однако для работы с ним следует уметь "накладывать" его на определённые участки видеопамяти. Такую операцию наложения осуществляет функция 05h, но, как уже говорилось, вместо неё используется более быстрая процедура BIOS, адрес которой записан в переменной DWC (Display Window Control). В области WinSize информационного блока ModeInfoBlock содержится значение размера окна, практически у всех моделей видеокарт оно равно 64 Кб и при установке видеоокон можно непосредственно использовать этот размер. Создадим переменную Num_Win размером 2 байта, которая будет являться входным параметром процедуры Set_Win и предназначена для хранения номера окна. <br /><br />Пример 5. Подпрограмма установки окна Set_Win <br /><br />;Объявление процедуры<br />Set_Win PROC<br /><br />;В регистр DX заносится номер окна<br />MOV DX,Num_Win <br />;Регистр BX очищается для установки окна "A" <br />XOR BX,BX <br />;Вызов процедуры BIOS <br />CALL DWORD PTR [DWC] <br /><br />;Проверка существования окна "В" <br />TEST WinB,01h <br />JE ResetB <br />;Установка окна "В" <br />MOV BX,01h <br />CALL DWORD PTR [DWC] <br /><br />;Возврат в программу<br />ResetB: RET<br /><br />;Объявление завершения процедуры<br />Set_Win ENDP<br /><br />Пример начинается с объявления начала процедуры Set_Win. В регистр DX заносится номер видеоокна, которое требуется установить. Старшая и младшая часть регистра BX очищается для установки окна "А". Затем происходит косвенный дальний вызов подпрограммы BIOS. Заключение в скобки переменной DWC означает, что адресом подпрограммы является не DWC, а хранящееся в ней значение.<br />О второй части примера следует рассказать более подробно. Как известно, у видеокарты, кроме окна А, может существовать окно В. Если это второе окно не учитывать при написании программы, то приложение может работать некорректно. Существует два варианта работы с окнами А и В: раздельная работа и синхронная работа. В большинстве случаев удобно работать с одним видеоокном (А или В), синхронно изменяя номера обоих окон, что и реализовано в вышеизложенном примере. Достаточно лишь проверить существование окна В. Если оно существует, то ему присваивается тот же номер, что и окну А. <br />В примере 4 в переменную WinB были записаны атрибуты окна B, а в главе 4 описаны значения флагов области WinAttributes. Если нулевой бит D0 этой области очищен, то окна В не существует. Для проверки состояния бита используется команда логического сравнения TEST. Если нулевой бит очищен, то флаг ZF устанавливается в состояние "1". Состояние флага анализирует команда условного перехода JE. Если окно В существует, то оно устанавливается под тем же номером, как и окно А, если не существует, то происходит переход на команду RET и выполнение процедуры завершается. <br /><br />В зависимости от видеорежима на экране может помещаться целое или нецелое число окон. Например, при стандартном размере окна в 64 кб при видеорежиме 116h (таблица 2) на экране умещается ровно 24 видеоокна. <br />Если в задаче используется функция 05h, то текст примера 5 будет выглядеть так же, но вместо строки с вызовом процедуры следует вызывать функцию 05h через прерывание INT 10h. При этом время выполнения подпрограммы существенно увеличится. <br /><br /><br /><br /><br /><br /><br />Глава 10 <br />Построение точки на экране<br /><br /><br />После написания подпрограммы Set_Win и инициализации регистров ES:DI все готово для работы с видеопамятью. Видеоадаптер постоянно сканирует рабочую область видеопамяти и преобразует её содержимое в три цвето-яркостных сигнала RGB, которые передаются монитору для визуализации изображения. Достаточно записать в видеопамять коды точек и на экране возникнет их изображение. <br /><br />Пример 6. Запись точки в видеопамять <br /><br />;Цикл программы<br />MAIN:<br /><br />;Определение номера окна<br />MOV Num_Win,00<br />;Вызов подпрограммы установки окна<br />CALL Set_Win <br />;Запись в регистр AX кода цвета точки (синий цвет)<br />MOV AX,1Fh <br />;Запись кода точки в видеопамять <br />MOV ES:[DI+00h],AX <br /><br />В переменную Num_Win записывается номер окна, которое следует установить, затем вызывается процедура Set_Win, которая была описана в примере 5. После того, как окно установлено, в распоряжении приложения находится сегмент видеопамяти размером 64 Кб. В этот сегмент можно записывать данные, которые немедленно будут отображены на экране. После того, как работа с видеоокном будет окончена, устанавливается следующее окно (обычно отличающееся на единицу) и т.д. <br />Для получения доступа к любому байту видеосегмента используется смещение DI. В данном примере в первые два байта видеосегмента (00h и 01h) записывается код 1Fh точки. Этот код синего цвета справедлив для режимов с размером точки 15 и 16 бит. В примере 2 был произвольно выбран видеорежим с размером точки 16 бит, поэтому код точки занимает 2 байта. Нетрудно подсчитать, что из-за размера точки в 2 байта в одном видеоокне поместится всего 32768 точек (половина сегмента).<br />Как известно, точка на экране имеет вертикальную и горизонтальную координату, а видеокарта работает с видеоокном и смещением. Для того, что бы преобразовать экранные координаты точки в значение номера видеоокна и смещения в нем, следует произвести операцию расчёта адреса точки. Подробнее о цветах и адресах точек рассказывается в следующих двух главах. <br /><br /><br /><br /> <br />Глава 11<br />Вычисление адреса точки<br /><br /><br />Недостатком использования оконного способа доступа к видеопамяти является малый размер окна. Экран как бы разбит на множество частей и приложению нужно постоянно следить за тем, достигнут ли конец границы окна и вовремя устанавливать другое. На практике координаты точек удобно задавать в декартовых координатах, но для преобразования адреса точки из вида (x,y) в адрес (Num_Win,DI) следует провести ряд математических вычислений, показанных ниже. <br /><br />Пример 7. Вычисление видеоадреса точки <br /><br />;Вычисление горизонтальной координаты в байтах<br />MOV AX,100 <br />MOV DX,Spixel <br />MUL DX <br />MOV BX,AX <br /><br />;Вычисление вертикальной координаты в байтах<br />MOV AX,Sline <br />MOV DX,200 <br />MUL DX <br /><br />;Сложение <br />ADD AX,BX <br /><br />;Проверка и исправление переноса<br />ADC DX,0 <br /><br />;Инициализация номера окна и смещения<br />MOV Num_Win,DX <br />MOV DI,AX <br /><br />;Вызов подпрограммы установки видеоокна<br />CALL Set_Win <br /><br />;Определение цвета точки (синий)<br />MOV AX,1Fh <br /><br />;Запись точки в видеопамять<br />MOV ES:[DI],AX <br /><br />Примечание: данный пример не оптимизирован (целых две операции умножения) по той причине, что в каждом конкретном случае этот алгоритм будет видоизменён в соответствии с требованиями задачи. <br /><br />В примере произвольно выбрана координата точки равная 100 пикселей по горизонтали и 200 по вертикали. По умолчанию принято, что отсчёт точек экрана ведётся с левого верхнего угла, а первая строка считается нулевой. <br />Для начала нужно вычислить горизонтальную координату точки в байтах. Для этого горизонтальную координату точки следует умножить на размер точки в байтах (Spixel). Команда умножения MUL требует, что бы один из сомножителей был помещён в регистр АХ. Регистр DX используется в качестве операнда и в него помещается второй сомножитель. Результат записывается в регистры DX:AX (в DX - старшая часть, в AX - младшая часть). В любом случае произведение получается величиной небольшой и потому записывается только в регистр AX, а DX очищается. Далее результат сохраняется в регистре BX, так как аккумулятор АХ будет использоваться в других операциях.<br />Вертикальная координата точки в байтах вычисляется путём умножения вертикальной координаты точки на размер строки в байтах (Sline). Результат сохраняется в DX:AX, причём в DX автоматически появляется номер окна (т.е. сколько раз в нём уместилось значение 65536), а в АХ - смещение.<br />Теперь к смещению в АХ прибавляется горизонтальная координата точки в байтах. Очевидно, что может возникнуть такая ситуация, когда результатом сложения будет число большее 65535. При этом произойдёт перенос и установится флаг переноса (CF=1). Поэтому, что бы получить корректные значения, используется команда ADC.<br />После того, как выполнены все вычисления, в регистре DX находится номер окна, а в АХ - смещение. Смещение записывается в регистр DI. Вызов функции Set_Win устанавливает видеоокно, номер которого пересылается из регистра DХ в переменную Num_Win. Все готово для записи точки в видеопамять по заданным экранным координатам.<br />Для наглядности вышеперечисленные действия можно отобразить в одной формуле:<br /><br />Адрес = Spixel · 100 + Sline · 200<br /><br />На практике при прорисовке объектов подобным способом вычисляют адрес только одной опорной точки, адреса остальных вычисляются более простыми способами. <br /><br /><br /> <br /><br />Глава 12 <br />Цвет в коде точки<br /><br /><br />Положение точки на экране определяется её адресом в видеопамяти, а цвет точки зависит от записанного кода по этому адресу. В главе 3 уже было сказано о режимах Direct color. В этих режимах код точки может занимать 2, 3 и 4 байта и определяет цвет точки. Байты регистров, куда записываются коды точек, принято нумеровать справа налево. Из видеопамяти видеоконтроллер считывает их в обратном порядке - слева направо. <br /><br />Таблица 4. Размещение цветов в коде точки для режима Hi-color 32Кб <br /><br />            Красный цвет (R)   Зеленый цвет (G)	Синий цвет (B)<br />n/a	E D C B А	             9	8 7 6 5	                      4 3 2 1 0<br /><br />В этом режиме код каждой точки занимает 15 разрядов (2^15 или 32 768 комбинаций цветов), а последний пятнадцатый разряд F не используется. Если биты двух базовых цветов обнулить, то изменяя значения пяти разрядов третьего цвета можно получать его оттенки. Например, коды базовых цветов максимальной интенсивности имеют следующие значения (для наглядности они показаны так же в двоичном виде, о чём говорит символ "b"): <br /><br />красный — 7С00h (0111110000000000b);<br />зелёный — ЗЕ0h (0000001111100000b);<br />синий — 1Fh (0000000000011111b). <br /><br />Таблица 5. Размещение цветов в коде точки для режима Hi-color 64Кб <br /><br />    Красный цвет (R)	    Зеленый цвет (G)	      Синий цвет (B)<br />        F E D C B                А 9 8 7 6 5	           4 3	2 1 0<br /><br />В отличие от предыдущего режима, в этом код красного и синего цвета занимают по 5 разрядов, а зелёный - 6 разрядов. Код каждой точки занимает 16 разрядов (2^16 или 65 536 комбинаций цветов). Коды базовых цветов максимальной интенсивности для этого режима имеют следующие значения: <br /><br />красный — 0F800h (1111100000000000b);<br />зелёный — 7E0h (0000011111100000b);<br />синий — 1Fh (0000000000011111b). <br /><br /><br />Таблица 6. Размещение цветов в коде точки для режима True Color 16.8Мб <br /><br />  Резерв (байт 3)    Красный (байт 2)      Зелёный (байт 1)  Синий (байт 0)<br />    1F ... 18	                    17 ... 10                    F ... 8	               7 .... 0<br /><br />В этом режиме код каждой точки занимает 24 разряда (2^24 или 16 777 216 комбинаций цветов), но из за неудобства работы с нечётным числом байтов используется дополнительный пустой резервный байт. Код каждого базового цвета занимает 8 бит (1 байт), а четвёртый байт пустой. Стандартом VBE допускается отсутствие резервного байта <br /><br />Если задача рассчитана на работу с различными видеорежимами, то она должна уметь использовать данные участка "Информация для Direct Color" инфоблока ModeInfoBlock (таблица 3). В нём описывается цветовая схема для точки, т.е. то же самое, что и в таблицах 4-6. При установке видеорежима True Color следует обязательно проверять значение области BitsPerPixel (размер точки в битах), так как некоторые видеокарты могут поддерживать только 3-значный код точки. <br /><br /><br /><br /><br /><br />Эпилог<br /><br /><br />Реальный режим работы процессора имеет ряд недостатков. Самые главные из них заключаются в том, что процессор может адресоваться к видеопамяти только через небольшие видеоокна, а использование 32-разрядных и 64-разрядных регистров в этом режиме ограничено. Всё это существенно влияет на скорость работы приложений и не позволяет полностью реализовать возможности современных персональных систем. На данный момент все графические приложения создаются для защищённого режима, который даёт значительный выигрыш в быстродействии и совместимости с новейшими программными и аппаратными средствами. Более того, в этом режиме доступно программирование шейдеров при помощи специфических шейдерных языков (OpenGL, Cg, DirectX ASM и др). <br />При программировании в реальном и виртуальном режиме приложению доступны только функции операционной системы DOS и функции BIOS материнской платы компьютера. Описание этих функций подробно изложены в достаточно большом количестве литературы. Если в задаче используются только функции BIOS, то такая задача является независимой от функций любой операционной системы, так как использует только встроенные подпрограммы оборудования. Фактически, для приложения, использующего только функции BIOS, операционная система нужна лишь для его запуска, всё остальное программа делает самостоятельно. <br />В данной книге освещены лишь некоторые вопросы относительно программирования видеокарт и для более детального ознакомления следует воспользоваться самим стандартом VBE. <br /><br />14.08.2008г.<br /><br /><br />г. Могилёв<br /><br />HTML версия ser99349059@yandex.ru
+
+<!-- google_ad_section_end --></font></br> </p>
+</index>
+
+
+
+</td>
+    <td width="190" bgcolor="#FFF9F0" valign="top"><p align="center">
+
+
+
+<noindex>
+<script type="text/javascript"><!--
+google_ad_client = "pub-8035502200157879";
+/* 160x600, создано 19.08.08  library.by */
+google_ad_slot = "7081925633";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</noindex>
+
+
+</td>
+  </tr>
+</table>
+
+</p>
+
+
+
+
+<p align="left">
+
+
+<strong><b>Литература по теме статьи:</b></strong>
+<br><br>
+
+<script type="text/topadvert">
+load_event: page_load
+feed_id: 7552
+pattern_id: 14
+book_author: 
+book_name: 
+</script><script type="text/javascript" charset="utf-8" defer="defer" async="async" src="http://loader.topadvert.ru/load.js"></script>
+
+
+<small><font color="#808080">© <a href="http://library.by" style="color: #808080" title="Белорусская цифровая библиотека">Library.by</a></small><br><br>
+<form>
+<INPUT TYPE="button" VALUE="<< Назад" onClick="history.go(-1)">
+<INPUT TYPE="button" VALUE="Вверх" onClick="location='#'">
+<INPUT TYPE="button" VALUE="Вперед >>" onCLick="history.go(1)">
+</form></p></br>
+
+
+
+
+<table border="0" cellpadding="5" cellspacing="0" width="770">
+  <tr>
+    <td>Служебное меню:</td>
+    <td>Реклама:</td>
+  </tr>
+  <tr>
+    <td><p align="left"><img src="../printer.gif" width="12" height="15"
+    alt="Распечатать публикацию (версия для печати)"
+    hspace="3"> <a href="http://library.by/portalus/modules/computers/print.php?subaction=showfull&amp;id=1218813636&amp;archive=&amp;start_from=&amp;ucat=1&amp;category=1" target="_blank"><u>Отправить на принтер</u> </a></p>
+    <p align="left"><img
+    src="http://library.by/portalus/modules/bankreferatov/images/go_forum.gif"
+    alt="Форум" align="left" width="14" height="16"><noindex><a
+    style="text-decoration: underline; color: rgb(0,64,128)" href="http://forumist.ru"
+    target="_blank" rel="nofollow">Обсудить на форуме</a></noindex> </td>
+    <td>
+
+<noindex>
+<p align="center"><!--REDexchange code begin--> <!--webbot bot="HTMLMarkup" startspan --><IFRAME src="http://www.red.by/redban/banner?place=473&cpy=1" width="468" height="60" scrolling="no" frameborder="0"><!--webbot
+    bot="HTMLMarkup" endspan --> <script>
+// <!--
+var rndnum = Math.round(Math.random() * 1000);
+document.write('<A href="http://www.red.by/redban/href?place=473&rnd=' + rndnum + '" target="_blank" rel="nofollow">');
+document.write('<IMG src="http://www.red.by/redban/banner?img&place=473&rnd=' + rndnum + '" width="468" height="60" border="0" alt="Красная Баннерная" ismap></A>');
+// -->
+</script> <noscript> <a
+    href="http://www.red.by/redban/href?place=473&rnd=1000" target="_blank" rel="nofollow"><img
+    src="http://www.red.by/redban/banner?img&place=473&rnd=1000" width="468"
+    height="60" border="0" alt="Красная Баннерная" ismap></a> </noscript> <!--webbot
+    bot="HTMLMarkup" startspan --></IFRAME><!--webbot bot="HTMLMarkup" endspan --> <!--REDexchange code end-->
+</noindex>
+
+</td>
+  </tr>
+</table>
+
+</br><p><b>КЛЮЧЕВЫЕ СЛОВА: <u><font face="Tahoma" color="#808080">SVGA, VESA, VBE, Видеокарта</font></b></u></p></br>
+
+
+
+</div>
+<form name="form" method="post" id="comment" action="">
+<script type="text/javascript">
+//<![CDATA[
+function insertext(text1,text2,spot){
+document.forms['comment'].elements['comments'].value += " " + text1 + text2;
+}
+//]]></script><h1>Оставьте свой комментарий - Автор публикации его обязательно прочитает!</h1>
+<p>
+
+
+
+
+<table border="0" cellpadding="5" cellspacing="5" width="750">
+  <tr>
+    <td width="500"><img src="http://library.by/portalus/modules/images/comment_now.gif"></br><font color="#FF0000">ВНИМАНИЕ!</font> Пройти быструю регистрацию вы можете в меню справа ></td>
+    <td width="250"><img
+    src="http://library.by/portalus/modules/images/register_new.gif"
+    alt="Быстрая регистрация на Library.by - заполните форму ниже!"></a></br>5 секунд! Заполните форму ниже:</td>
+  </tr>
+  <tr>
+    <td width="500" bgcolor="#FFFFDF" valign="top">
+
+
+<label for="name"><b><big>Логин <font color="#FF0000">*</font>:</b></big></label></br><input id="name" type="text" size="30" name="name" tabindex="1" value="" style="font-family: Tahoma; font-size: 16; color: rgb(0,0,128); text-align: left; font-weight: bold; margin-left: 0px; padding-left: 4px"/><br /><br />
+
+<label for="mail"><b><big>Email <font color="#FF0000">*</font>: </b></big></br><input id="mail" type="text" size="30" name="mail" tabindex="2" value="" style="font-family: Tahoma; font-size: 16; color: rgb(0,0,128); text-align: left; font-weight: bold;  margin-left: 0px; padding-left: 4px"/> </label><br /><br />
+
+<label for="password"><b><big>Пароль <font color="#FF0000">*</font>: </b></big></br><input id="password" type="password" size="30" name="password" tabindex="3" value="" style="font-family: Tahoma; font-size: 16; color: rgb(0,0,128); text-align: left; font-weight: bold; margin-left: 0px; padding-left: 4px"/> </label><br /><br /><br />
+
+
+<b><big>Текст комментария:</big></b><br />
+<a href="javascript:insertext(':smile:','','short')"><img style="border: none;" alt="smile" src="http://library.by/portalus/modules/computers/data/emoticons/smile.gif" /></a>&nbsp;<a href="javascript:insertext(':wink:','','short')"><img style="border: none;" alt="wink" src="http://library.by/portalus/modules/computers/data/emoticons/wink.gif" /></a>&nbsp;<a href="javascript:insertext(':wassat:','','short')"><img style="border: none;" alt="wassat" src="http://library.by/portalus/modules/computers/data/emoticons/wassat.gif" /></a>&nbsp;<a href="javascript:insertext(':tongue:','','short')"><img style="border: none;" alt="tongue" src="http://library.by/portalus/modules/computers/data/emoticons/tongue.gif" /></a>&nbsp;<a href="javascript:insertext(':laughing:','','short')"><img style="border: none;" alt="laughing" src="http://library.by/portalus/modules/computers/data/emoticons/laughing.gif" /></a>&nbsp;<a href="javascript:insertext(':sad:','','short')"><img style="border: none;" alt="sad" src="http://library.by/portalus/modules/computers/data/emoticons/sad.gif" /></a>&nbsp;<a href="javascript:insertext(':angry:','','short')"><img style="border: none;" alt="angry" src="http://library.by/portalus/modules/computers/data/emoticons/angry.gif" /></a>&nbsp;<a href="javascript:insertext(':crying:','','short')"><img style="border: none;" alt="crying" src="http://library.by/portalus/modules/computers/data/emoticons/crying.gif" /></a>&nbsp;<br />
+<textarea cols="50" rows="8" name="comments" tabindex="3"></textarea><br />
+<input class="input" type="submit" tabindex="4" name="submit" value="Добавить комментарий" style="background-color: rgb(255,240,240); text-align: left; font-weight: bold; margin-left: 0px; padding-left: 4px"/></br> <input type="checkbox" id="rememberme" name="rememberme" value="yes" checked="checked" /><label for="rememberme">Запомнить меня?</label><label for="sendcomments"><input type="checkbox" id="sendcomments" name="sendcomments" value="yes" checked="checked"> Посылать комментарии на Ваш e-mail?</label>
+</p>
+<p><noindex><small> <a href="javascript:insertext('[b]','[/b]','short')"><b>[b]</b> текст <b>[/b]</b></a> - Жирный текст<br /> <a href="javascript:insertext('[i]','[/i]','short')"><b>[i]</b> текст <b>[/i]</b></a> - Наклонный текст<br /> <a href="javascript:insertext('[u]','[/u]','short')"><b>[u]</b> текст <b>[/u]</b></a> - Подчеркнутый текст<br /> <a href="javascript:insertext('[del]','[/del]','short')"><b>[del]</b> текст <b>[/del]</b></a> - Зачеркнутый текст<br /> <a href="javascript:insertext('[quote]','[/quote]','short')"><b>[quote]</b> текст <b>[/quote]</b></a> - Цитата<br /> <a href="javascript:insertext('[quote]','[/quote]','short')"><b>[quote]</b> текст <b>[/quote]</b></a> - Цитата<br /></noindex></small>
+
+</td>
+    <td width="250" bgcolor="#F7F7F7" valign="top">
+
+<IFRAME src="register_fast.php" width="250" height="400" scrolling="no" frameborder="0"></IFRAME></br>
+
+<img src="http://library.by/portalus/modules/images/error.png"> После регистрации вы сразу сможете комментировать любую статью, а также и публиковать свои материалы и файлы на Library.by!
+</td>
+  </tr>
+</table>
+
+<p align="center"><img src="http://library.by/portalus/modules/images/error.png"> Library.by платит за каждую Вашу публикацию от 0,04$ до 0,06$! <u><noindex><a href="http://forumist.ru/showthread.php?p=3190" target="_blank" title="Подробная информация - на официальном форуме Порталуса" style="color: rgb(255,0,0)" rel="nofollow"><u>Подробная информация (?)</u></a></noindex></u></p>
+
+</p>
+
+
+
+
+
+
+
+
+<div><input type="hidden" name="javasubaction" value="showfull" /><input type="hidden" name="subaction" value="addcomment" /><input type="hidden" name="ucat" value="1" /><input type="hidden" name="show" value="" /><input type="hidden" name="category" value="1" />
+</div></form>
+<p align="center">
+<br>
+
+<strong>Рекомендуем! Мощная система поиска по Library.by:</strong>
+<br>
+<br>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="70%" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<div class="yandexform" onclick="return {type: 0, logo: 'rb', arrow: true, webopt: false, websearch: false, bg: '#CCCCCC', fg: '#000000', fontsize: 16, suggest: true, site_suggest: true, encoding: ''}"><form action="http://library.by/search/yandex.html" method="get"><input type="hidden" name="searchid" value="229327"/><input name="text"/><input type="submit" value="Найти на library.by"/></form></div><script type="text/javascript" src="http://site.yandex.net/load/form/1/form.js" charset="utf-8"></script>
+
+</td>
+    </tr>
+  </table>
+
+
+
+
+
+</p>
+
+</p>
+
+
+
+
+
+
+<hr size="1" color="#C0C0C0">
+
+<br>
+
+
+<div align="left"><left>
+<p>
+<table border="0" cellpadding="0" cellspacing="0" width="790">
+  <tr>
+    <td colspan="2"></td>
+    <td rowspan="4" valign="top">
+<p></p><big><strong><font face="Arial"><p align="left"
+    style="margin-left: 0; padding-left: 0">Пресс-релизы (анонсы):</font></strong></big>
+
+</p>
+</td>
+  </tr>
+  <tr align="center">
+    <td colspan="2" height="10"></td>
+  </tr>
+  <tr>
+    <td><big><strong><font face="Arial"><p align="left"
+    style="margin-left: 0; padding-left: 0">Похожие статьи на library.by:</font></strong></big></td>
+    <td><big><strong><font face="Arial"><p align="left"
+    style="margin-left: 0; padding-left: 0">Новости науки, сегодня:</font></strong></big></td>
+  </tr>
+  <tr align="center">
+    <td valign="top"><script language="javascript"
+    src="http://www.library.by/news3/rss.php?url=http%3A%2F%2Flibrary.by%2Fportalus%2Fmodules%2Fcomputers%2Frss.php&amp;newpage=&amp;chead=&amp;atl=&amp;desc=&amp;owncss=&amp;eleminate=&amp;auth=&amp;dts=&amp;width=300&amp;max=5&amp;maxfrom=10&amp;maxto=10&amp;tlen=100&amp;rnd=1&amp;bt=0&amp;bs=Groove&amp;nmb=&amp;ntb=&amp;naf=&amp;nst=&amp;nwd=0&amp;nht=0&amp;initime=1230289900&amp;dlttime=0&amp;dlen=0&amp;bg=%23F9F9F9&amp;bc=%23F9F9F9&amp;tc=%23585858&amp;ts=9&amp;spc=1&amp;ims=&amp;lc=%23585858&amp;lstyle=4&amp;rel=&amp;tfont=Verdana,+Arial,+Sans-serif"></script>    </td>
+    <td valign="top">
+
+<script language=javascript src="http://www.library.by/news3/rss.php?url=http%3A%2F%2Flibrary.by%2Fnews2%2Fdesc%2F%3Frss%3D1&newpage=1&chead=&atl=&desc=&owncss=&eleminate=&auth=&dts=&width=250&max=5&maxfrom=10&maxto=10&tlen=100&rnd=&bt=0&bs=Groove&nmb=&ntb=1&naf=&nst=&nwd=0&nht=0&initime=1230935324&dlttime=0&dlen=0&bg=%23F9F9FF&bc=%23F9F9FF&tc=%23000000&ts=9&spc=1&ims=&lc=%23000000&lstyle=4&rel=&tfont=Verdana,+Arial,+Sans-serif"></script> 
+
+
+    </td>
+  </tr>
+  <tr align="center">
+    <td valign="top"><p align="left" style="margin-left: 0; padding-left: 0"><a
+    href="http://library.by/add/" style="text-decoration: underline" title="Разместить научную статью в библиотеке">Добавить
+    публикацию</a></td>
+    <td><p align="left" style="margin-left: 0; padding-left: 0"><a
+    href="http://library.by/news2/" style="text-decoration: underline" title="Новости науки">Все новости
+    на library.by</a></td>
+    <td valign="top"><p align="left" style="margin-left: 0; padding-left: 0"><a
+    href="http://library.by/reklama/" style="text-decoration: underline" title="Реклама на образовательных сайтах">Разместить
+    рекламу</a></td>
+  </tr>
+</table>
+
+
+</left></div>
+</p>
+<br>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center"><center>
+
+
+
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td width="100%" bgcolor="#D4D4D4" colspan="4" height="5"></td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="4" height="5"></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#D4D4D4" colspan="4" height="5"></td>
+  </tr>
+  <tr>
+    <td width="50%" colspan="2" bgcolor="#FFFFFF"><div align="left"><a href="http://active.by" title="Профессиональный хостинг" rel="nofollow"><img src="http://www.library.by/portalus/modules/images/active.by.gif" width="355" height="75" border="0"></a></td>
+      
+    </div></td>
+    <td width="50%" colspan="2" bgcolor="#FFFFFF"><div align="right"><table border="0" cellpadding="0" cellspacing="0" width="450">
+      <tr>
+        <td width="33%">
+<p align="center"><!--LiveInternet counter--><script type="text/javascript">document.write("<a href='http://www.liveinternet.ru/click' target=_blank rel=nofollow><img src='http://counter.yadro.ru/hit?t21.1;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) +";i" + escape("Жж"+document.title.substring(0,80)) + ";" + Math.random() + "' border=0 width=88 height=31 alt='' title='LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня'><\/a>")</script><!--/LiveInternet-->
+</td>
+        <td width="33%"><p align="center">
+<!-- Akavita counter code --><a target="_top" rel="nofollow" href="http://adlik.akavita.com/bin/link?id=1166"> <script language="javascript"><!--
+d=document;w=window;n=navigator;d.cookie="cc=1";
+r=''+escape(d.referrer);js=10;c=(d.cookie)?1:0;j=0;
+x=Math.random();u=''+escape(w.location.href);lt=0;
+h=history.length;t=new Date;f=(self!=top)?1:0;cd=0;
+tz=t.getTimezoneOffset();cpu=n.cpuClass;ww=wh=ss=0;
+//--></script><script language="javascript1.1"><!--
+js=11;j=(n.javaEnabled()?1:0);
+//--></script><script language="javascript1.2"><!--
+js=12;lt=1;s=screen;ss=s.width;
+cd=(s.colorDepth?s.colorDepth:s.pixelDepth);
+//--></script><script language="javascript1.3"><!--
+js=13;wh=w.innerHeight;ww=w.innerWidth;
+wh=(wh?wh:d.documentElement.offsetHeight);
+ww=(ww?ww:d.documentElement.offsetWidth);
+//--></script><script language="javascript"><!--
+q='lik?id=1166&d='+u+'&r='+r+'&h='+h+'&f='+f;
+q+='&c='+c+'&tz='+tz+'&cpu='+cpu+'&js='+js+'&wh='+wh;
+q+='&ww='+ww+'&ss='+ss+'&cd='+cd+'&j='+j+'&x='+x;
+d.write('<img src="http://adlik.akavita.com/bin/'+
+q+'" alt="Akavita" '+
+'border=0 width=88 height=31>');
+if(lt){d.write('<'+'!-- ');}//--></script><noscript> <img src="http://adlik.akavita.com/bin/lik?id=1166" border="0" height="31" width="88" alt="Akavita"> </noscript><script language="JavaScript"><!--
+if(lt){d.write('--'+'>');}//--></script></a> <!-- Akavita counter code --></td>
+        <td width="34%"><p align="center"><!--Rating@Mail.ru COUNTEr--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=941362"'+
+' target=_top rel=nofollow><img src="http://dd.c5.be.a0.top.list.ru/counter'+
+'?id=941362;t=49;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru"'+' border=0 height=31 width=88/><\/a>')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><a target="_top" rel="nofollow" href="http://top.mail.ru/jump?from=941362"><img src="http://dd.c5.be.a0.top.list.ru/counter?js=na;id=941362;t=49" border="0" height="31" width="88" alt="Рейтинг@Mail.ru" /></a></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></td>
+      </tr>
+    </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#F4F2F2" colspan="4" height="5"></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#D4D4D4" colspan="4" height="25"><p align="center"><big><big><font color="#FFFFFF" face="Lucida Sans Unicode"><a href="http://student.by" style="color: rgb(255,255,255); text-decoration: none" target="_top" title="STUDENT.BY" rel="nofollow">рефераты под заказ</a> | <a href="http://science.library.by" style="color: rgb(255,255,255); text-decoration: none" target="_top" title="Полный список рубрик, новинки" rel="nofollow">наука</a> | <a href="http://litportal.library.by" rel="nofollow" target="_top" style="text-decoration: none; color: rgb(255,255,255)" title="Литература на library.by">литература</a> | <a href="http://tutor.library.by" rel="nofollow" style="color: rgb(255,255,255); text-decoration: none" target="_top" title="Учеба в Беларуси, белорусские рефераты">учеба</a> | <a href="http://dnevnik.by" rel="nofollow" target="_blank" style="color: rgb(255,255,255); text-decoration: none" title="Белорусские молодёжные блоги">дневники</a> | <a href="http://kahanne.com" target="_top" rel="nofollow" style="color: rgb(255,255,255); text-decoration: none" title="Знакомства в Беларуси">любовь по-белорусски</a></font></big></big></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#808080" colspan="4"></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#F4F2F2" colspan="4"><div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="900" background="http://www.library.by/portalus/modules/images/bottom.gif">
+      <tr>
+        <td width="100%"><div align="right"><table border="0" cellpadding="0" cellspacing="0" width="850" height="117">
+          <tr>
+            <td rowspan="2" valign="bottom"><div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td height="80" valign="bottom"><div align="center"><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"
+WIDTH="160" HEIGHT="55" id="BMPF-w_logo.swf">
+<PARAM NAME=movie VALUE="http://library.by/images/w_logo.swf">
+<PARAM NAME=quality VALUE="best"> 
+<PARAM NAME=bgcolor VALUE=#FFFFFF>
+<EMBED src="http://library.by/images/w_logo.swf" quality="best" bgcolor=#FFFFFF WIDTH="160" HEIGHT="55"
+NAME="BMPF-w_logo.swf" ALIGN="" TYPE="application/x-shockwave-flash"
+PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer">
+</EMBED>
+</OBJECT>
+</td>
+              </tr>
+              <tr>
+                <td width="100%" valign="top"><div align="center"><font face="Arial"><a href="http://webmaster.by" target="_blank" style="color: rgb(0,0,0)" title="Монетизация сайтов, вебмастеринг, заработок Вебмастеров"><u>Дизайн и верстка - Webmaster.by</u></font></a></td>
+              </tr>
+            </table>
+            </center></div><font face="Arial"><u><small><p></small></u></font>&nbsp;</td>
+            <td>&nbsp;<div align="right"><table border="0" cellpadding="0" cellspacing="0" width="90%">
+              <tr>
+                <td width="40%"><font face="Arial">РЕКЛАМА:</font></td>
+                <td width="60%"><font face="Arial"><a href="http://library.by/about/" title="О библиотеке" target="_top" style="color: rgb(0,0,0)"><u>Информация о проекте</u></a> | <a href="http://library.by/reklama/" title="Реклама на образовательных сайтах" target="_top" style="color: rgb(0,0,0)"><u>Размещение рекламы</u></a></font></td>
+              </tr>
+              <tr>
+                <td width="40%"><font face="Arial">РЕДАКТОРАМ СЕТЕВЫХ ИЗДАНИЙ: </font></td>
+                <td width="60%"><font face="Arial"><a href="http://library.by/portalus/modules/about/readme.php?category=32" target="_top" style="color: rgb(0,0,0)"><u>Копирование информации с Library.by</u></a>  </font></td>
+              </tr>
+              <tr>
+                <td width="40%"><font face="Arial">АВТОРАМ, ДЕЯТЕЛЯМ НАУКИ:</font></td>
+                <td width="60%"><font face="Arial"><a href="http://library.by/add/" title="Добавить публикацию в интернет" style="color: rgb(0,0,0)"><u>Добавить статью</u></a> | <a href="http://forumist.ru" title="Форум поддержки пользователей библиотеки" style="color: rgb(0,0,0)"><u>Суппорт-форум</u></a> | <a href="http://library.by/stats" target="_top" style="color: rgb(0,0,0)" title="Список всех последних публикаций"><u>Статистика</u></a></font></td>
+              </tr>
+            </table>
+            </div></td>
+          </tr>
+          <tr>
+            <td valign="top"><div align="right"><table border="0" cellpadding="0" cellspacing="0" width="90%">
+              <tr>
+                <td width="100%"><font face="Arial">Copyright @ 1999-2012 &quot;<a href="http://library.by/about/" title="О библиотеке"><u>Белорусская
+                цифровая библиотека</u></a>&quot;. Все права защищены.</font></td>
+              </tr>
+            </table>
+            </div></td>
+          </tr>
+        </table>
+        </div></td>
+      </tr>
+    </table>
+    </center></div></td>
+  </tr>
+  <tr>
+    <td width="25%" bgcolor="#808080"></td>
+    <td width="25%" bgcolor="#F4F2F2"></td>
+    <td width="25%" bgcolor="#F4F2F2"></td>
+    <td width="25%" bgcolor="#808080"></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#F4F2F2" height="130" colspan="4">
+
+
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="70%" id="AutoNumber1">
+    <tr>
+      <td width="100%">
+
+<div class="yandexform" onclick="return {type: 0, logo: 'rb', arrow: true, webopt: false, websearch: false, bg: '#CCCCCC', fg: '#000000', fontsize: 16, suggest: true, site_suggest: true, encoding: 'windows-1251'}"><form action="http://library.by/search/yandex.html" method="get"><input type="hidden" name="searchid" value="229327"/><input name="text" size="100"/><input type="submit" value="Найти на library.by"/></form></div><script type="text/javascript" src="http://site.yandex.net/load/form/1/form.js" charset="utf-8"></script>
+
+
+</td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+
+
+
+
+
+
+
+<p align="center"><font color="#000000" face="Tahoma"> <a
+href="http://library.by/portalus/modules/belarus/readme.php">Культура
+Беларуси</a> | <a href="http://library.by/portalus/modules/biology/readme.php">Биология</a>
+| <a href="http://library.by/portalus/modules/belarus/readme.php"
+style="background-color: rgb(255,255,0)">История Беларуси</a> | <a
+href="http://library.by/portalus/modules/warcraft/readme.php">Военное дело</a>
+| <a href="http://library.by/portalus/modules/belorussianlaw/readme.php">Право
+Беларуси</a> | <a href="http://library.by/portalus/modules/science/readme.php">Вопросы
+науки</a> | <a href="http://library.by/portalus/modules/beleconomics/readme.php">Экономика
+Беларуси</a> | <a href="http://library.by/portalus/modules/geography/readme.php">География</a>
+| <a href="http://library.by/portalus/modules/belprose/readme.php">Белорусская
+проза</a> | <a href="http://library.by/portalus/modules/history/readme.php">История
+Всемирная</a> | <a href="http://library.by/portalus/modules/belpoetry/readme.php">Белорусская
+поэзия</a> | <a href="http://library.by/portalus/modules/computers/readme.php">Компьютеры
+и Интернет</a> | <a
+href="http://library.by/portalus/modules/belliterature/readme.php">Критика
+беллита</a> | <a href="http://library.by/portalus/modules/culture/readme.php">Культура
+и искусство</a> | <a
+href="http://library.by/portalus/modules/linguistics/readme.php">Лингвистика</a>
+| <a href="http://library.by/portalus/modules/samizdat_prose/readme.php">Авторская
+проза</a> | <a href="http://library.by/portalus/modules/medecine/readme.php"
+style="background-color: rgb(255,255,0)">Медицина</a> | <a
+href="http://library.by/portalus/modules/samizdat_poetry/readme.php">Авторская
+поэзия</a> | <a href="http://library.by/portalus/modules/pedagogics/readme.php">Педагогика</a>
+&nbsp; <a href="http://library.by/portalus/modules/internationallaw/readme.php">Право
+международное</a> | <a
+href="http://library.by/portalus/modules/tales/readme.php">Сказки</a> | <a
+href="http://library.by/portalus/modules/theoryoflaw/readme.php">Право (теория
+права)</a> | <a href="http://library.by/portalus/modules/fantasy_soviet/readme.php">Фантастика
+советская</a> | <a
+href="http://library.by/portalus/modules/psychology/readme.php"
+style="background-color: rgb(255,255,0)">Психология</a> | <a
+href="http://library.by/portalus/modules/fantasy_foreign/readme.php">Фантастика
+зарубежная</a> | <a
+href="http://library.by/portalus/modules/religion/readme.php">Религия</a> | <a
+href="http://library.by/portalus/modules/adventure/readme.php">Приключения</a>
+| <a href="http://library.by/portalus/modules/love/readme.php">Сексология</a> | <a
+href="http://library.by/portalus/modules/historical_novels/readme.php">Исторические
+романы</a> | <a href="http://library.by/portalus/modules/sport/readme.php">Спорт</a>
+| <a href="http://library.by/portalus/modules/humor/readme.php">Юмор</a> | <a
+href="http://library.by/portalus/modules/motors/readme.php">Машины и моторы</a>
+| <a href="http://library.by/portalus/modules/historical_memoirs/readme.php">Мемуары,
+жизнеописания</a> | <a
+href="http://library.by/portalus/modules/philosophy/readme.php">Философия</a> | <a
+href="http://library.by/portalus/modules/ecology/readme.php">Экология</a> | <a
+href="http://library.by/portalus/modules/english/readme.php">Английский язык</a>
+| <a href="http://library.by/portalus/modules/economics/readme.php">Экономика</a>
+| <a href="http://library.by/portalus/modules/english_russia/readme.php">О России
+на английском</a> | <a
+href="http://library.by/portalus/modules/different/readme.php">Разное</a></font></p>
+
+
+
+</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+</center></div>
+
+
+
+<noindex>
+<!--BEGIN Medialand Library.by (Fly-media)-->
+<script language="JavaScript">
+var random = Math.floor(Math.random() * 1000000000);
+document.write('<scr' + 'ipt language="JavaScript" src="http://flymedia.advertpay.net/code?pid=16554&gid=6&oin=1&rid=' + random +'"></scr' + 'ipt>');
+</script>
+<!--END Medialand -->
+</noindex>
+
+
+
+</body>
+</html>

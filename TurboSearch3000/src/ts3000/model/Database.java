@@ -17,10 +17,6 @@ public class Database {
 	private static Logger DatabaseLogger = Logger.getLogger(Database.class);
 	private IndexatorAndFinder indexatorAndFinder;
 	
-	public static void main(String ... args) {
-		Database db = new Database("documents.txt");
-	}
-	
 	public Database(String filename) {
 		BasicConfigurator.configure();
 		indexatorAndFinder = new IndexatorAndFinder(filename, new StammerIndexFindStrategy());
