@@ -10,6 +10,10 @@
  */
 package app;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import ts3000.model.Category;
+
 /**
  *
  * @author Андрей
@@ -20,6 +24,106 @@ public class CategoriesField extends javax.swing.JPanel {
     public CategoriesField() {
         initComponents();
     }
+    
+        private ArrayList<Category> categories = new ArrayList<Category>(10);
+    
+    private int pages = 0;
+    private int currentPage;
+    protected MainWindow parentWindow;
+    
+    private void makeVisibleByPage(int pageNum) {
+        if (pageNum < pages - 1) {
+            makeVisibleByNum(4);
+        } else {
+            int howMuch = categories.size() % 4;
+            if (howMuch == 0 && pages > 0) {
+                howMuch = 4;
+            }
+            makeVisibleByNum(howMuch);
+        }   
+    }
+    
+    private void makeVisibleByNum(int num) {
+        searchResult1.setVisible(num >= 1);
+        searchResult2.setVisible(num >= 2);
+        searchResult3.setVisible(num >= 3);
+        searchResult4.setVisible(num >= 4);        
+    }
+    
+    public boolean setPage(int newPage) {
+        if (pages < newPage || newPage < 0) {
+            return false;
+        } else {
+            currentPage = newPage;
+            lblCurPage.setText("Page " + Integer.toString(currentPage + 1));
+            makeVisibleByPage(newPage);
+            int howMuch = categories.size() % 4;
+            if (howMuch == 0 || newPage < pages - 1) {
+                howMuch = 4;
+            }
+            
+            if (pages == 0) {
+                return true;
+            }
+            
+            if (howMuch >= 1) {
+                Category cat = categories.get(newPage*4 + 0);
+                searchResult1.setCaption(cat.getName());
+                String desc = cat.getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult1.setPath(desc);
+                searchResult1.setDescription(cat.getSize() + " item(s) in the category");
+            }
+            if (howMuch >= 2) {
+                Category cat = categories.get(newPage*4 + 1);
+                searchResult2.setCaption(cat.getName());
+                String desc = cat.getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult2.setPath(desc);
+                searchResult2.setDescription(cat.getSize() + " item(s) in the category");
+            }
+            if (howMuch >= 3) {
+                Category cat = categories.get(newPage*4 + 2);
+                searchResult3.setCaption(cat.getName());
+                String desc = cat.getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult3.setPath(desc);
+                searchResult3.setDescription(cat.getSize() + " item(s) in the category");
+            }
+            if (howMuch >= 4) {
+                Category cat = categories.get(newPage*4 + 3);
+                searchResult4.setCaption(cat.getName());
+                String desc = cat.getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult4.setPath(desc);
+                searchResult4.setDescription(cat.getSize() + " item(s) in the category");
+            }
+            
+            return true;
+        }
+    }
+    
+    public void setSource(Category[] categories) {
+        this.categories = new ArrayList<Category>(categories.length);
+        this.categories.addAll(Arrays.asList(categories));
+        pages = (categories.length + 3)/4;
+        setPage(0);
+    }  
+    
+    public void setSource(ArrayList<Category> categories) {
+        this.categories = new ArrayList<Category>(categories.size());
+        this.categories.addAll(categories);
+        pages = (categories.size() + 3)/4;
+        setPage(0);
+    }   
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -35,24 +139,52 @@ public class CategoriesField extends javax.swing.JPanel {
         lnkNextPage = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         lnkPrevPage = new javax.swing.JLabel();
-        lblSortBy = new javax.swing.JLabel();
-        cmbSortBy = new javax.swing.JComboBox();
         searchResult4 = new app.SearchResult();
         lblCurPage = new javax.swing.JLabel();
         searchResult3 = new app.SearchResult();
 
+        searchResult2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult2MouseClicked(evt);
+            }
+        });
+
+        searchResult1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult1MouseClicked(evt);
+            }
+        });
+
         lnkNextPage.setText(">>");
+        lnkNextPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lnkNextPageMouseClicked(evt);
+            }
+        });
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24));
         lblTitle.setText("Categories");
 
         lnkPrevPage.setText("<<");
+        lnkPrevPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lnkPrevPageMouseClicked(evt);
+            }
+        });
 
-        lblSortBy.setText("sort by:");
-
-        cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date" }));
+        searchResult4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult4MouseClicked(evt);
+            }
+        });
 
         lblCurPage.setText("curr");
+
+        searchResult3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -63,12 +195,7 @@ public class CategoriesField extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblTitle)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 300, Short.MAX_VALUE)
-                                .addComponent(lblSortBy)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchResult2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
                             .addComponent(searchResult3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
                             .addComponent(searchResult4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
@@ -86,10 +213,7 @@ public class CategoriesField extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTitle)
-                    .addComponent(lblSortBy))
+                .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchResult1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -103,13 +227,50 @@ public class CategoriesField extends javax.swing.JPanel {
                     .addComponent(lblCurPage)
                     .addComponent(lnkNextPage)
                     .addComponent(lnkPrevPage))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void searchResult1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseClicked
+        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(
+                categories.get(currentPage*4+0).getName()));
+        parentWindow.setSearchResults();
+    }//GEN-LAST:event_searchResult1MouseClicked
+
+    private void searchResult2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseClicked
+        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(
+                categories.get(currentPage*4+1).getName()));
+        parentWindow.setSearchResults();
+    }//GEN-LAST:event_searchResult2MouseClicked
+
+    private void searchResult3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseClicked
+        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(
+                categories.get(currentPage*4+2).getName()));
+        parentWindow.setSearchResults();
+    }//GEN-LAST:event_searchResult3MouseClicked
+
+    private void searchResult4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseClicked
+        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(
+                categories.get(currentPage*4+3).getName()));
+        parentWindow.setSearchResults();
+    }//GEN-LAST:event_searchResult4MouseClicked
+
+    private void lnkPrevPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkPrevPageMouseClicked
+        if (currentPage == 0)
+            return;
+        
+        setPage(currentPage - 1);
+    }//GEN-LAST:event_lnkPrevPageMouseClicked
+
+    private void lnkNextPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkNextPageMouseClicked
+        if (currentPage == pages - 1)
+            return;
+        
+        setPage(currentPage + 1);
+    }//GEN-LAST:event_lnkNextPageMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    protected javax.swing.JComboBox cmbSortBy;
     protected javax.swing.JLabel lblCurPage;
-    protected javax.swing.JLabel lblSortBy;
     protected javax.swing.JLabel lblTitle;
     protected javax.swing.JLabel lnkNextPage;
     protected javax.swing.JLabel lnkPrevPage;

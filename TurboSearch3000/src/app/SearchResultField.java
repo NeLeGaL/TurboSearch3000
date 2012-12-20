@@ -121,6 +121,12 @@ public class SearchResultField extends javax.swing.JPanel {
         setPage(0);
     }
     
+    public void setSource(ArrayList<Document> docs) {
+        this.docs = docs;
+        pages = (docs.size() + 3)/4;
+        setPage(0);
+    }
+    
     public void setSize(int i) {
         this.setSize(300, i*120 + 100);
         this.setVisible(false);
@@ -272,6 +278,7 @@ public class SearchResultField extends javax.swing.JPanel {
     private void searchResult1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+0));
+        parentWindow.viewerPanel.openedFromHistory = false;
     }//GEN-LAST:event_searchResult1MouseClicked
 
     private class DocComparator implements Comparator<Document> {
@@ -321,16 +328,19 @@ public class SearchResultField extends javax.swing.JPanel {
     private void searchResult2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+1));
+        parentWindow.viewerPanel.openedFromHistory = false;
     }//GEN-LAST:event_searchResult2MouseClicked
 
     private void searchResult3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+2));
+        parentWindow.viewerPanel.openedFromHistory = false;
     }//GEN-LAST:event_searchResult3MouseClicked
 
     private void searchResult4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+3));
+        parentWindow.viewerPanel.openedFromHistory = false;
     }//GEN-LAST:event_searchResult4MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

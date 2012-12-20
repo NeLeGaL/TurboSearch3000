@@ -10,6 +10,12 @@
  */
 package app;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import ts3000.model.Document;
+
 /**
  *
  * @author Андрей
@@ -20,6 +26,123 @@ public class HistoryField extends javax.swing.JPanel {
     public HistoryField() {
         initComponents();
     }
+    
+    protected RecentFilesHelper mgr = null;
+    
+    private ArrayList<Document> docs = new ArrayList<Document>(10);
+    
+    private int pages = 0;
+    private int currentPage;
+    protected MainWindow parentWindow;
+    
+    private void makeVisibleByPage(int pageNum) {
+        if (pageNum < pages - 1) {
+            makeVisibleByNum(4);
+        } else {
+            int howMuch = docs.size() % 4;
+            if (howMuch == 0 && pages > 0) {
+                howMuch = 4;
+            }
+            makeVisibleByNum(howMuch);
+        }   
+    }
+    
+    private void makeVisibleByNum(int num) {
+        searchResult1.setVisible(num >= 1);
+        searchResult2.setVisible(num >= 2);
+        searchResult3.setVisible(num >= 3);
+        searchResult4.setVisible(num >= 4);        
+    }
+    
+    public boolean setPage(int newPage) {
+        if (pages < newPage || newPage < 0) {
+            return false;
+        } else {
+            currentPage = newPage;
+            lblCurPage.setText("Page " + Integer.toString(currentPage + 1));
+            makeVisibleByPage(newPage);
+            int howMuch = docs.size() % 4;
+            if (howMuch == 0 || newPage < pages - 1) {
+                howMuch = 4;
+            }
+            
+            if (pages == 0) {
+                return true;
+            }
+            
+            if (howMuch >= 1) {
+                Document doc = docs.get(newPage*4 + 0);
+                searchResult1.setCaption(doc.getTitle());
+                String desc = doc.getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult1.setDescription(desc);
+                searchResult1.setPath("category - " + doc.getCategory());
+            }
+            if (howMuch >= 2) {
+                Document doc = docs.get(newPage*4 + 1);
+                searchResult2.setCaption(doc.getTitle());
+                String desc = doc.getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult2.setDescription(desc);
+                searchResult2.setPath("category - " + doc.getCategory());
+            }
+            if (howMuch >= 3) {
+                Document doc = docs.get(newPage*4 + 2);
+                searchResult3.setCaption(doc.getTitle());
+                String desc = doc.getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult3.setDescription(desc);
+                searchResult3.setPath("category - " + doc.getCategory());
+            }
+            if (howMuch >= 4) {
+                Document doc = docs.get(newPage*4 + 3);
+                searchResult4.setCaption(doc.getTitle());
+                String desc = doc.getAnnotation();
+                if (desc.length() >= 50) {
+                    desc = desc.substring(0, 50) + "...";
+                }
+                searchResult4.setDescription(desc);
+                searchResult4.setPath("category - " + doc.getCategory());
+            }
+            
+            return true;
+        }
+    }
+    
+    public void loadHistory() {
+        
+        if (mgr == null) {
+            mgr = new RecentFilesHelper();
+        }
+        
+        if (!mgr.loadRecentFilesList()) {
+            docs = new ArrayList<Document>();
+        } else {
+            ArrayList<String> files = mgr.getRecentFilesList();
+            docs = new ArrayList<Document>();
+            for (String i : files) {
+                String[] categoryAndTitle = i.split("/");
+                docs.add(parentWindow.database.getDocument(categoryAndTitle[0] , categoryAndTitle[1]));
+            }
+        }
+        
+        pages = (docs.size() + 3)/4;
+        setPage(0);
+    }                                                                         
+
+    private class DocComparator implements Comparator<Document> {   
+        @Override
+        public int compare(Document o1, Document o2) {
+            return o2.getDate().compareTo(o2.getDate());
+        }
+    }                                            
+
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -36,23 +159,51 @@ public class HistoryField extends javax.swing.JPanel {
         searchResult2 = new app.SearchResult();
         searchResult3 = new app.SearchResult();
         searchResult4 = new app.SearchResult();
-        cmbSortBy = new javax.swing.JComboBox();
-        lblSortBy = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         lnkPrevPage = new javax.swing.JLabel();
 
         lnkNextPage.setText(">>");
+        lnkNextPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lnkNextPageMouseClicked(evt);
+            }
+        });
 
         lblCurPage.setText("curr");
 
-        cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date" }));
+        searchResult1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult1MouseClicked(evt);
+            }
+        });
 
-        lblSortBy.setText("sort by:");
+        searchResult2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult2MouseClicked(evt);
+            }
+        });
+
+        searchResult3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult3MouseClicked(evt);
+            }
+        });
+
+        searchResult4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchResult4MouseClicked(evt);
+            }
+        });
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24));
         lblTitle.setText("History");
 
         lnkPrevPage.setText("<<");
+        lnkPrevPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lnkPrevPageMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -63,12 +214,7 @@ public class HistoryField extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblTitle)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
-                                .addComponent(lblSortBy)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchResult2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
                             .addComponent(searchResult3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
                             .addComponent(searchResult4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
@@ -86,10 +232,7 @@ public class HistoryField extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTitle)
-                    .addComponent(lblSortBy))
+                .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchResult1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -103,13 +246,50 @@ public class HistoryField extends javax.swing.JPanel {
                     .addComponent(lblCurPage)
                     .addComponent(lnkNextPage)
                     .addComponent(lnkPrevPage))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void searchResult1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseClicked
+        parentWindow.setViewerPanel();
+        parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+0));
+        parentWindow.viewerPanel.openedFromHistory = true;
+    }//GEN-LAST:event_searchResult1MouseClicked
+
+    private void searchResult2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseClicked
+        parentWindow.setViewerPanel();
+        parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+1));
+        parentWindow.viewerPanel.openedFromHistory = true;
+    }//GEN-LAST:event_searchResult2MouseClicked
+
+    private void searchResult3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseClicked
+        parentWindow.setViewerPanel();
+        parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+2));
+        parentWindow.viewerPanel.openedFromHistory = true;
+    }//GEN-LAST:event_searchResult3MouseClicked
+
+    private void searchResult4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseClicked
+        parentWindow.setViewerPanel();
+        parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+3));
+        parentWindow.viewerPanel.openedFromHistory = true;
+    }//GEN-LAST:event_searchResult4MouseClicked
+
+    private void lnkPrevPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkPrevPageMouseClicked
+        if (currentPage == 0)
+            return;
+        
+        setPage(currentPage - 1);
+    }//GEN-LAST:event_lnkPrevPageMouseClicked
+
+    private void lnkNextPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkNextPageMouseClicked
+        if (currentPage == pages - 1)
+            return;
+        
+        setPage(currentPage + 1);
+    }//GEN-LAST:event_lnkNextPageMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    protected javax.swing.JComboBox cmbSortBy;
     protected javax.swing.JLabel lblCurPage;
-    protected javax.swing.JLabel lblSortBy;
     protected javax.swing.JLabel lblTitle;
     protected javax.swing.JLabel lnkNextPage;
     protected javax.swing.JLabel lnkPrevPage;

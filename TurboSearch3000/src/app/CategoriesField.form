@@ -21,13 +21,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="1">
-                              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="300" max="32767" attributes="0"/>
-                              <Component id="lblSortBy" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cmbSortBy" min="-2" pref="110" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="lblTitle" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="searchResult2" alignment="0" pref="564" max="32767" attributes="1"/>
                           <Component id="searchResult3" alignment="0" pref="564" max="32767" attributes="1"/>
                           <Component id="searchResult4" alignment="0" pref="564" max="32767" attributes="1"/>
@@ -51,11 +45,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cmbSortBy" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="lblTitle" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblSortBy" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="searchResult1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -70,18 +60,24 @@
                   <Component id="lnkNextPage" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lnkPrevPage" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="app.SearchResult" name="searchResult2">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchResult2MouseClicked"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
       </AuxValues>
     </Component>
     <Component class="app.SearchResult" name="searchResult1">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchResult1MouseClicked"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
       </AuxValues>
@@ -90,6 +86,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lnkNextPageMouseClicked"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
       </AuxValues>
@@ -109,33 +108,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblSortBy">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="sort by:"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cmbSortBy">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="name ascending"/>
-            <StringItem index="1" value="name descending"/>
-            <StringItem index="2" value="date"/>
-          </StringArray>
-        </Property>
-      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lnkPrevPageMouseClicked"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
       </AuxValues>
     </Component>
     <Component class="app.SearchResult" name="searchResult4">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchResult4MouseClicked"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
       </AuxValues>
@@ -149,6 +132,9 @@
       </AuxValues>
     </Component>
     <Component class="app.SearchResult" name="searchResult3">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchResult3MouseClicked"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
       </AuxValues>

@@ -48,6 +48,9 @@ public class MainWindow extends javax.swing.JApplet {
             });
             searchPanel.parentWindow = this;
             searchResults.parentWindow = this;
+            viewerPanel.parentWindow = this;
+            categoriesField.parentWindow = this;
+            historyField.parentWindow = this;
             database = new Database("C:\\Users\\Андрей\\Documents\\GitHub\\TurboSearch3000\\TurboSearch3000\\documents.txt");
             //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
         } catch (Exception ex) {
@@ -185,6 +188,11 @@ public class MainWindow extends javax.swing.JApplet {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 searchFieldFocusLost(evt);
+            }
+        });
+        searchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                searchFieldKeyTyped(evt);
             }
         });
 
@@ -496,24 +504,29 @@ public class MainWindow extends javax.swing.JApplet {
         viewerPanel.setVisible(true);
     }
     
-    private boolean searchRes = false;
-    
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        activateSearchResults();
-        //searchPanel.setVisible(false);
-        //searchPanel.setSize(searchPanel.getWidth() + 100, searchPanel.getHeight() + 100);
-        if (searchRes){setSearchPanel();} else {setSearchResults();}
+        searchPanel.loadDocs(searchField.getText());
+        searchResults.setSource(searchPanel.gotDocs);
+        setSearchResults();
     }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
+        if (evt.getKeyChar() == 10 || evt.getKeyChar() == 13) {
+            searchButtonActionPerformed(null);
+        }
+    }//GEN-LAST:event_searchFieldKeyTyped
 
     private void activateSearchDocument() {
         setSearchPanel();
     }
     
     private void activateAllDocuments() {
+        categoriesField.setSource(database.getCategories());
         setCategoriesPanel();
     }
     
     private void activateHistory() {
+        historyField.loadHistory();
         setHistoryPanel();
     }
     
