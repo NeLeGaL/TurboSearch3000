@@ -17,8 +17,8 @@ class IndexatorAndFinder {
 	
 	public IndexatorAndFinder(String filename, IndexFindStrategy strategy) {
 		this.strategy = strategy;
-		fileWorker = new FileWorker(this);
-		fileWorker.loadFile(filename);
+		fileWorker = new FileWorker(this, filename);
+		fileWorker.start();
 	}
 	
 	ArrayList<Document> processQuery(String query) {
