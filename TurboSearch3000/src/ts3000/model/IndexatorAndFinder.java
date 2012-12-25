@@ -47,11 +47,34 @@ class IndexatorAndFinder {
     }
         
     public ArrayList<Category> getCategories() {
-    	return fileWorker.getCategories();
+    	ArrayList<Category> categories = fileWorker.getCategories();
+    	if (categories.size() >= 3) {
+    		for (int i = 0; i < categories.size(); ++i) {
+    			if (categories.get(i).getName().equals("Секс")) {
+    				swap(categories, 0, i);
+    				continue;
+    			}
+    			if (categories.get(i).getName().equals("Наркотики")) {
+    				swap(categories, 1, i);
+    				continue;
+    			}
+    			if (categories.get(i).getName().equals("Рок-н-ролл")) {
+    				swap(categories, 2, i);
+    				continue;
+    			}    			
+    		}
+    	}
+    	return categories;
     }
         
     public Document getDocument(String category, String title) {
     	return fileWorker.getDocument(category, title);
+    }
+    
+    private void swap(ArrayList<Category> a, int i, int j) {
+    	Category k = a.get(i);
+    	a.set(i, a.get(j));
+    	a.set(j, k);
     }
 }
 

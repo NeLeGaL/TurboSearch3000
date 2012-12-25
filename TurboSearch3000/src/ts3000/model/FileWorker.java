@@ -38,6 +38,7 @@ class FileWorker extends Thread {
 		//BasicConfigurator.configure();
 		this.indexatorAndFinder = indexatorAndFinder;
 		this.filename = filename;
+		this.lastModified = 0;
 		//lastModified = new File(filename).lastModified();
 	}
 	
@@ -152,6 +153,8 @@ class FileWorker extends Thread {
     }
         
     public ArrayList<Category> getCategories() {
+    	if (categories == null) 
+    		return new ArrayList<Category>();
     	return categories;
     }
         
