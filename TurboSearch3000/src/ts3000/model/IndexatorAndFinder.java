@@ -9,15 +9,19 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.concurrent.Semaphore;
 
+import org.apache.log4j.Logger;
+
 class IndexatorAndFinder {
-	static final String DELIMETERS = "\t\n .<>,!&?$%#@()[]{}-";
+	static final String DELIMETERS = "\t\n .<>,!&?$%#@()[]{}-\"«»";
 	private FileWorker fileWorker;
 	private Map<String, HashSet<Integer>> grams = new HashMap<String, HashSet<Integer>>();
 	private Semaphore synchSemaphore = new Semaphore(1);
 	private IndexFindStrategy strategy;
+	private String filename;
 	
 	public IndexatorAndFinder(String filename, IndexFindStrategy strategy) {
 		this.strategy = strategy;
+		this.filename = filename;
 		fileWorker = new FileWorker(this, filename);
 		fileWorker.start();
 	}
@@ -41,8 +45,23 @@ class IndexatorAndFinder {
 		grams = result;
 		
 		synchSemaphore.release();
+		Logger.getLogger("IndexatorAndFinder").info("Ready... Steady... Go!");
+		readEmAll(listOfDocuments);
 	}
+	
+	private void readEmAll(ArrayList<Document> listOfDocuments) {
 		
+		int k = 0;
+		for (int i = 0; i < listOfDocuments.size(); ++i) {
+			String text = listOfDocuments.get(i).getPlainText();
+			for (int j = 0; j < text.length(); ++j) {
+				++k;
+			}
+		}
+		
+		Logger.getLogger("IndexatorAndFinder").info(k + "Done");
+	}
+	
 	public ArrayList<Document> getDocsByCategory(String category) {
     	return fileWorker.getDocsByCategory(category);
     }

@@ -55,7 +55,7 @@ class FileWorker extends Thread {
 					DatabaseLogger.info("File was changed, let's reindex it");
 					if (!Thread.currentThread().isInterrupted())
 						loadFile();
-					Thread.sleep(5000);				
+					Thread.sleep(30000);				
 				}
 			} catch (InterruptedException e) {
 				DatabaseLogger.info("We were sleeping, and now we are angry!");
@@ -79,6 +79,7 @@ class FileWorker extends Thread {
 		categoryDocuments = new HashMap<String, HashMap<String,Document>>();
 		documents = new ArrayList<Document>();
 		categories = new ArrayList<Category>();
+		System.out.println(System.getProperty("user.dir"));
 		
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
