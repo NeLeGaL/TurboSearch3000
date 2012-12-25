@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /*
  * MainWindow.java
@@ -11,11 +7,15 @@
 package app;
 
 import java.awt.Color;
+import java.awt.TrayIcon.MessageType;
 import javax.swing.JOptionPane;
 
 import ts3000.model.Database;
 
-
+/**
+ *
+ * @author Андрей
+ */
 public class MainWindow extends javax.swing.JApplet {
     int resCount = 0;
     protected Database database;
@@ -47,7 +47,7 @@ public class MainWindow extends javax.swing.JApplet {
             viewerPanel.parentWindow = this;
             categoriesField.parentWindow = this;
             historyField.parentWindow = this;
-            database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/result.txt");
+            database = new Database("documents.txt");
             //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
         } catch (Exception ex) {
             ex.printStackTrace();

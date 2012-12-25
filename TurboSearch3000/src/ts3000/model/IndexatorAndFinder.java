@@ -1,9 +1,12 @@
+
 package ts3000.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
 import java.util.concurrent.Semaphore;
 
 class IndexatorAndFinder {
@@ -15,8 +18,8 @@ class IndexatorAndFinder {
 	
 	public IndexatorAndFinder(String filename, IndexFindStrategy strategy) {
 		this.strategy = strategy;
-		fileWorker = new FileWorker(this);
-		fileWorker.loadFile(filename);
+		fileWorker = new FileWorker(this, filename);
+		fileWorker.start();
 	}
 	
 	ArrayList<Document> processQuery(String query) {
@@ -51,3 +54,4 @@ class IndexatorAndFinder {
     	return fileWorker.getDocument(category, title);
     }
 }
+

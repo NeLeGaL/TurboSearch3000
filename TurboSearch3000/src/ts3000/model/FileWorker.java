@@ -1,20 +1,27 @@
 package ts3000.model;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
-class FileWorker {
+class FileWorker extends Thread {
 	private static Logger DatabaseLogger = Logger.getLogger(Database.class);
 	private IndexatorAndFinder indexatorAndFinder;
+	private String filename;
+	private long lastModified;
 	
 	private String smartSplit(String source, String from, String to) {
 		String result = "";
@@ -27,8 +34,33 @@ class FileWorker {
 		return result;
 	}
 	
-	public FileWorker(IndexatorAndFinder indexatorAndFinder) {
+	public FileWorker(IndexatorAndFinder indexatorAndFinder, String filename) {
+		//BasicConfigurator.configure();
 		this.indexatorAndFinder = indexatorAndFinder;
+		this.filename = filename;
+		//lastModified = new File(filename).lastModified();
+	}
+	
+	@Override
+	public void run() {
+		DatabaseLogger.info("Check thread started");
+		DatabaseLogger.info("Filename: " + filename);
+		while (true) {
+		try {
+			Thread.sleep(5000);
+			File file = new File(filename);
+			if (file.lastModified() != this.lastModified) {
+				this.lastModified = file.lastModified();
+				DatabaseLogger.info("File was changed, let's reindex it");
+				loadFile();
+			}
+			else  {
+				DatabaseLogger.info("The same database file.");				
+			}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	ArrayList<Document> getListOfDocuments(HashSet<Integer> documentNumbers) {
@@ -41,7 +73,7 @@ class FileWorker {
 		return result;
 	}
 	
-	void loadFile(String filename) {
+	void loadFile() {
 		categoryDocuments = new HashMap<String, HashMap<String,Document>>();
 		documents = new ArrayList<Document>();
 		categories = new ArrayList<Category>();
