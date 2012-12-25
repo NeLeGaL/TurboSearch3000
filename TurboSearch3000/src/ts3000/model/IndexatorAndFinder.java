@@ -34,7 +34,8 @@ class IndexatorAndFinder {
 		try {
 			synchSemaphore.acquire();
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			System.out.println("Cannot index");
+			return;
 		}
 		
 		grams = result;
@@ -75,6 +76,11 @@ class IndexatorAndFinder {
     	Category k = a.get(i);
     	a.set(i, a.get(j));
     	a.set(j, k);
+    }
+    
+    void finishIt() {
+    	System.out.println("Indexator and finder: finishing...");
+    	fileWorker.interrupt();
     }
 }
 

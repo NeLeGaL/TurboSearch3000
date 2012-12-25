@@ -46,22 +46,23 @@ class FileWorker extends Thread {
 	public void run() {
 		DatabaseLogger.info("Check thread started");
 		DatabaseLogger.info("Filename: " + filename);
-		while (true) {
-		try {
-			Thread.sleep(5000);
-			File file = new File(filename);
-			if (file.lastModified() != this.lastModified) {
-				this.lastModified = file.lastModified();
-				DatabaseLogger.info("File was changed, let's reindex it");
-				loadFile();
-			}
-			else  {
-				DatabaseLogger.info("The same database file.");				
-			}
+		boolean theEnd = false;
+		while (!Thread.currentThread().isInterrupted() && !theEnd) {
+			try {
+				File file = new File(filename);
+				if (file.lastModified() != this.lastModified) {
+					this.lastModified = file.lastModified();
+					DatabaseLogger.info("File was changed, let's reindex it");
+					if (!Thread.currentThread().isInterrupted())
+						loadFile();
+					Thread.sleep(5000);				
+				}
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				DatabaseLogger.info("We were sleeping, and now we are angry!");
+				theEnd = true;
 			}
 		}
+		DatabaseLogger.info("We are stopping, bye-bye!");
 	}
 	
 	ArrayList<Document> getListOfDocuments(HashSet<Integer> documentNumbers) {
@@ -81,44 +82,47 @@ class FileWorker extends Thread {
 		
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
-			
-			String line;
-			while ((line = br.readLine()) != null) {
-				if (!line.contains("div id")) continue;
+			try {
+				String line;
+				while ((line = br.readLine()) != null) {
+					if (!line.contains("div id")) continue;
 				
-				String category = smartSplit(line, "div id=\"", "\">");
+					String category = smartSplit(line, "div id=\"", "\">");
 				
-				line = br.readLine();
-				String title = smartSplit(line, "<h2 id=\"docTitle\" style=\"\">", "</h2>");
-				
-				line = br.readLine();
-				String annotation = smartSplit(line, "<div id=\"docAnnotation\" style=\"\">", "</div>");
-				
-				line = br.readLine();
-				String date = smartSplit(line, "<div id=\"docDate\" style=\"\">", "</div>");
-				
-				line = br.readLine();
-				StringBuilder sb = new StringBuilder();
-				while (!line.contains("//END_OF_DOCUMENT")) {
-					sb.append(line);
-					sb.append("\n");
 					line = br.readLine();
+					String title = smartSplit(line, "<h2 id=\"docTitle\" style=\"\">", "</h2>");
+				
+					line = br.readLine();
+					String annotation = smartSplit(line, "<div id=\"docAnnotation\" style=\"\">", "</div>");
+				
+					line = br.readLine();
+					String date = smartSplit(line, "<div id=\"docDate\" style=\"\">", "</div>");
+				
+					line = br.readLine();
+					StringBuilder sb = new StringBuilder();
+					while (!line.contains("//END_OF_DOCUMENT")) {
+						sb.append(line);
+						sb.append("\n");
+						line = br.readLine();
+					}
+					line = br.readLine();
+				
+					Document doc = new Document(title, annotation, sb.toString(), category, new Date(date));
+					documents.add(doc);
+				
+					if (!categoryDocuments.containsKey(category)) {
+						categoryDocuments.put(category, new HashMap<String, Document>());
+					}
+				
+					categoryDocuments.get(category).put(title, doc);
+				
+					DatabaseLogger.info("Load document " + title + " from category " + category);
 				}
-				line = br.readLine();
-				
-				Document doc = new Document(title, annotation, sb.toString(), category, new Date(date));
-				documents.add(doc);
-				
-				if (!categoryDocuments.containsKey(category)) {
-					categoryDocuments.put(category, new HashMap<String, Document>());
-				}
-				
-				categoryDocuments.get(category).put(title, doc);
-				
-				DatabaseLogger.info("Load document " + title + " from category " + category);
-			}
+			} finally {
+				System.out.println("Closing buffered reader");
+				br.close();
+			}	
 			
-			br.close();
  		} catch (FileNotFoundException e) {
 			DatabaseLogger.error("Can't load new database. Not such file. Stuck to old version");
 		} catch (IOException e) {

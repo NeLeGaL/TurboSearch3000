@@ -47,13 +47,24 @@ public class MainWindow extends javax.swing.JApplet {
             viewerPanel.parentWindow = this;
             categoriesField.parentWindow = this;
             historyField.parentWindow = this;
-            database = new Database("documents.txt");
+            database = new Database("C:\\Users\\NeLeGaL\\Documents\\GitHub\\TurboSearch3000\\TurboSearch3000\\result.txt");
             //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-
+    
+    /*Called before destroy*/
+    public void stop() {
+    	System.out.println("Stop");
+    }
+    
+    /*Called before closing*/
+    public void destroy() {
+    	System.out.println("Destroy");
+    	database.finishIt();
+    }
+    
     /** This method is called from within the init() method to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is

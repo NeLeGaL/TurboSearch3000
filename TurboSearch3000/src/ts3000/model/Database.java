@@ -34,6 +34,8 @@ public class Database {
 		return indexatorAndFinder.processQuery(query);
 	}
 
-	
+	public void finishIt() {
+		indexatorAndFinder.finishIt();
+	}
 }
 
