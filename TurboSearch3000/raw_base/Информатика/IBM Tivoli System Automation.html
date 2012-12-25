@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">"
+
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<ul>
+<li class="toclevel-1"><a href="#.D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5">Введение</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C">Функциональность</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D1.8B.D0.B5_.D0.BF.D0.BE.D0.BB.D0.B8.D1.82.D0.B8.D0.BA.D0.B8">Стандартные политики</a>
+</li>
+<li class="toclevel-1"><a href="#System_Automation_Application_Manager">System Automation Application Manager</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F">Графический интерфейс пользователя</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BF.D0.BB.D0.B0.D1.82.D1.84.D0.BE.D1.80.D0.BC.D1.8B_.D0.B8_.D0.BE.D0.BF.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B">Поддерживаемые платформы и операционные системы</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.92.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Внешние ссылки</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</a>
+</li>
+</ul>
+</ul></td></tr></table><hr/>
+<h2><span class="mw-headline" id=".D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5">Введение</span></h2>
+
+<p>Семейство программных продуктов <i>IBM Tivoli® System Automation</i> предназначено для обеспечения высокой доступности <i>(high availability),</i> а также, <i>автоматизации</i> IT ресурсов в компьютерных кластерах <i>(cluster)</i>. Под IT ресурсами понимаются программные приложения и их компоненты, процессы, IP инфраструктура, внешняя память и.т.д. Под кластером понимается совокупность компьютеров с разделяемыми ресурсами. Область применения System Automation от одного компьютера до IT инфраструктуры целого предприятия.</p>
+<h2><span class="mw-headline" id=".D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C">Функциональность</span></h2>
+
+<p>Технология System Automation различает два аспекта: Автоматизация (Automation) и высокая доступность (high availability). Автоматизация подразумевает запуск и остановку ресурсов согласно заданной политике <i>(policy)</i> с учетом зависимостей <i>(dependencies)</i> ресурсов друг от друга. </p>
+<p>Например, заданная цель для ресурса А - быть активным (online). Ресурс А имеет зависимость от ресурса B:</p>      
+<pre>
+   А --&#62; StartAfter --&#62; B
+</pre>
+<p>то есть, для запуска ресурса А необходимо, чтобы ресурс B был активным. System Automation обеспечивает запуск ресурса B и, когда ресурс B станет активным, запустит ресурс А.</p>
+<p>Такие зависимости между ресурсами или группами ресурсов могут быть следующих видов:</p>
+<pre>
+   Порядок запуска или остановки:
+       - StartAfter
+       - StopAfter
+       - ForceDown
+</pre>
+<pre>
+   Локальность или нелокальность, т.е. требование к ресурсам работать на одном узле (операционной системе) или на разных:
+       - Collocated
+       - AntiCollocated
+</pre>
+<pre>
+   Группирование ресурсов и вложенность групп.
+</pre>
+<p>Все ресурсы, группы и зависимости описываются в специальной таблице (или графе), называемой policy. Кроме того, в policy задается желаемое состояние ресурсов и их групп (например, Online). Когда policy активируется, System Automation пытается наиболее полно удовлетворить заданную в policy цель. </p>
+<p>Такая технология называется <i>goal driven Automation</i> - целевая Автоматизация.</p>
+<h2><span class="mw-headline" id=".D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D1.8B.D0.B5_.D0.BF.D0.BE.D0.BB.D0.B8.D1.82.D0.B8.D0.BA.D0.B8">Стандартные политики</span></h2>
+<p>Чтобы облегчить пользователю написание политик для конкретных индустриальных решений, System Automation предлагает шаблоны политик, которые остается лишь приспособить к данной конфигурации. Такие шаблоны (<i>precanned policies</i>) поставляются для следующих продуктов и решений (смотри иллюстрацию). Например, политика SAP описывает взаимозависимость компонент в среде SAP, a System Automation обеспечивает желаемое состояние компонент, запуская и останавливая их в заданном порядке, а также поддерживая их высокую доступность.</p>
+<h2><span class="mw-headline" id="System_Automation_Application_Manager">System Automation Application Manager</span></h2>
+
+<p>Описанное выше решение позволяет автоматизировать и делать высоко доступными ресурсы в пределах гомогенных кластеров. Это означает, что все узлы кластера должны иметь одинаковую архитектуру и операционную систему, например Linux на Intel x86. Однако вычислительные центры современных предприятий оснащены самыми различными платформами, на которых работают приложения, требующие высокой доступности. Приложения на различных платформах, а значит и в разных кластерах, могут зависеть друг от друга (<i>crosscluster dependency</i>). Для автоматизации таких мультиплаттформных (мультикластерных) сред используется System Automation Application Manager (SAAM), позволяющий создавать policies с учетом мультикластерных зависимостей.</p>
+<h2><span class="mw-headline" id=".D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F">Графический интерфейс пользователя</span></h2>
+
+<p>Базированный на технологии WebSphere Графический интерфейс пользователя (<i>GUI</i>) позволяет в удобной форме отслеживать состояние ресурсов, узлов и кластеров. Кроме того, пользователь имеет возможность запускать и останавливать ресурсы, а также временно отключать Автоматизацию для того или иного ресурса или для целых групп (<i>requests</i>).</p>
+<h2><span class="mw-headline" id=".D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BF.D0.BB.D0.B0.D1.82.D1.84.D0.BE.D1.80.D0.BC.D1.8B_.D0.B8_.D0.BE.D0.BF.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D1.8B.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B">Поддерживаемые платформы и операционные системы</span></h2>
+
+<p>IBM Tivoli® System Automation поддерживает следующие платформы:</p>
+
+<ul>
+<li>AIX</li>
+<li>Linux</li>
+<li>SUN Solaris</li>
+<li>MS Windows Server 2003/2008</li>
+<li>z/OS</li></ul>
+
+<h2><span class="mw-headline" id=".D0.92.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Внешние ссылки</span></h2>
+
+<ul>
+<li><a class="externallink" href="http://www-306.ibm.com/software/tivoli/products/sys-auto-multi/" rel="nofollow" title="http://www-306.ibm.com/software/tivoli/products/sys-auto-multi/">Tivoli System Automation for Multiplatforms</a></li>
+<li><a class="externallink" href="http://www-306.ibm.com/software/tivoli/products/system-automation-390/" rel="nofollow" title="http://www-306.ibm.com/software/tivoli/products/system-automation-390/">Tivoli System Automation for z/OS</a></li></ul>
+
+<h2><span class="mw-headline" id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</span></h2>
+
+<ul>
+<li>Высокая доступность</li>
+<li>Кластер (группа компьютеров)</li></ul>
+
+<p>Категория:Информатика
+T
+Категория:Торговые марки
+Категория:IBM Tivoli</p>
+<p><a href="http://de.wikipedia.org/wiki/Tivoli_System_Automation">de:Tivoli System Automation</a></p>
+</html>

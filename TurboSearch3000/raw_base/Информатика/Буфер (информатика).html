@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">"
+
+
+<p>В информатике <b>буфер</b> () — это область памяти, используемая для временного хранения данных при вводе или выводе. Обмен данными (ввод и вывод) может происходить как с внешними устройствами, так и с процессами в пределах компьютера. Буферы могут быть реализованы в аппаратном или программном обеспечении, но подавляющее большинство буферов реализуется в программном обеспечении. Буферы используются когда существует разница между скоростью получения данных и скоростью их обработки, или в случае когда эти скорости переменны, например, при буферизации печати.</p>
+<h2><span class="mw-headline" id=".D0.91.D1.83.D1.84.D0.B5.D1.80_.D0.B8_.D0.BA.D1.8D.D1.88">Буфер и кэш</span></h2>
+
+<p>Эти термины не являются взаимоисключающими, и их функции часто смешиваются, но существует различие в их предназначении. Буфер — временное хранилище, где большие блоки данных сливаются или разбиваются на части. Это необходимо для взаимодействия с запоминающим устройством, которое работает с большими блоками данных, или когда данные передаются в другом порядке чем тот, в котором они формируются, и лишь желательно — в том случае, когда использование мелких блоков неэффективно. Использование буфера приносит пользу, даже если буферизуемые данные пишутся в буфер и читаются из него однократно.</p>
+<p>В свою очередь, использование кэша предполагает, что данные будут читаться из кэша чаще, чем записываться туда. Его назначение — уменьшить число обращений к запоминающему устройству, а не сделать их более эффективными.</p>
+<h2><span class="mw-headline" id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B1.D1.83.D1.84.D0.B5.D1.80.D0.BE.D0.B2">Использование буферов</span></h2>
+
+<p>Метод организации обмена данными между устройствами или процессами с использованием буфера называется <b><i>буферизацией</i></b>. Один из наиболее известных для пользователей ПК примеров такого использования буфера — буфер обмена в ОС Microsoft Windows.</p>
+<p>Также буферы используются в программировании для получения данных от функций. Функции Windows API, результатом работы которых является строковое значение (например, <a class="externallink" href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/intl/unicode_17si.asp" rel="nofollow" title="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/intl/unicode_17si.asp">MultiByteToWideChar</a>), принимают в качестве одного из аргументов указатель на буфер, куда производится вывод. Вот пример исходного текста фрагмента программы на C, преобразующего строку «Hello, World!» в Unicode:
+</p>
+<pre>
+// исходная строка
+CHAR text[] = &#34;Hello, World!&#34;;
+
+// буфер для получения результата
+WCHAR buffer[256];
+
+// преобразование строки в Unicode
+MultiByteToWideChar(CP_ACP, 0, text, strlen(text) + 1,
+  buffer, sizeof(buffer)/sizeof(WCHAR));
+</pre>
+
+<h2><span class="mw-headline" id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</span></h2>
+
+<ul>
+<li>Буфер обмена</li>
+<li>Кэш</li>
+<li>Переполнение буфера</li>
+<li>Двойная буферизация</li>
+<li>Тройная буферизация</li></ul>
+
+<p>Категория:Информатика</p>
+<p><a href="http://ar.wikipedia.org/wiki/%D8%B5%D9%88%D8%A7%D9%86_(%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA%D9%8A%D8%A9)">ar:???? (?????????)</a>
+<a href="http://bg.wikipedia.org/wiki/%D0%91%D1%83%D1%84%D0%B5%D1%80_(%D0%B8%D0%B7%D1%87%D0%B8%D1%81%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%B0_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0)">bg:Буфер (изчислителна техника)</a>
+<a href="http://ca.wikipedia.org/wiki/Mem%C3%B2ria_interm%C3%A8dia">ca:Mem?ria interm?dia</a>
+<a href="http://cs.wikipedia.org/wiki/Vyrovn%C3%A1vac%C3%AD_pam%C4%9B%C5%A5">cs:Vyrovn?vac? pam??</a>
+<a href="http://de.wikipedia.org/wiki/Puffer_(Informatik)">de:Puffer (Informatik)</a>
+<a href="http://el.wikipedia.org/wiki/%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%81%CE%B9%CE%BD%CE%AE_%CE%BC%CE%BD%CE%AE%CE%BC%CE%B7_(%CF%85%CF%80%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CF%83%CF%84%CE%AD%CF%82)">el:????????? ????? (???????????)</a>
+<a href="http://en.wikipedia.org/wiki/Data_buffer">en:Data buffer</a>
+<a href="http://es.wikipedia.org/wiki/Buffer_de_datos">es:Buffer de datos</a>
+<a href="http://et.wikipedia.org/wiki/Puhverm%C3%A4lu">et:Puhverm?lu</a>
+<a href="http://fa.wikipedia.org/wiki/%D8%AD%D8%A7%D9%81%D8%B8%D9%87_%D9%85%DB%8C%D8%A7%D9%86%DA%AF%DB%8C%D8%B1">fa:????? ???????</a>
+<a href="http://fi.wikipedia.org/wiki/Puskurimuisti">fi:Puskurimuisti</a>
+<a href="http://fr.wikipedia.org/wiki/M%C3%A9moire_tampon">fr:M?moire tampon</a>
+<a href="http://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A6%D7%A5">he:????</a>
+<a href="http://hr.wikipedia.org/wiki/Me%C4%91uspremnik">hr:Me?uspremnik</a>
+<a href="http://it.wikipedia.org/wiki/Buffer">it:Buffer</a>
+<a href="http://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%83%95%E3%82%A1">ja:????</a>
+<a href="http://kk.wikipedia.org/wiki/%D0%91%D1%83%D1%84%D0%B5%D1%80%D0%BB%D0%B5%D1%83_(%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)">kk:Буферлеу (информатика)</a>
+<a href="http://ko.wikipedia.org/wiki/%EB%B2%84%ED%8D%BC_(%EC%BB%B4%ED%93%A8%ED%84%B0_%EA%B3%BC%ED%95%99)">ko:?? (??? ??)</a>
+<a href="http://nl.wikipedia.org/wiki/Buffer_(geheugen)">nl:Buffer (geheugen)</a>
+<a href="http://pl.wikipedia.org/wiki/Bufor_(programowanie)">pl:Bufor (programowanie)</a>
+<a href="http://pt.wikipedia.org/wiki/Buffer_(ci%C3%AAncia_da_computa%C3%A7%C3%A3o)">pt:Buffer (ci?ncia da computa??o)</a>
+<a href="http://sk.wikipedia.org/wiki/Vyrovn%C3%A1vacia_pam%C3%A4%C5%A5">sk:Vyrovn?vacia pam??</a>
+<a href="http://sr.wikipedia.org/wiki/%D0%91%D0%B0%D1%84%D0%B5%D1%80">sr:Бафер</a>
+<a href="http://sv.wikipedia.org/wiki/Buffert_(datalogi)">sv:Buffert (datalogi)</a>
+<a href="http://tr.wikipedia.org/wiki/Ara_Bellek">tr:Ara Bellek</a>
+<a href="http://uk.wikipedia.org/wiki/%D0%91%D1%83%D1%84%D0%B5%D1%80_(%D1%96%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)">uk:Буфер (інформатика)</a>
+<a href="http://zh.wikipedia.org/wiki/%E7%B7%A9%E8%A1%9D%E5%99%A8">zh:???</a></p>
+</html>

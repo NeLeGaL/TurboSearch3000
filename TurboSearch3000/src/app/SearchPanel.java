@@ -11,9 +11,6 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
-import javax.swing.JOptionPane;
 import ts3000.model.Document;
 
 /**

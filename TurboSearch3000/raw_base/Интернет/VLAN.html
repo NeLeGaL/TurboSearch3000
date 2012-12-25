@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">"
+<p><b>VLAN</b> (аббр. от ) — логическая (&#34;виртуальная&#34;) локальная компьютерная сеть, представляет собой группу хостов с общим набором требований, которые взаимодействуют так, как если бы они были подключены к широковещательному домену, независимо от их физического местонахождения. VLAN имеет те же свойства, что и физическая локальная сеть, но позволяет конечным станциям группироваться вместе, даже если они не находятся в одной физической сети. Такая реорганизация может быть сделана на основе программного обеспечения вместо физического перемещения устройств.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<ul>
+<li class="toclevel-1"><a href="#.D0.A0.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_VLAN_.D0.B2_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0.D1.85_CISCO">Реализация VLAN в устройствах CISCO</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.9E.D0.B1.D0.BE.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.BB.D0.B5.D0.BD.D1.81.D1.82.D0.B2.D0.B0_.D0.B2_VLAN">Обозначение членства в VLAN</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.9F.D1.80.D0.B5.D0.B8.D0.BC.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.B0">Преимущества</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.98.D1.81.D1.82.D0.BE.D1.87.D0.BD.D0.B8.D0.BA.D0.B8">Источники</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Ссылки</a>
+</li>
+</ul>
+</ul></td></tr></table><hr/>
+<h2><span class="mw-headline" id=".D0.A0.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_VLAN_.D0.B2_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0.D1.85_CISCO">Реализация VLAN в устройствах CISCO</span></h2>
+
+<p>В устройствах Cisco, протокол VTP (VLAN Trunking Protocol) предусматривает VLAN-домены для упрощения администрирования. VTP также выполняет «чистку» трафика, направляя VLAN трафик только на те коммутаторы, которые имеют целевые VLAN-порты (функция VTP pruning). Коммутаторы Cisco в основном используют протокол 802.1Q Trunk вместо устаревшего проприетарного ISL (Inter-Switch Link) для обеспечения совместимости информации.</p>
+<p>По умолчанию на каждом порту коммутатора имеется сеть VLAN1 или VLAN управления. Сеть управления не может быть удалена, однако могут быть созданы дополнительные сети VLAN и этим альтернативным VLAN могут быть дополнительно назначены порты.</p>
+<p><b>Native VLAN</b> — это параметр каждого порта, который определяет номер VLAN, который получают все непомеченные (untagged) пакеты.</p>
+<h2><span class="mw-headline" id=".D0.9E.D0.B1.D0.BE.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.BB.D0.B5.D0.BD.D1.81.D1.82.D0.B2.D0.B0_.D0.B2_VLAN">Обозначение членства в VLAN</span></h2>
+<p>Для этого существуют следующие решения:
+</p>
+<ul>
+<li>по порту (Port-based, 802.1Q): порту коммутатора вручную назначается одна VLAN. В случае, если одному порту должны соответствовать несколько VLAN (например, если соединение VLAN проходит через несколько свитчей), то этот порт должен быть членом транка. Только одна VLAN может получать все пакеты, не отнесённые ни к одной VLAN (в терминологии 3Com, Planet, D-Link, Zyxel, HP — <i>untagged</i>, в терминологии Cisco — <i>native VLAN</i>). Свитч будет добавлять метки данной VLAN ко всем принятым кадрам не имеющим никаких меток. VLAN, построенные на базе портов, имеют некоторые ограничения.</li>
+<li>по MAC-адресу (MAC-based): членство в VLANe основывается на MAC-адресе рабочей станции. В таком случае свитч имеет таблицу MAC-адресов всех устройств вместе с VLANами, к которым они принадлежат.</li>
+<li>по протоколу (Protocol-based): данные 3-4 уровня в заголовке пакета используются чтобы определить членство в VLANe. Например, IP-машины могут быть переведены в первую VLAN, а AppleTalk-машины во вторую. Основной недостаток этого метода в том, что он нарушает независимость уровней, поэтому, например, переход с IPv4 на IPv6 приведет к нарушению работоспособности сети.</li>
+<li>методом аутентификации (Authentication based): устройства могут быть автоматически перемещены в VLAN основываясь на данных аутентификации пользователя или устройства при использовании протокола 802.1x.</li></ul>
+
+<h2><span class="mw-headline" id=".D0.9F.D1.80.D0.B5.D0.B8.D0.BC.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.B0">Преимущества</span></h2>
+
+<ul>
+<li>Облегчается перемещение, добавление устройств и изменение их соединений друг с другом.</li>
+<li>Достигается большая степень административного контроля вследствие наличия устройства, осуществляющего между сетями VLAN маршрутизацию на 3-м уровне.</li>
+<li>Уменьшается потребление полосы пропускания по сравнению с ситуацией одного широковещательного домена.</li>
+<li>Сокращается непроизводственное использование CPU за счет сокращения пересылки широковещательных сообщений.</li>
+<li>Предотвращение широковещательных штормов и предотвращение петель.</li></ul>
+
+<h2><span class="mw-headline" id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</span></h2>
+
+<ul>
+<li>IEEE 802.1</li></ul>
+
+<h2><span class="mw-headline" id=".D0.98.D1.81.D1.82.D0.BE.D1.87.D0.BD.D0.B8.D0.BA.D0.B8">Источники</span></h2>
+
+<ul>
+<li>Эндрю Таненбаум, 2003, «Computer Networks», Pearson Education International, New Jersey.</li></ul>
+
+<h2><span class="mw-headline" id=".D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Ссылки</span></h2>
+
+<ul>
+<li><a class="externallink" href="http://www.ietf.org/rfc/rfc3069.txt" rel="nofollow" title="http://www.ietf.org/rfc/rfc3069.txt">RFC3069 VLAN Aggregation for Efficient IP Address Allocation</a></li>
+<li><a class="externallink" href="http://standards.ieee.org/getieee802/download/802.1Q-1998.pdf" rel="nofollow" title="http://standards.ieee.org/getieee802/download/802.1Q-1998.pdf">IEEE’s 802.1Q standard 1998 version</a> (<a class="externallink" href="http://standards.ieee.org/getieee802/download/802.1Q-2003.pdf" rel="nofollow" title="http://standards.ieee.org/getieee802/download/802.1Q-2003.pdf">2003 version</a>)(<a class="externallink" href="http://standards.ieee.org/getieee802/download/802.1Q-2005.pdf" rel="nofollow" title="http://standards.ieee.org/getieee802/download/802.1Q-2005.pdf">2005 version</a>)</li>
+<li><a class="externallink" href="http://www.cisco.com/univercd/cc/td/doc/product/software/ios113ed/113ed_cr/switch_c/xcvlan.htm" rel="nofollow" title="http://www.cisco.com/univercd/cc/td/doc/product/software/ios113ed/113ed_cr/switch_c/xcvlan.htm">Cisco’s Overview of Routing between Virtual LANs</a></li>
+<li><a class="externallink" href="http://www.cisco.com/univercd/cc/td/doc/product/software/ios121/121newft/121t/121t3/dtbridge.htm" rel="nofollow" title="http://www.cisco.com/univercd/cc/td/doc/product/software/ios121/121newft/121t/121t3/dtbridge.htm">Cisco’s <i>Bridging Between IEEE 802.1Q VLANs </i> white paper</a></li>
+<li><a class="externallink" href="http://net21.ucdavis.edu/newvlan.htm" rel="nofollow" title="http://net21.ucdavis.edu/newvlan.htm">University of California’s VLAN Information</a></li>
+<li><a class="externallink" href="http://wiki.openwrt.org/OpenWrtDocs/NetworkInterfaces" rel="nofollow" title="http://wiki.openwrt.org/OpenWrtDocs/NetworkInterfaces">OpenWRT guide to VLANs</a>: Provides a good beginners guide to all VLANS</li>
+<li>Some <a class="externallink" href="http://www.zeroshell.net/eng/faq/network/" rel="nofollow" title="http://www.zeroshell.net/eng/faq/network/">FAQ</a> about the VLANs</li>
+<li><a class="externallink" href="http://xgu.ru/wiki/VLAN" rel="nofollow" title="http://xgu.ru/wiki/VLAN">VLAN</a> на Xgu.ru — подробная информация о настройке и использовании VLAN в активном сетевом оборудовании Cisco и HP ProCurve и в операционных системах Linux и FreeBSD</li>
+<li><a class="externallink" href="http://network.xsp.ru/3_6.php" rel="nofollow" title="http://network.xsp.ru/3_6.php">Виртуальные Локальные Сети: VLAN</a> на примере Cisco Catalyst</li>
+<li><a class="externallink" href="http://www.xnets.ru/plugins/content/content.php?content.92" rel="nofollow" title="http://www.xnets.ru/plugins/content/content.php?content.92">Возможности современных коммутаторов по организации виртуальных сетей</a></li></ul>
+
+
+
+<p>Категория:Интернет
+Категория:Виртуальные локальные сети?</p>
+<p><a href="http://ar.wikipedia.org/wiki/%D9%84%D8%A7%D9%86_%D8%A7%D9%81%D8%AA%D8%B1%D8%A7%D8%B6%D9%8A%D8%A9">ar:??? ????????</a>
+<a href="http://bg.wikipedia.org/wiki/%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%BD%D0%B0_%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D0%BD%D0%B0_%D0%BC%D1%80%D0%B5%D0%B6%D0%B0">bg:Виртуална локална мрежа</a>
+<a href="http://ca.wikipedia.org/wiki/VLAN">ca:VLAN</a>
+<a href="http://cs.wikipedia.org/wiki/VLAN">cs:VLAN</a>
+<a href="http://de.wikipedia.org/wiki/Virtual_Local_Area_Network">de:Virtual Local Area Network</a>
+<a href="http://en.wikipedia.org/wiki/Virtual_LAN">en:Virtual LAN</a>
+<a href="http://es.wikipedia.org/wiki/VLAN">es:VLAN</a>
+<a href="http://et.wikipedia.org/wiki/Virtuaalne_kohtv%C3%B5rk">et:Virtuaalne kohtv?rk</a>
+<a href="http://fi.wikipedia.org/wiki/Virtuaalil%C3%A4hiverkko">fi:Virtuaalil?hiverkko</a>
+<a href="http://fr.wikipedia.org/wiki/R%C3%A9seau_local_virtuel">fr:R?seau local virtuel</a>
+<a href="http://gu.wikipedia.org/wiki/%E0%AA%B5%E0%AB%80%E0%AA%B2%E0%AB%87%E0%AA%A8">gu:?????</a>
+<a href="http://he.wikipedia.org/wiki/%D7%A8%D7%A9%D7%AA_%D7%9E%D7%A7%D7%95%D7%9E%D7%99%D7%AA_%D7%95%D7%99%D7%A8%D7%98%D7%95%D7%90%D7%9C%D7%99%D7%AA">he:??? ?????? ?????????</a>
+<a href="http://hi.wikipedia.org/wiki/VLAN">hi:VLAN</a>
+<a href="http://hr.wikipedia.org/wiki/VLAN">hr:VLAN</a>
+<a href="http://hu.wikipedia.org/wiki/Virtu%C3%A1lis_helyi_h%C3%A1l%C3%B3zat">hu:Virtu?lis helyi h?l?zat</a>
+<a href="http://id.wikipedia.org/wiki/VLAN">id:VLAN</a>
+<a href="http://it.wikipedia.org/wiki/VLAN">it:VLAN</a>
+<a href="http://ja.wikipedia.org/wiki/Virtual_Local_Area_Network">ja:Virtual Local Area Network</a>
+<a href="http://kk.wikipedia.org/wiki/%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%B4%D1%8B%D2%9B_%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%B4%D1%8B%D2%9B_%D0%B6%D0%B5%D0%BB%D1%96">kk:Виртуальды? локальды? желі</a>
+<a href="http://nl.wikipedia.org/wiki/Virtual_LAN">nl:Virtual LAN</a>
+<a href="http://no.wikipedia.org/wiki/VLAN">no:VLAN</a>
+<a href="http://pl.wikipedia.org/wiki/Wirtualna_sie%C4%87_lokalna">pl:Wirtualna sie? lokalna</a>
+<a href="http://pt.wikipedia.org/wiki/Virtual_LAN">pt:Virtual LAN</a>
+<a href="http://ro.wikipedia.org/wiki/VLAN">ro:VLAN</a>
+<a href="http://sk.wikipedia.org/wiki/VLAN">sk:VLAN</a>
+<a href="http://sv.wikipedia.org/wiki/VLAN">sv:VLAN</a>
+<a href="http://ta.wikipedia.org/wiki/%E0%AE%AE%E0%AF%86%E0%AE%AF%E0%AF%8D%E0%AE%A8%E0%AE%BF%E0%AE%95%E0%AE%B0%E0%AF%8D_%E0%AE%95%E0%AF%81%E0%AE%B1%E0%AF%81%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%B0%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%81%E0%AE%AA%E0%AF%8D_%E0%AE%AA%E0%AE%BF%E0%AE%A3%E0%AF%88%E0%AE%AF%E0%AE%AE%E0%AF%8D">ta:????????? ?????????????? ???????</a>
+<a href="http://te.wikipedia.org/wiki/VLAN">te:VLAN</a>
+<a href="http://th.wikipedia.org/wiki/%E0%B9%81%E0%B8%A5%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%99">th:?????????</a>
+<a href="http://uk.wikipedia.org/wiki/VLAN">uk:VLAN</a>
+<a href="http://vi.wikipedia.org/wiki/Virtual_LAN">vi:Virtual LAN</a>
+<a href="http://zh.wikipedia.org/wiki/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91">zh:?????</a></p>
+</html>

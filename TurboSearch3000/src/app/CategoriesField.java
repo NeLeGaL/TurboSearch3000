@@ -20,7 +20,12 @@ import ts3000.model.Category;
  */
 public class CategoriesField extends javax.swing.JPanel {
 
-    /** Creates new form CategoriesField */
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1246532928935334729L;
+
+	/** Creates new form CategoriesField */
     public CategoriesField() {
         initComponents();
     }

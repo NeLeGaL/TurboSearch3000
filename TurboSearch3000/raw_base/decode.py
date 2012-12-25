@@ -10,3 +10,4 @@ for filename in lst:
 
     out.write('iconv -f WINDOWS-1251 -t UTF-8 ' + filename + ' >tmp\nmv tmp ' + filename + '\n')
 out.close()
+

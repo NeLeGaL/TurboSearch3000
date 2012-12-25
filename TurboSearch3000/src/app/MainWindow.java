@@ -11,7 +11,6 @@
 package app;
 
 import java.awt.Color;
-import java.awt.TrayIcon.MessageType;
 import javax.swing.JOptionPane;
 
 import ts3000.model.Database;

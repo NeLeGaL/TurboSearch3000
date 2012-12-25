@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">"
+<p><b>Алгоритм распространения доверия</b> ( также <i>алгоритм «sum-product»</i>) — алгоритм маргинализации с помощью двунаправленной передачи сообщений на графе, применяемый для вывода на графических вероятностных моделях (таких как байесовские и марковские сети).</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<ul>
+<li class="toclevel-1"><a href="#.D0.9F.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87.D0.B8">Постановка задачи</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B3.D1.80.D0.B0.D1.84.D0.B0">Структура графа</a>
+</li>
+<ul>
+<li class="toclevel-2"><a href="#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80">Пример</a>
+</li>
+</ul>
+<li class="toclevel-1"><a href="#.D0.9F.D0.B5.D1.80.D0.B5.D0.B4.D0.B0.D1.87.D0.B0_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B9">Передача сообщений</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.90.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC">Алгоритм</a>
+</li>
+<ul>
+<li class="toclevel-2"><a href="#.D0.9F.D0.BE.D0.B4.D1.85.D0.BE.D0.B4_1">Подход 1</a>
+</li>
+<li class="toclevel-2"><a href="#.D0.9F.D0.BE.D0.B4.D1.85.D0.BE.D0.B4_2">Подход 2</a>
+</li>
+</ul>
+<li class="toclevel-1"><a href="#.D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B0.D1.80.D0.B3.D0.B8.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2">Вычисление маргиналов</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.9D.D0.BE.D1.80.D0.BC.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BD.D0.B0_.D0.BB.D0.B5.D1.82.D1.83">Нормализация на лету</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.B1.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0">Математическое обоснование алгоритма</a>
+</li>
+<li class="toclevel-1"><a href="#.D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Ссылки</a>
+</li>
+</ul>
+</ul></td></tr></table><hr/>
+<h2><span class="mw-headline" id=".D0.9F.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87.D0.B8">Постановка задачи</span></h2>
+<p>Рассмотрим функцию:</p>
+
+<dl>
+<dd><span class="math">p^*(X) = \prod^m_{j=1}f_j(X_j)</span>, где <span class="math">X_j = \{x_i\}_{i = 1}^n</span></dd></dl>
+
+<p>Чтобы получить вероятность, необходимо её нормализовать:</p>
+
+<dl>
+<dd><span class="math">p(X) = \frac{1}{Z} \prod^m_{j=1}f_j(X_j), Z = \sum_X \prod^m_{j=1}f_j(X_j)</span></dd></dl>
+
+<p>Рассматриваются следующие задачи:
+</p>
+<ol>
+<li>Задача нормализации:</li></ol>
+
+
+<dl>
+<dd>найти <span class="math">Z = \sum_X \prod^m_{j=1}f_j(X_j)</span></dd></dl>
+
+
+<ol>
+<li>Задача маргинализации:</li></ol>
+
+
+<dl>
+<dd>найти <span class="math">p^*_i(x_i) = \sum_{k \neq i}p^*(X)</span></dd></dl>
+
+
+<ol>
+<li>Задача нормализованной маргинализации</li></ol>
+
+
+<dl>
+<dd>найти <span class="math">p_i(x_i) = \sum_{k \neq i}p(X)</span></dd></dl>
+
+<p>Все эти задачи NP-полны, так что сложность их решения в худшем случае возрастает экспоненциально.
+Однако некоторые частные случаи можно решить быстрее, чем и занимается данный алгоритм.</p>
+<h2><span class="mw-headline" id=".D0.A1.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D0.B0_.D0.B3.D1.80.D0.B0.D1.84.D0.B0">Структура графа</span></h2>
+<p>Граф, используемый алгоритмом, состоит из вершин, соответствующих переменным, и вершин, соответствующих функциям. Функции соединены с переменными, от которых они зависят.</p>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80">Пример</span></h3>
+<p>Например функции</p>
+
+<dl>
+<dd><span class="math">p^*(X) = f_1(x_1)f_2(x_2)f_3(x_3)f_4(x_1, x_2)f_5(x_2, x_3)</span></dd></dl>
+
+<p>соответствует следующий граф:</p>
+
+<dl>
+<dd>Файл:SumProduct_ExampleGraph.png</dd></dl>
+
+<h2><span class="mw-headline" id=".D0.9F.D0.B5.D1.80.D0.B5.D0.B4.D0.B0.D1.87.D0.B0_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B9">Передача сообщений</span></h2>
+<p>В графе пересылаются сообщения двух видов: от функций к переменным и от переменных к функциям.</p>
+<p>От переменной <span class="math">x_i</span> к функции <span class="math">f_j</span>:</p>
+
+<dl>
+<dd><span class="math">q_{i \to j}(x_i) = \prod_{k \in ne(i) \setminus j} r_{k \to i}(x_i)</span> (здесь <span class="math">ne(i)</span> — множество вершин, соседних с i)</dd></dl>
+
+
+<p>От функции <span class="math">f_j</span> к переменной <span class="math">x_i</span>:</p>
+
+<dl>
+<dd><span class="math">r_{i \to j}(x_i) = \sum_{X_i \setminus x_i}(f_j(X_j) \prod_{k \in ne(i) \setminus j}q_{k \to j}(x_k)</span></dd></dl>
+
+<p>При этом пустое произведение считаем равным единице.
+Из этих формул видно, что если у вершины всего один сосед, то её сообщение можно вычислить не зная входящих сообщений.</p>
+<h2><span class="mw-headline" id=".D0.90.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC">Алгоритм</span></h2>
+<p>Существует два подхода, в зависимости от характера полученного графа.</p>
+<h3><span class="mw-headline" id=".D0.9F.D0.BE.D0.B4.D1.85.D0.BE.D0.B4_1">Подход 1</span></h3>
+<p>Предположим, что граф является деревом.
+Начиная с листьев будем постепенно обходить все вершины и вычислять сообщения (при этом применяется стандартное правило передачи сообщений: сообщение можно передавать только если его можно полностью построить).</p>
+<p>Тогда за количество шагов, равное диаметру графа, работа алгоритма закончится.</p>
+<h3><span class="mw-headline" id=".D0.9F.D0.BE.D0.B4.D1.85.D0.BE.D0.B4_2">Подход 2</span></h3>
+<p>Если граф не является деревом, то можно начать с того, что все переменные передают сообщение 1, а потом уже его модифицируют, когда до них доходят сообщения от функций.</p>
+<p>Такой алгоритм в общем случае работает неверно и делает много лишнего, но все же полезен на практике.</p>
+<h2><span class="mw-headline" id=".D0.92.D1.8B.D1.87.D0.B8.D1.81.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B0.D1.80.D0.B3.D0.B8.D0.BD.D0.B0.D0.BB.D0.BE.D0.B2">Вычисление маргиналов</span></h2>
+<p>Когда рассылка сообщений закончена, маргиналы вычисляются по следующей формуле:</p>
+
+<dl>
+<dd><span class="math">p^*_i(x_i) = \prod_{j \in ne(i)}r_{j \to i}(x_i)</span></dd></dl>
+
+
+<dl>
+<dd><span class="math">Z = \sum_i p^*_i(x_i), p(x_i) = \frac{1}{Z}p^*_i(x_i)</span></dd></dl>
+
+<h2><span class="mw-headline" id=".D0.9D.D0.BE.D1.80.D0.BC.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BD.D0.B0_.D0.BB.D0.B5.D1.82.D1.83">Нормализация на лету</span></h2>
+<p>Если нужно рассчитать только нормализованные маргиналы (настоящие вероятности), то можно на каждом шаге нормализовать сообщения от переменных к функциям:</p>
+
+<dl>
+<dd><span class="math">q_{i \to j}(x_i) = \alpha_{ij} \prod_{k \in ne(i) \setminus j} r_{k \to i}(x_i)</span>,</dd></dl>
+
+<p>где <span class="math">\alpha_{ij}</span> подобраны так, чтобы</p>
+
+<dl>
+<dd><span class="math">\sum_i q_{i \to j}(x_i) = 1</span></dd></dl>
+
+<h2><span class="mw-headline" id=".D0.9C.D0.B0.D1.82.D0.B5.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.B1.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D0.B0">Математическое обоснование алгоритма</span></h2>
+<p>С математической точки зрения алгоритм изначальное разложение:</p>
+
+<dl>
+<dd><span class="math">p^*(X) = \prod^m_{j=1}f_j(X_j)</span></dd></dl>
+
+<p>перераскладывает в произведение:</p>
+
+<dl>
+<dd><span class="math">p^*(X) = \prod^m_{j=1}\phi_j(X_j) \prod^m_{i=1}\psi_i(x_i)</span>,</dd></dl>
+
+<p>где <span class="math">\phi_j</span> соответствует узлам-функциям, а <span class="math">\psi_i</span> — узлам-переменным.</p>
+<p>Изначально, до передачи сообщений <span class="math">\phi_j(X_j) = f_j(X_j)</span> и <span class="math">\psi_i(x_i) = 1</span></p>
+<p>Каждый раз, когда приходит сообщение <span class="math">r_{j \to i}</span> из функции в переменную, <span class="math">\phi</span> и <span class="math">\psi</span> пересчитываются:</p>
+
+<dl>
+<dd><span class="math">\psi_i(x_i) = \prod_{j \in ne(i)}r_{j \to i}(x_i)</span>,</dd></dl>
+
+
+<dl>
+<dd><span class="math">\phi_j(X_i) = \frac{f_j(X_j)}{\prod_{i \in ne(j)}r_{j \to i}(x_i)}</span></dd></dl>
+
+<p>Очевидно, что общее произведение от этого не меняется, а <span class="math">\psi_i</span> по окончании передачи сообщений станет маргиналом <span class="math">p^*(x_i)</span>.</p>
+<h2><span class="mw-headline" id=".D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Ссылки</span></h2>
+<p><a class="externallink" href="http://logic.pdmi.ras.ru/~sergey/index.php?page=mlbayes" rel="nofollow" title="http://logic.pdmi.ras.ru/~sergey/index.php?page=mlbayes">С. Николенко. Курс «Вероятностное обучение»</a></p>
+<p>Категория:Информатика
+Категория:Теория вероятностей</p>
+<p><a href="http://en.wikipedia.org/wiki/Belief_propagation">en:Belief propagation</a>
+<a href="http://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87%E4%BC%9D%E6%90%AC%E6%B3%95">ja:?????</a></p>
+</html>
