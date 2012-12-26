@@ -52,12 +52,26 @@ public class HistoryField extends javax.swing.JPanel {
         searchResult4.setVisible(num >= 4);        
     }
     
+    public void filter() {
+        ArrayList<Document> newDocs = new ArrayList<Document>(docs.size());
+        for (Document i : docs) {
+            if (i != null)
+                newDocs.add(i);
+        }
+        
+        docs = newDocs;
+    }
+    
     public boolean setPage(int newPage) {
         if (pages < newPage || newPage < 0) {
             return false;
         } else {
             currentPage = newPage;
-            lblCurPage.setText("Page " + Integer.toString(currentPage + 1));
+            if (pages == 0) {
+                lblCurPage.setText("Found nothing");
+            }else {
+                lblCurPage.setText("Page " + Integer.toString(currentPage + 1) + " of " + Integer.toString(pages));
+            }
             makeVisibleByPage(newPage);
             int howMuch = docs.size() % 4;
             if (howMuch == 0 || newPage < pages - 1) {
@@ -68,45 +82,59 @@ public class HistoryField extends javax.swing.JPanel {
                 return true;
             }
             
+            int maxTextLen = 120;
+            
             if (howMuch >= 1) {
                 Document doc = docs.get(newPage*4 + 0);
                 searchResult1.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.equals("")) {
+                    desc = doc.getPlainText();
+                }
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult1.setDescription(desc);
-                searchResult1.setPath("category - " + doc.getCategory());
+                searchResult1.setPath(doc.getCategory());
             }
             if (howMuch >= 2) {
                 Document doc = docs.get(newPage*4 + 1);
                 searchResult2.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.equals("")) {
+                    desc = doc.getPlainText();
+                }
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult2.setDescription(desc);
-                searchResult2.setPath("category - " + doc.getCategory());
+                searchResult2.setPath(doc.getCategory());
             }
             if (howMuch >= 3) {
                 Document doc = docs.get(newPage*4 + 2);
                 searchResult3.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.equals("")) {
+                    desc = doc.getPlainText();
+                }
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult3.setDescription(desc);
-                searchResult3.setPath("category - " + doc.getCategory());
+                searchResult3.setPath(doc.getCategory());
             }
             if (howMuch >= 4) {
                 Document doc = docs.get(newPage*4 + 3);
                 searchResult4.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.equals("")) {
+                    desc = doc.getPlainText();
+                }
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult4.setDescription(desc);
-                searchResult4.setPath("category - " + doc.getCategory());
+                searchResult4.setPath(doc.getCategory());
             }
             
             return true;
@@ -128,6 +156,7 @@ public class HistoryField extends javax.swing.JPanel {
                 String[] categoryAndTitle = i.split("/");
                 docs.add(parentWindow.database.getDocument(categoryAndTitle[0] , categoryAndTitle[1]));
             }
+            filter();
         }
         
         pages = (docs.size() + 3)/4;
@@ -161,6 +190,7 @@ public class HistoryField extends javax.swing.JPanel {
         lnkPrevPage = new javax.swing.JLabel();
 
         lnkNextPage.setText(">>");
+        lnkNextPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lnkNextPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lnkNextPageMouseClicked(evt);
@@ -197,6 +227,7 @@ public class HistoryField extends javax.swing.JPanel {
         lblTitle.setText("History");
 
         lnkPrevPage.setText("<<");
+        lnkPrevPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lnkPrevPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lnkPrevPageMouseClicked(evt);

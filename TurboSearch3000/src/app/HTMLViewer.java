@@ -51,6 +51,10 @@ public class HTMLViewer extends javax.swing.JPanel {
         mgr.saveRecentFilesList();
         
         this.viewer.setText(doc.getText());
+        this.lblCaption.setText(doc.getTitle());
+        this.lblCategory.setText(doc.getCategory());
+        this.viewer.setSelectionStart(0);
+        this.viewer.setSelectionEnd(0);
         rememberTheFile(doc);
     }
     
@@ -70,9 +74,13 @@ public class HTMLViewer extends javax.swing.JPanel {
         scrollPanel = new javax.swing.JScrollPane();
         viewer = new javax.swing.JEditorPane();
         lnkBack = new javax.swing.JLabel();
+        lblCaption = new javax.swing.JLabel();
+        lblDash = new javax.swing.JLabel();
+        lblCategory = new javax.swing.JLabel();
 
         scrollPanel.setViewportView(viewer);
 
+        lnkBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lnkBack.setText("<< back to the list of the documents");
         lnkBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lnkBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -87,6 +95,16 @@ public class HTMLViewer extends javax.swing.JPanel {
             }
         });
 
+        lblCaption.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblCaption.setText("Document title");
+
+        lblDash.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblDash.setText("-");
+
+        lblCategory.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        lblCategory.setForeground(new java.awt.Color(51, 153, 0));
+        lblCategory.setText("Category");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,16 +112,26 @@ public class HTMLViewer extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lnkBack)
-                .addContainerGap(457, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(lblCaption)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDash)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCategory)
+                .addContainerGap())
             .addComponent(scrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(lnkBack)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lnkBack)
+                    .addComponent(lblCategory)
+                    .addComponent(lblDash)
+                    .addComponent(lblCaption))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE))
+                .addComponent(scrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -123,6 +151,9 @@ public class HTMLViewer extends javax.swing.JPanel {
     }//GEN-LAST:event_lnkBackMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lblCaption;
+    private javax.swing.JLabel lblCategory;
+    private javax.swing.JLabel lblDash;
     private javax.swing.JLabel lnkBack;
     private javax.swing.JScrollPane scrollPanel;
     private javax.swing.JEditorPane viewer;

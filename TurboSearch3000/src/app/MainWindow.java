@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /*
  * MainWindow.java
@@ -7,15 +11,10 @@
 package app;
 
 import java.awt.Color;
-import java.awt.TrayIcon.MessageType;
 import javax.swing.JOptionPane;
-
 import ts3000.model.Database;
 
-/**
- *
- * @author Андрей
- */
+
 public class MainWindow extends javax.swing.JApplet {
     int resCount = 0;
     protected Database database;
@@ -29,42 +28,42 @@ public class MainWindow extends javax.swing.JApplet {
     public void init() {
         try {
             
-            java.awt.EventQueue.invokeAndWait(new Runnable() {
-
+            final MainWindow wnd = this;
+            
+            java.awt.EventQueue.invokeAndWait(new Runnable() {                
+                
                 public void run() {
+                    resize(1000, 600); 
                     initComponents();
-                    //searchButton.setF
                     searchDocumentLabel.setFocusable(true);
                     allDocumentsLabel.setFocusable(true);
                     historyLabel.setFocusable(true);
                     
+                    // set focus for something
+                    allDocumentsLabel.requestFocus();
+                    //searchPanel.tbxSearchField.requestFocus();
+                    
                     setSearchPanel();
-                    searchPanel.tbxSearchField.requestFocus();
+                    searchPanel.parentWindow = wnd;
+                    searchResults.parentWindow = wnd;
+                    viewerPanel.parentWindow = wnd;
+                    categoriesField.parentWindow = wnd;
+                    historyField.parentWindow = wnd;
+                    
+                    
+                    //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/result.txt");
+                    database = new Database(/*"C:\\Users\\NeLeGaL\\Documents\\GitHub\\TurboSearch3000\\TurboSearch3000\\"*/"result.txt");
+                    //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
+            
                 }
             });
-            searchPanel.parentWindow = this;
-            searchResults.parentWindow = this;
-            viewerPanel.parentWindow = this;
-            categoriesField.parentWindow = this;
-            historyField.parentWindow = this;
-            database = new Database("result.txt");
-            //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/documents.txt");
+            
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-    
-    /*Called before destroy*/
-    public void stop() {
-    	System.out.println("Stop");
-    }
-    
-    /*Called before closing*/
-    public void destroy() {
-    	System.out.println("Destroy");
-    	database.finishIt();
-    }
-    
+
     /** This method is called from within the init() method to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -89,6 +88,8 @@ public class MainWindow extends javax.swing.JApplet {
         viewerPanel = new app.HTMLViewer();
 
         setBackground(new java.awt.Color(0, 255, 255));
+        setName("Document viewer"); // NOI18N
+        setStub(null);
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -305,6 +306,8 @@ public class MainWindow extends javax.swing.JApplet {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        getAccessibleContext().setAccessibleName("Document viewer");
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusGained
@@ -367,8 +370,14 @@ public class MainWindow extends javax.swing.JApplet {
     }//GEN-LAST:event_allDocumentsLabelMouseExited
 
     private void allDocumentsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allDocumentsLabelMouseClicked
+        try{
+        
         allDocumentsLabel.requestFocus();
         activateAllDocuments();
+        
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Database is still loading...\nThanks for your patience :)", "Please wait just a second...", 1);
+        }
     }//GEN-LAST:event_allDocumentsLabelMouseClicked
 
     private void allDocumentsLabelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_allDocumentsLabelKeyPressed
@@ -396,8 +405,14 @@ public class MainWindow extends javax.swing.JApplet {
     }//GEN-LAST:event_historyLabelMouseExited
 
     private void historyLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyLabelMouseClicked
+        
+        try {
         historyLabel.requestFocus();
         activateHistory();
+        
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Database is still loading...\nThanks for your patience :)", "Please wait just a second...", 1);
+        }
     }//GEN-LAST:event_historyLabelMouseClicked
 
     private void historyLabelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_historyLabelKeyPressed
@@ -512,9 +527,7 @@ public class MainWindow extends javax.swing.JApplet {
     }
     
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        searchPanel.loadDocs(searchField.getText());
-        searchResults.setSource(searchPanel.gotDocs);
-        setSearchResults();
+        searchPanel.setSearch(searchField.getText());
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped

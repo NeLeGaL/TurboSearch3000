@@ -55,12 +55,26 @@ public class CategoriesField extends javax.swing.JPanel {
         searchResult4.setVisible(num >= 4);        
     }
     
+    public void filter() {
+        ArrayList<Category> newCats = new ArrayList<Category>(categories.size());
+        for (Category i : categories) {
+            if (i != null)
+                newCats.add(i);
+        }
+        
+        categories = newCats;
+    }
+    
     public boolean setPage(int newPage) {
         if (pages < newPage || newPage < 0) {
             return false;
         } else {
             currentPage = newPage;
-            lblCurPage.setText("Page " + Integer.toString(currentPage + 1));
+            if (pages == 0) {
+                lblCurPage.setText("Found nothing");
+            }else {
+                lblCurPage.setText("Page " + Integer.toString(currentPage + 1) + " of " + Integer.toString(pages));
+            }
             makeVisibleByPage(newPage);
             int howMuch = categories.size() % 4;
             if (howMuch == 0 || newPage < pages - 1) {
@@ -71,12 +85,14 @@ public class CategoriesField extends javax.swing.JPanel {
                 return true;
             }
             
+            int maxTextLen = 80;
+            
             if (howMuch >= 1) {
                 Category cat = categories.get(newPage*4 + 0);
                 searchResult1.setCaption(cat.getName());
                 String desc = cat.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult1.setPath(desc);
                 searchResult1.setDescription(cat.getSize() + " item(s) in the category");
@@ -85,8 +101,8 @@ public class CategoriesField extends javax.swing.JPanel {
                 Category cat = categories.get(newPage*4 + 1);
                 searchResult2.setCaption(cat.getName());
                 String desc = cat.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult2.setPath(desc);
                 searchResult2.setDescription(cat.getSize() + " item(s) in the category");
@@ -95,8 +111,8 @@ public class CategoriesField extends javax.swing.JPanel {
                 Category cat = categories.get(newPage*4 + 2);
                 searchResult3.setCaption(cat.getName());
                 String desc = cat.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult3.setPath(desc);
                 searchResult3.setDescription(cat.getSize() + " item(s) in the category");
@@ -105,8 +121,8 @@ public class CategoriesField extends javax.swing.JPanel {
                 Category cat = categories.get(newPage*4 + 3);
                 searchResult4.setCaption(cat.getName());
                 String desc = cat.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult4.setPath(desc);
                 searchResult4.setDescription(cat.getSize() + " item(s) in the category");
@@ -117,15 +133,26 @@ public class CategoriesField extends javax.swing.JPanel {
     }
     
     public void setSource(Category[] categories) {
+        if (categories == null) {
+            pages = 0;
+            setPage(0);
+        }
+        
         this.categories = new ArrayList<Category>(categories.length);
         this.categories.addAll(Arrays.asList(categories));
+        filter();
         pages = (categories.length + 3)/4;
         setPage(0);
     }  
     
     public void setSource(ArrayList<Category> categories) {
+        if (categories == null) {
+            pages = 0;
+            setPage(0);
+        }
         this.categories = new ArrayList<Category>(categories.size());
         this.categories.addAll(categories);
+        filter();
         pages = (categories.size() + 3)/4;
         setPage(0);
     }   
@@ -161,6 +188,7 @@ public class CategoriesField extends javax.swing.JPanel {
         });
 
         lnkNextPage.setText(">>");
+        lnkNextPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lnkNextPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lnkNextPageMouseClicked(evt);
@@ -171,6 +199,7 @@ public class CategoriesField extends javax.swing.JPanel {
         lblTitle.setText("Categories");
 
         lnkPrevPage.setText("<<");
+        lnkPrevPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lnkPrevPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lnkPrevPageMouseClicked(evt);
@@ -236,27 +265,45 @@ public class CategoriesField extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void searchResult1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseClicked
-        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(
-                categories.get(currentPage*4+0).getName()));
+        String categoryName = categories.get(currentPage*4+0).getName();
+        
+        parentWindow.searchResults.lblTitle.setText("Documents in category \"" + categoryName + "\"");
+        parentWindow.searchResults.lnkToCategories.setVisible(true);
+        
+        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(categoryName));
         parentWindow.setSearchResults();
     }//GEN-LAST:event_searchResult1MouseClicked
 
     private void searchResult2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseClicked
-        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(
-                categories.get(currentPage*4+1).getName()));
+        String categoryName = categories.get(currentPage*4+1).getName();
+        
+        parentWindow.searchResults.lblTitle.setText("Documents in category \"" + categoryName + "\"");
+        parentWindow.searchResults.lnkToCategories.setVisible(true);
+        
+        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(categoryName));
         parentWindow.setSearchResults();
     }//GEN-LAST:event_searchResult2MouseClicked
 
     private void searchResult3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseClicked
-        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(
-                categories.get(currentPage*4+2).getName()));
+        String categoryName = categories.get(currentPage*4+2).getName();
+        
+        parentWindow.searchResults.lblTitle.setText("Documents in category \"" + categoryName + "\"");
+        parentWindow.searchResults.lnkToCategories.setVisible(true);
+        
+        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(categoryName));
         parentWindow.setSearchResults();
     }//GEN-LAST:event_searchResult3MouseClicked
 
     private void searchResult4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseClicked
-        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(
-                categories.get(currentPage*4+3).getName()));
+        String categoryName = categories.get(currentPage*4+3).getName();
+        
+        parentWindow.searchResults.lblTitle.setText("Documents in category \"" + categoryName + "\"");
+        parentWindow.searchResults.lnkToCategories.setVisible(true);
+        
+        parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(categoryName));
         parentWindow.setSearchResults();
     }//GEN-LAST:event_searchResult4MouseClicked
 

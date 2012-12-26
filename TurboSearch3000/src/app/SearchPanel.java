@@ -103,10 +103,19 @@ public class SearchPanel extends javax.swing.JPanel {
     	}
     }
     
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        loadDocs(tbxSearchField.getText());
+    protected void setSearch(String searchedText) {
+        loadDocs(searchedText);
+        if (searchedText.length() >= 30) {
+                    searchedText = searchedText.substring(0, 30) + "...";
+                }
+        parentWindow.searchResults.lblTitle.setText("Search results - \"" + searchedText + "\"");
+        parentWindow.searchResults.lnkToCategories.setVisible(false);
         parentWindow.searchResults.setSource(gotDocs);
         parentWindow.setSearchResults();
+    }
+    
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        setSearch(tbxSearchField.getText());
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void tbxSearchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tbxSearchFieldFocusGained

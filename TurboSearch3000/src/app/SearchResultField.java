@@ -10,6 +10,7 @@
  */
 package app;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,6 +35,8 @@ public class SearchResultField extends javax.swing.JPanel {
     private int currentPage;
     protected MainWindow parentWindow;
     
+    private boolean fromCategory = false;
+    
     private void makeVisibleByPage(int pageNum) {
         if (pageNum < pages - 1) {
             makeVisibleByNum(4);
@@ -53,12 +56,47 @@ public class SearchResultField extends javax.swing.JPanel {
         searchResult4.setVisible(num >= 4);        
     }
     
+    public void filter() {
+        ArrayList<Document> newDocs = new ArrayList<Document>(docs.size());
+        
+        
+        
+        for (Document i : docs) {
+            if (i != null)
+                newDocs.add(i);
+        }
+        
+        docs = newDocs;
+        
+        try {
+            DocComparator comp = null;
+
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("name ascending")) {
+                comp = new DocComparator(0);
+            }
+
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("name descending")) {
+                comp = new DocComparator(1);
+            }
+
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("date")) {
+                comp = new DocComparator(2);
+            }
+
+            Collections.sort(docs, comp);
+        } catch (Exception ex) { }
+    }
+    
     public boolean setPage(int newPage) {
         if (pages < newPage || newPage < 0) {
             return false;
         } else {
             currentPage = newPage;
-            lblCurPage.setText("Page " + Integer.toString(currentPage + 1));
+            if (pages == 0) {
+                lblCurPage.setText("Found nothing");
+            }else {
+                lblCurPage.setText("Page " + Integer.toString(currentPage + 1) + " of " + Integer.toString(pages));
+            }
             makeVisibleByPage(newPage);
             int howMuch = docs.size() % 4;
             if (howMuch == 0 || newPage < pages - 1) {
@@ -69,45 +107,59 @@ public class SearchResultField extends javax.swing.JPanel {
                 return true;
             }
             
+            int maxTextLen = 120;
+            
             if (howMuch >= 1) {
                 Document doc = docs.get(newPage*4 + 0);
                 searchResult1.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.equals("")) {
+                    desc = doc.getPlainText();
+                }
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult1.setDescription(desc);
-                searchResult1.setPath("category - " + doc.getCategory());
+                searchResult1.setPath(/*"category - " + */doc.getCategory());
             }
             if (howMuch >= 2) {
                 Document doc = docs.get(newPage*4 + 1);
                 searchResult2.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.equals("")) {
+                    desc = doc.getPlainText();
+                }
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult2.setDescription(desc);
-                searchResult2.setPath("category - " + doc.getCategory());
+                searchResult2.setPath(doc.getCategory());
             }
             if (howMuch >= 3) {
                 Document doc = docs.get(newPage*4 + 2);
                 searchResult3.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.equals("")) {
+                    desc = doc.getPlainText();
+                }
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult3.setDescription(desc);
-                searchResult3.setPath("category - " + doc.getCategory());
+                searchResult3.setPath(doc.getCategory());
             }
             if (howMuch >= 4) {
                 Document doc = docs.get(newPage*4 + 3);
                 searchResult4.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
-                if (desc.length() >= 50) {
-                    desc = desc.substring(0, 50) + "...";
+                if (desc.equals("")) {
+                    desc = doc.getPlainText();
+                }
+                if (desc.length() >= maxTextLen) {
+                    desc = desc.substring(0, maxTextLen) + "...";
                 }
                 searchResult4.setDescription(desc);
-                searchResult4.setPath("category - " + doc.getCategory());
+                searchResult4.setPath(doc.getCategory());
             }
             
             return true;
@@ -117,12 +169,14 @@ public class SearchResultField extends javax.swing.JPanel {
     public void setSource(Document[] docs) {
         this.docs = new ArrayList<Document>(docs.length);
         this.docs.addAll(Arrays.asList(docs));
+        filter();
         pages = (docs.length + 3)/4;
         setPage(0);
     }
     
     public void setSource(ArrayList<Document> docs) {
         this.docs = docs;
+        filter();
         pages = (docs.size() + 3)/4;
         setPage(0);
     }
@@ -151,6 +205,7 @@ public class SearchResultField extends javax.swing.JPanel {
         lnkPrevPage = new javax.swing.JLabel();
         lnkNextPage = new javax.swing.JLabel();
         lblCurPage = new javax.swing.JLabel();
+        lnkToCategories = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
 
@@ -187,7 +242,7 @@ public class SearchResultField extends javax.swing.JPanel {
 
         lblSortBy.setText("sort by:");
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24));
+        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblTitle.setText("Search results");
 
         lnkPrevPage.setText("<<");
@@ -208,6 +263,22 @@ public class SearchResultField extends javax.swing.JPanel {
 
         lblCurPage.setText("curr");
 
+        lnkToCategories.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lnkToCategories.setForeground(new java.awt.Color(0, 0, 255));
+        lnkToCategories.setText("<< back to categories");
+        lnkToCategories.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lnkToCategories.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lnkToCategoriesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lnkToCategoriesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lnkToCategoriesMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -219,14 +290,16 @@ public class SearchResultField extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblTitle)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lnkToCategories)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                                 .addComponent(lblSortBy)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cmbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(searchResult2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
-                            .addComponent(searchResult3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
-                            .addComponent(searchResult4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
-                            .addComponent(searchResult1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)))
+                            .addComponent(searchResult2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+                            .addComponent(searchResult3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+                            .addComponent(searchResult4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+                            .addComponent(searchResult1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(265, 265, 265)
                         .addComponent(lnkPrevPage)
@@ -243,8 +316,9 @@ public class SearchResultField extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbSortBy, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTitle)
-                    .addComponent(lblSortBy))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(lblSortBy)
+                    .addComponent(lnkToCategories))
+                .addGap(18, 18, 18)
                 .addComponent(searchResult1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(searchResult2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -343,6 +417,18 @@ public class SearchResultField extends javax.swing.JPanel {
         parentWindow.viewerPanel.openedFromHistory = false;
     }//GEN-LAST:event_searchResult4MouseClicked
 
+    private void lnkToCategoriesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkToCategoriesMouseEntered
+        lnkToCategories.setForeground(new Color(0, 0, 150));
+    }//GEN-LAST:event_lnkToCategoriesMouseEntered
+
+    private void lnkToCategoriesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkToCategoriesMouseExited
+        lnkToCategories.setForeground(Color.blue);
+    }//GEN-LAST:event_lnkToCategoriesMouseExited
+
+    private void lnkToCategoriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkToCategoriesMouseClicked
+        parentWindow.setCategoriesPanel();
+    }//GEN-LAST:event_lnkToCategoriesMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JComboBox cmbSortBy;
     protected javax.swing.JLabel lblCurPage;
@@ -350,6 +436,7 @@ public class SearchResultField extends javax.swing.JPanel {
     protected javax.swing.JLabel lblTitle;
     protected javax.swing.JLabel lnkNextPage;
     protected javax.swing.JLabel lnkPrevPage;
+    protected javax.swing.JLabel lnkToCategories;
     protected app.SearchResult searchResult1;
     protected app.SearchResult searchResult2;
     protected app.SearchResult searchResult3;

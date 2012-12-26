@@ -24,7 +24,9 @@ public class RecentFilesHelper {
                     String[] content = readFile();
                     int savedRecordsCount = Integer.parseInt(content[0]);
                     for (int i = 1; i < savedRecordsCount + 1; i++) {
-                            files.add(content[i]);
+                            files.add(content[i].
+                                    replace((CharSequence)"и?", (CharSequence)"й").
+                                    replace((CharSequence)"е?", (CharSequence)"ё"));
                     }
             } catch (IOException e) {
                     return false;
@@ -32,11 +34,24 @@ public class RecentFilesHelper {
 
             return true;
 	}
+        
+        private boolean find(String newFile) {
+            
+                return files.contains(newFile);
+        }
 	
 	public void addNewRecentFile(String newFile) {
-            files.add(0, newFile);
-            if (files.size() > RECORDS_COUNT) {
-                files.remove(files.size() - 1);
+            if (!find(newFile)) {
+                files.add(0, newFile);
+            
+                if (files.size() > RECORDS_COUNT) {
+                    files.remove(files.size() - 1);
+                }
+            }else {
+                int index = files.indexOf(newFile);
+                String tmp = files.get(index);
+                files.set(index, files.get(0));
+                files.set(0, tmp);
             }
 	}
 	
