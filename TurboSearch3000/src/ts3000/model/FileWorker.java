@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -97,7 +97,7 @@ class FileWorker extends Thread {
 					String annotation = smartSplit(line, "<div id=\"docAnnotation\" style=\"\">", "</div>");
 				
 					line = br.readLine();
-					String date = smartSplit(line, "<div id=\"docDate\" style=\"\">", "</div>");
+					String dateStr = smartSplit(line, "<div id=\"docDate\" style=\"\">", "</div>");
 				
 					line = br.readLine();
 					StringBuilder sb = new StringBuilder();
@@ -107,8 +107,19 @@ class FileWorker extends Thread {
 						line = br.readLine();
 					}
 					line = br.readLine();
-				
-					Document doc = new Document(title, annotation, sb.toString(), category, new Date(date));
+					
+					Date date;
+					try {
+						date = Date.valueOf(dateStr);
+					} catch (IllegalArgumentException e) {
+						DatabaseLogger.info("Bad date. Let's get current date!");
+						//to get current time
+						java.util.Calendar cal = java.util.Calendar.getInstance();
+						java.util.Date utilDate = cal.getTime();
+						date = new Date(utilDate.getTime());
+					}
+					
+					Document doc = new Document(title, annotation, sb.toString(), category, date);
 					documents.add(doc);
 				
 					if (!categoryDocuments.containsKey(category)) {

@@ -1,6 +1,6 @@
 package ts3000.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import org.jsoup.Jsoup;
 

@@ -369,8 +369,8 @@ public class SearchResultField extends javax.swing.JPanel {
         public int compare(Document o1, Document o2) {
             if (state == 1)
                 return o2.getTitle().compareTo(o1.getTitle());
-            if (state == 2)
-                return o2.getDate().compareTo(o2.getDate());
+            if (state == 2) //Oh, Andrew, Andrew...
+            	return o2.getDate().compareTo(o1.getDate());
             return o1.getTitle().compareTo(o2.getTitle());
         }
     }
