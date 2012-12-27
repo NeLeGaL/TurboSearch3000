@@ -4,7 +4,7 @@ import java.sql.Date;
 
 import org.jsoup.Jsoup;
 
-public class Document {
+public class Document implements Comparable<Document> {
 	public String getTitle() {
 		return title;
 	}
@@ -29,6 +29,11 @@ public class Document {
     	return plainText;
     }
     
+    // It's specially for FoundDocumentWithRangeParameter
+    public Double getRangeParameter() {
+    	return new Double(0);
+    }
+    
     public Document(String title, String annotation, String text, String category, Date date)
     {
     	this.title = title;
@@ -39,10 +44,25 @@ public class Document {
         this.plainText = Jsoup.parse(htmlText).text();
     }
 	
+	public Document(Document document) {
+		this.title = document.title;
+		this.annotation = document.annotation;
+		this.htmlText = document.htmlText;
+		this.plainText = document.plainText;
+		this.date = document.date;
+		this.category = document.category;
+	}
+
 	private String title;
 	private String annotation;
 	private String htmlText;
 	private String plainText;
     private String category;
     private Date date;
+	
+    @Override
+	public int compareTo(Document arg0) {
+    	return this.getRangeParameter().compareTo(arg0.getRangeParameter()) ;
+	}
+
 }

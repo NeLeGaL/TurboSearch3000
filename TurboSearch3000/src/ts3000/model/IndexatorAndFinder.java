@@ -27,7 +27,16 @@ class IndexatorAndFinder {
 	}
 	
 	ArrayList<Document> processQuery(String query) {
-		return fileWorker.getListOfDocuments(strategy.find(query, grams, synchSemaphore));
+		ArrayList<Document> resultFromFileWorker = 
+					fileWorker.getListOfDocuments(strategy.find(query, grams, synchSemaphore));
+		
+		for (int i = 0; i < resultFromFileWorker.size(); ++i) {
+			FoundDocumentWithRangeParameter doc =
+					new FoundDocumentWithRangeParameter(resultFromFileWorker.get(i), query);
+			resultFromFileWorker.set(i, doc);
+		}
+		
+		return resultFromFileWorker;
 	}
 	
 	void indexIt(ArrayList<Document> listOfDocuments) {

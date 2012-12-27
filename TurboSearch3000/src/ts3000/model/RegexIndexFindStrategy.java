@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 
 public class RegexIndexFindStrategy implements IndexFindStrategy {
-	class Rule {
+	static class Rule {
 		public Rule(String ending, int cutLength, String newEnding) {
 			this.ending = ending;
 			this.cutLength = cutLength;
@@ -38,22 +38,20 @@ public class RegexIndexFindStrategy implements IndexFindStrategy {
 		int cutLength;
 	}
 	
-	private ArrayList<Rule> rules = new ArrayList<Rule>();
-	private HashSet<String> vocabulary = new HashSet<String>();
-	
-	@SuppressWarnings("resource")
-	public RegexIndexFindStrategy() {
-		BufferedReader br;
-		BufferedReader vocBr;
+	private static ArrayList<Rule> rules = new ArrayList<Rule>();
+	private static HashSet<String> vocabulary = new HashSet<String>();
+
+	static {
+		BufferedReader br = null;
+		BufferedReader vocBr = null;
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream("rules.txt"), "UTF-8"));
 			vocBr = new BufferedReader(new InputStreamReader(new FileInputStream("voc.txt"), "UTF-8"));
 		} catch (UnsupportedEncodingException e) {
 			Logger.getAnonymousLogger().severe("UTF-8 is not supported?! Go home, local JVM, you're drunk.");
-			return;
+			
 		} catch (FileNotFoundException e) {
 			Logger.getAnonymousLogger().severe("Can't find files with rules. Will use exact index strategy instead");
-			return;
 		}
 		
 		String line;
@@ -80,6 +78,7 @@ public class RegexIndexFindStrategy implements IndexFindStrategy {
 		} catch (IOException e) {
 			Logger.getAnonymousLogger().severe("Oh my God. Why, just why you throw IO-exception while closing file opened for reading?");
 		}
+		
 	}
 	
 	@Override
@@ -166,10 +165,10 @@ public class RegexIndexFindStrategy implements IndexFindStrategy {
 		}
 	}
 	
-	final int MAX_LEVEL = 6;
-	final int MAX_FORMS = 15;
+	static final int MAX_LEVEL = 6;
+	static final int MAX_FORMS = 15;
 	
-	private HashSet<String> tryNormalizeWord(String word) {
+	static HashSet<String> tryNormalizeWord(String word) {
 		HashSet<String> result = new HashSet<String>();
 		word = word.toLowerCase().replace('ё', 'е').trim();
 		
