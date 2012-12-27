@@ -66,6 +66,7 @@ public class Document implements Comparable<Document> {
 
     @Override
 	public int compareTo(Document arg0) {
+    	System.out.println( this.getTitle() + ": " + this.wordsAmount + " " + arg0.getTitle() + " : " + arg0.wordsAmount);
     	return this.getRangeParameter().compareTo(arg0.getRangeParameter()) ;
 	}
 

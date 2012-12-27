@@ -149,7 +149,6 @@ public class RegexIndexFindStrategy implements IndexFindStrategy {
 		StringTokenizer tokenizer = new StringTokenizer(document.getPlainText(), IndexatorAndFinder.DELIMETERS);
 		while(tokenizer.hasMoreTokens()) {
 			String word = tokenizer.nextToken();
-			
 			HashSet<String> forms = tryNormalizeWord(word);
 			
 			for (String form : forms) {
@@ -169,9 +168,33 @@ public class RegexIndexFindStrategy implements IndexFindStrategy {
 	static final int MAX_LEVEL = 6;
 	static final int MAX_FORMS = 15;
 	
+	static boolean isAllowed(char a) {
+		for (int i = 0; i < IndexatorAndFinder.ALLOWED_SYMBOLS.length(); ++i){
+			if (IndexatorAndFinder.ALLOWED_SYMBOLS.charAt(i) == a) 
+				return true;
+		}
+		return false;
+	}
+	
+	static String specialTrim(String str) {
+		StringBuilder sb = new StringBuilder();
+		int i = 0;
+		for (i = 0; i < str.length(); ++i) 
+			if (isAllowed(str.charAt(i)))
+				break;
+		
+		for (; i < str.length(); ++i) {
+			if (!isAllowed(str.charAt(i)))
+				break;
+			sb.append(str.charAt(i));
+		}
+		
+		return sb.toString();
+	}
+	
 	static HashSet<String> tryNormalizeWord(String word) {
 		HashSet<String> result = new HashSet<String>();
-		word = word.toLowerCase().replace('ё', 'е').trim();
+		word = specialTrim(word.toLowerCase().replace('ё', 'е'));
 		
 		result.add(word);
 		
@@ -245,6 +268,7 @@ public class RegexIndexFindStrategy implements IndexFindStrategy {
 		tests.add("стремясь");
 		tests.add("возвышаемыми");
 		tests.add("воробья");
+		tests.add("Булгаков");
 		
 		for (String test : tests) {
 			System.out.println(test);

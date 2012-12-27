@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 
 class IndexatorAndFinder {
 	static final String DELIMETERS = "\t\n .<>,!&?$%#@()[]{}-\"«»";
+	static final String ALLOWED_SYMBOLS = "àáâãäå¸æçèéêëìíîïğñòóôõö÷øùüûúışÿÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÜÛÚİŞßqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
 	private FileWorker fileWorker;
 	private Map<String, HashSet<Integer>> grams = new HashMap<String, HashSet<Integer>>();
 	private Semaphore synchSemaphore = new Semaphore(1);
