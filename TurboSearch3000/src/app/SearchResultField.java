@@ -82,7 +82,10 @@ public class SearchResultField extends javax.swing.JPanel {
             if (cmbSortBy.getModel().getSelectedItem().toString().equals("date")) {
                 comp = new DocComparator(2);
             }
-
+            
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("range")) {
+            	comp = new DocComparator(3);
+            }
             Collections.sort(docs, comp);
         } catch (Exception ex) { }
     }
@@ -233,7 +236,7 @@ public class SearchResultField extends javax.swing.JPanel {
             }
         });
 
-        cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date" }));
+        cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date", "range" }));
         cmbSortBy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbSortByActionPerformed(evt);
@@ -367,11 +370,14 @@ public class SearchResultField extends javax.swing.JPanel {
         
         @Override
         public int compare(Document o1, Document o2) {
+            if (state == 0)
+                return o1.getTitle().compareTo(o2.getTitle());
             if (state == 1)
-                return o2.getTitle().compareTo(o1.getTitle());
+            	return o2.getTitle().compareTo(o1.getTitle());
             if (state == 2) //Oh, Andrew, Andrew...
-            	return o2.getDate().compareTo(o1.getDate());
-            return o1.getTitle().compareTo(o2.getTitle());
+            	return o1.getDate().compareTo(o2.getDate());
+
+            return o2.compareTo(o1);
         }
     }
     
@@ -391,7 +397,10 @@ public class SearchResultField extends javax.swing.JPanel {
             if (cmbSortBy.getModel().getSelectedItem().toString().equals("date")) {
                 comp = new DocComparator(2);
             }
-
+            
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("range")) {
+            	comp = new DocComparator(3);
+            }
             Collections.sort(docs, comp);
             setPage(0);
         } catch (Exception ex) {

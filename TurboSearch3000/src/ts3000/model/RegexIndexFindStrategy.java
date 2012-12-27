@@ -93,7 +93,7 @@ public class RegexIndexFindStrategy implements IndexFindStrategy {
 			sb.append(d.getTitle());
 			sb.append(" ");
 			sb.append(d.getCategory());
-			indexOneDocument(listOfDocuments.get(i).getPlainText() , i, newGrams);
+			indexOneDocument(listOfDocuments.get(i) , i, newGrams);
 		}
 		
 		return newGrams;
@@ -145,14 +145,15 @@ public class RegexIndexFindStrategy implements IndexFindStrategy {
 		return ans;
 	}
 	
-	private void indexOneDocument(String document, int documentNumber, Map<String, HashSet<Integer>> grams) {
-		StringTokenizer tokenizer = new StringTokenizer(document, IndexatorAndFinder.DELIMETERS);
+	private void indexOneDocument(Document document, int documentNumber, Map<String, HashSet<Integer>> grams) {
+		StringTokenizer tokenizer = new StringTokenizer(document.getPlainText(), IndexatorAndFinder.DELIMETERS);
 		while(tokenizer.hasMoreTokens()) {
 			String word = tokenizer.nextToken();
 			
 			HashSet<String> forms = tryNormalizeWord(word);
 			
 			for (String form : forms) {
+				document.addNewWordToStatistic(form);
 				HashSet<Integer> cur = grams.get(form);
 				if (cur != null) {
 					cur.add(documentNumber);

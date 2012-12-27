@@ -1,9 +1,7 @@
 package ts3000.model;
 
 import java.sql.Date;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.StringTokenizer;
 
 public class FoundDocumentWithRangeParameter extends Document {
@@ -20,11 +18,8 @@ public class FoundDocumentWithRangeParameter extends Document {
 		calculateRangeIndex(query);
 	}
 	
-	private void calculateRangeIndex(String query) {
-		Map<String, Integer> wordInDocumentAmount = getWordStatistic();
-		
+	private void calculateRangeIndex(String query) {		
 		StringTokenizer tokenizer = new StringTokenizer(query, IndexatorAndFinder.DELIMETERS);
-		
 		int result = 0;
 		while (tokenizer.hasMoreTokens()) {
 			String token = tokenizer.nextToken().toLowerCase();
@@ -37,50 +32,19 @@ public class FoundDocumentWithRangeParameter extends Document {
 			}
 		}
 		
-		rangeIndex = result / (double)wordsAmount;
+		if (wordsAmount != 0) {
+			rangeIndex = result / (double)wordsAmount;
+		}
+		else {
+			rangeIndex = 0;
+		}
 	}
 	
 	@Override 
 	public Double getRangeParameter() {
 		return new Double(rangeIndex);
-	}
-	
-	private Map<String, Integer> getWordStatistic() {
-		StringTokenizer tokenizer = new StringTokenizer(getDocumentText(), IndexatorAndFinder.DELIMETERS);
-		Map<String, Integer> wordInDocumentAmount = new HashMap<String, Integer>();
+	}	
 
-		while(tokenizer.hasMoreTokens()) {
-			String word = tokenizer.nextToken();
-			++wordsAmount;
-			
-			HashSet<String> forms = RegexIndexFindStrategy.tryNormalizeWord(word);
-			for (String form : forms) {
-				if (wordInDocumentAmount.containsKey(form)) {
-					wordInDocumentAmount.put(form, wordInDocumentAmount.get(form) + 1);
-				}
-				else {
-					wordInDocumentAmount.put(form,  1);
-				}
-			}
-		}
-		
-		return wordInDocumentAmount;
-	}
-
-	
-	private String getDocumentText() {
-		StringBuilder sb = new StringBuilder(super.getPlainText());
-		sb.append(" ");
-		sb.append(super.getAnnotation());
-		sb.append(" ");
-		sb.append(super.getTitle());
-		sb.append(" ");
-		sb.append(super.getCategory());
-		
-		return sb.toString();
-	}
-	
-	private int wordsAmount = 0;
 	private double rangeIndex;
 
 }
