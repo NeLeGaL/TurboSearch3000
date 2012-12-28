@@ -92,7 +92,7 @@ public class SearchPanel extends javax.swing.JPanel {
         });
 
         btnLucky.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnLucky.setText("Feeling lucky");
+        btnLucky.setText("Feeling lucky!");
         btnLucky.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLuckyActionPerformed(evt);
@@ -112,7 +112,7 @@ public class SearchPanel extends javax.swing.JPanel {
                         .addGap(58, 58, 58)
                         .addComponent(btnLucky, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(226, 226, 226))
-                    .addComponent(tbxSearchField, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE))
+                    .addComponent(tbxSearchField, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE))
                 .addGap(121, 121, 121))
         );
         layout.setVerticalGroup(

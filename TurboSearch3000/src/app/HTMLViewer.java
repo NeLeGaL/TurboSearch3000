@@ -11,6 +11,9 @@
 package app;
 
 import java.awt.Color;
+import java.awt.Rectangle;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import ts3000.model.Document;
 
 /**
@@ -26,6 +29,9 @@ public class HTMLViewer extends javax.swing.JPanel {
         this.viewer.setText("");
         this.viewer.setEditable(false);
         lnkBack.setForeground(Color.blue);
+        currentRect = new  Rectangle(0,0,100,100);
+        this.scrollPanel.setVerticalScrollBarPolicy(
+                        JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     }
     
     RecentFilesHelper mgr = null;
@@ -43,6 +49,8 @@ public class HTMLViewer extends javax.swing.JPanel {
     
     public void loadDocument(Document doc) {
         
+        parentWindow.previewPanel.setVisible(false);
+        
         if (mgr == null) {
             mgr = new RecentFilesHelper();
         }
@@ -59,6 +67,16 @@ public class HTMLViewer extends javax.swing.JPanel {
         this.viewer.setSelectionStart(0);
         this.viewer.setSelectionEnd(0);
         rememberTheFile(doc);
+    }
+    
+    public void loadDocumentWithoutSaving(Document doc) {
+        
+        this.viewer.setText(doc.getText());
+        this.lblCaption.setText(doc.getTitle());
+        this.lblCategory.setText(doc.getCategory());
+        this.viewer.setSelectionStart(0);
+        this.viewer.setSelectionEnd(0);
+        
     }
     
     public void rememberTheFile(Document doc) {
@@ -81,6 +99,14 @@ public class HTMLViewer extends javax.swing.JPanel {
         lblDash = new javax.swing.JLabel();
         lblCategory = new javax.swing.JLabel();
 
+        viewer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                viewerKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                viewerKeyTyped(evt);
+            }
+        });
         scrollPanel.setViewportView(viewer);
 
         lnkBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -159,6 +185,26 @@ public class HTMLViewer extends javax.swing.JPanel {
                 break;
         }
     }//GEN-LAST:event_lnkBackMouseClicked
+
+    private void viewerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_viewerKeyTyped
+            
+    }//GEN-LAST:event_viewerKeyTyped
+
+    
+    protected Rectangle currentRect = null;
+    
+    private void viewerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_viewerKeyPressed
+        if (evt.getKeyCode() == 38) {
+            //this.scrollPanel.scrollRectToVisible(new Rectangle(0,currentRect.y-100,100,100));
+                        this.scrollPanel.scrollRectToVisible(new Rectangle(-100,-100,-100,-100));
+
+        }
+        if (evt.getKeyCode() == 40) {
+            //this.scrollPanel.scrollRectToVisible(new Rectangle(0,currentRect.y+100,100,100));
+                        this.scrollPanel.scrollRectToVisible(new Rectangle(100,100,100,100));
+
+        }
+    }//GEN-LAST:event_viewerKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblCaption;

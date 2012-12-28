@@ -105,7 +105,7 @@ public class HistoryField extends javax.swing.JPanel {
                 searchResult1.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
                 if (desc.equals("")) {
-                    desc = doc.getPlainText();
+                    desc = doc.getPlainText().substring(2);
                 }
                 if (desc.length() >= maxTextLen) {
                     desc = desc.substring(0, maxTextLen) + "...";
@@ -118,7 +118,7 @@ public class HistoryField extends javax.swing.JPanel {
                 searchResult2.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
                 if (desc.equals("")) {
-                    desc = doc.getPlainText();
+                    desc = doc.getPlainText().substring(2);
                 }
                 if (desc.length() >= maxTextLen) {
                     desc = desc.substring(0, maxTextLen) + "...";
@@ -131,7 +131,7 @@ public class HistoryField extends javax.swing.JPanel {
                 searchResult3.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
                 if (desc.equals("")) {
-                    desc = doc.getPlainText();
+                    desc = doc.getPlainText().substring(2);
                 }
                 if (desc.length() >= maxTextLen) {
                     desc = desc.substring(0, maxTextLen) + "...";
@@ -144,7 +144,7 @@ public class HistoryField extends javax.swing.JPanel {
                 searchResult4.setCaption(doc.getTitle());
                 String desc = doc.getAnnotation();
                 if (desc.equals("")) {
-                    desc = doc.getPlainText();
+                    desc = doc.getPlainText().substring(2);
                 }
                 if (desc.length() >= maxTextLen) {
                     desc = desc.substring(0, maxTextLen) + "...";
@@ -219,11 +219,23 @@ public class HistoryField extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchResult1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                searchResult1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                searchResult1MouseExited(evt);
+            }
         });
 
         searchResult2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchResult2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                searchResult2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                searchResult2MouseExited(evt);
             }
         });
 
@@ -231,11 +243,23 @@ public class HistoryField extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchResult3MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                searchResult3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                searchResult3MouseExited(evt);
+            }
         });
 
         searchResult4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchResult4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                searchResult4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                searchResult4MouseExited(evt);
             }
         });
 
@@ -336,6 +360,42 @@ public class HistoryField extends javax.swing.JPanel {
         
         setPage(currentPage + 1);
     }//GEN-LAST:event_lnkNextPageMouseClicked
+
+    private void searchResult1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseEntered
+        parentWindow.prevViewer.loadDocumentWithoutSaving(docs.get(currentPage*4+0));
+        parentWindow.previewPanel.setVisible(true);
+    }//GEN-LAST:event_searchResult1MouseEntered
+
+    private void searchResult1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseExited
+        parentWindow.previewPanel.setVisible(false);
+    }//GEN-LAST:event_searchResult1MouseExited
+
+    private void searchResult2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseEntered
+        parentWindow.prevViewer.loadDocumentWithoutSaving(docs.get(currentPage*4+1));
+        parentWindow.previewPanel.setVisible(true);
+    }//GEN-LAST:event_searchResult2MouseEntered
+
+    private void searchResult2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseExited
+        parentWindow.previewPanel.setVisible(false);
+    }//GEN-LAST:event_searchResult2MouseExited
+
+    private void searchResult3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseEntered
+        parentWindow.prevViewer.loadDocumentWithoutSaving(docs.get(currentPage*4+2));
+        parentWindow.previewPanel.setVisible(true);
+    }//GEN-LAST:event_searchResult3MouseEntered
+
+    private void searchResult3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseExited
+        parentWindow.previewPanel.setVisible(false);
+    }//GEN-LAST:event_searchResult3MouseExited
+
+    private void searchResult4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseEntered
+        parentWindow.prevViewer.loadDocumentWithoutSaving(docs.get(currentPage*4+3));
+        parentWindow.previewPanel.setVisible(true);
+    }//GEN-LAST:event_searchResult4MouseEntered
+
+    private void searchResult4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseExited
+        parentWindow.previewPanel.setVisible(false);
+    }//GEN-LAST:event_searchResult4MouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JLabel lblCurPage;
