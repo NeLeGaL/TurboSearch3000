@@ -30,7 +30,10 @@ public class HTMLViewer extends javax.swing.JPanel {
     
     RecentFilesHelper mgr = null;
     
-    protected boolean openedFromHistory = false; // means opened from search results
+    protected int openedFrom = 0; // means opened from search results
+    // 0 - search results
+    // 1 - history
+    // 2 - lucky
     
     protected MainWindow parentWindow;
     
@@ -95,13 +98,13 @@ public class HTMLViewer extends javax.swing.JPanel {
             }
         });
 
-        lblCaption.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblCaption.setFont(new java.awt.Font("Tahoma", 0, 24));
         lblCaption.setText("Document title");
 
-        lblDash.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblDash.setFont(new java.awt.Font("Tahoma", 0, 18));
         lblDash.setText("-");
 
-        lblCategory.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        lblCategory.setFont(new java.awt.Font("Tahoma", 0, 20));
         lblCategory.setForeground(new java.awt.Color(51, 153, 0));
         lblCategory.setText("Category");
 
@@ -144,17 +147,24 @@ public class HTMLViewer extends javax.swing.JPanel {
     }//GEN-LAST:event_lnkBackMouseExited
 
     private void lnkBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkBackMouseClicked
-        if (openedFromHistory)
-            parentWindow.setHistoryPanel();
-        else 
-            parentWindow.setSearchResults();
+        switch (openedFrom) {
+            case 0:
+                parentWindow.setSearchResults();
+                break;
+            case 1:
+                parentWindow.setHistoryPanel();
+                break;
+            case 2:
+                parentWindow.setSearchPanel();
+                break;
+        }
     }//GEN-LAST:event_lnkBackMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblCaption;
     private javax.swing.JLabel lblCategory;
     private javax.swing.JLabel lblDash;
-    private javax.swing.JLabel lnkBack;
+    protected javax.swing.JLabel lnkBack;
     private javax.swing.JScrollPane scrollPanel;
     private javax.swing.JEditorPane viewer;
     // End of variables declaration//GEN-END:variables

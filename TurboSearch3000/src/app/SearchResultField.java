@@ -11,6 +11,7 @@
 package app;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -83,9 +84,10 @@ public class SearchResultField extends javax.swing.JPanel {
                 comp = new DocComparator(2);
             }
             
-            if (cmbSortBy.getModel().getSelectedItem().toString().equals("range")) {
-            	comp = new DocComparator(3);
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("relevance")) {
+                comp = new DocComparator(3);
             }
+
             Collections.sort(docs, comp);
         } catch (Exception ex) { }
     }
@@ -106,8 +108,22 @@ public class SearchResultField extends javax.swing.JPanel {
                 howMuch = 4;
             }
             
+            lnkPrevPage.setEnabled(currentPage != 0);
+            lnkNextPage.setEnabled(currentPage != pages - 1);
+            
             if (pages == 0) {
+                lnkPrevPage.setVisible(false);
+                lnkNextPage.setVisible(false);
+                Font font = lblCurPage.getFont();
+                lblCurPage.setFont(font.deriveFont((float)40.));
+                lblCurPage.setForeground(new Color(200, 200, 200));
                 return true;
+            } else {
+                lnkPrevPage.setVisible(true);
+                lnkNextPage.setVisible(true);
+                Font font = lblCurPage.getFont();
+                lblCurPage.setFont(font.deriveFont((float)11.));
+                lblCurPage.setForeground(Color.black);
             }
             
             int maxTextLen = 120;
@@ -124,6 +140,7 @@ public class SearchResultField extends javax.swing.JPanel {
                 }
                 searchResult1.setDescription(desc);
                 searchResult1.setPath(/*"category - " + */doc.getCategory());
+                searchResult1.setToolTipText(doc.getPlainText());
             }
             if (howMuch >= 2) {
                 Document doc = docs.get(newPage*4 + 1);
@@ -137,6 +154,7 @@ public class SearchResultField extends javax.swing.JPanel {
                 }
                 searchResult2.setDescription(desc);
                 searchResult2.setPath(doc.getCategory());
+                searchResult2.setToolTipText(doc.getPlainText());
             }
             if (howMuch >= 3) {
                 Document doc = docs.get(newPage*4 + 2);
@@ -150,6 +168,7 @@ public class SearchResultField extends javax.swing.JPanel {
                 }
                 searchResult3.setDescription(desc);
                 searchResult3.setPath(doc.getCategory());
+                searchResult3.setToolTipText(doc.getPlainText());
             }
             if (howMuch >= 4) {
                 Document doc = docs.get(newPage*4 + 3);
@@ -163,6 +182,7 @@ public class SearchResultField extends javax.swing.JPanel {
                 }
                 searchResult4.setDescription(desc);
                 searchResult4.setPath(doc.getCategory());
+                searchResult4.setToolTipText(doc.getPlainText());
             }
             
             return true;
@@ -187,6 +207,14 @@ public class SearchResultField extends javax.swing.JPanel {
     public void setSize(int i) {
         this.setSize(300, i*120 + 100);
         this.setVisible(false);
+    }
+    
+    protected void setThreeWaySorting() {
+        cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date" }));
+    }
+    
+    protected void setCompleteSorting() {
+        cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "relevance", "name ascending", "name descending", "date" }));
     }
 
     /** This method is called from within the constructor to
@@ -236,7 +264,7 @@ public class SearchResultField extends javax.swing.JPanel {
             }
         });
 
-        cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date", "range" }));
+        cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "name ascending", "name descending", "date" }));
         cmbSortBy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbSortByActionPerformed(evt);
@@ -245,7 +273,7 @@ public class SearchResultField extends javax.swing.JPanel {
 
         lblSortBy.setText("sort by:");
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24));
         lblTitle.setText("Search results");
 
         lnkPrevPage.setText("<<");
@@ -266,7 +294,7 @@ public class SearchResultField extends javax.swing.JPanel {
 
         lblCurPage.setText("curr");
 
-        lnkToCategories.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lnkToCategories.setFont(new java.awt.Font("Tahoma", 0, 18));
         lnkToCategories.setForeground(new java.awt.Color(0, 0, 255));
         lnkToCategories.setText("<< back to categories");
         lnkToCategories.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -334,7 +362,7 @@ public class SearchResultField extends javax.swing.JPanel {
                     .addComponent(lblCurPage)
                     .addComponent(lnkNextPage)
                     .addComponent(lnkPrevPage))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -355,12 +383,13 @@ public class SearchResultField extends javax.swing.JPanel {
     private void searchResult1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+0));
-        parentWindow.viewerPanel.openedFromHistory = false;
+        parentWindow.viewerPanel.openedFrom = 0;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to the list of the documents");
     }//GEN-LAST:event_searchResult1MouseClicked
 
     private class DocComparator implements Comparator<Document> {
         
-        public int state = 0; // 0 for title-asc sort, 1 for title-desc sort, 2 for date sort
+        public int state = 0; // 0 for title-asc sort, 1 for title-desc sort, 2 for date sort, 3 for range
         
         public DocComparator() { }
         
@@ -370,14 +399,13 @@ public class SearchResultField extends javax.swing.JPanel {
         
         @Override
         public int compare(Document o1, Document o2) {
-            if (state == 0)
-                return o1.getTitle().compareTo(o2.getTitle());
             if (state == 1)
-            	return o2.getTitle().compareTo(o1.getTitle());
-            if (state == 2) //Oh, Andrew, Andrew...
-            	return o1.getDate().compareTo(o2.getDate());
-
-            return o2.compareTo(o1);
+                return o2.getTitle().compareTo(o1.getTitle());
+            if (state == 2)
+                return o2.getDate().compareTo(o1.getDate());
+            if (state == 3)
+                return o2.getRangeParameter().compareTo(o1.getRangeParameter());
+            return o1.getTitle().compareTo(o2.getTitle());
         }
     }
     
@@ -398,9 +426,10 @@ public class SearchResultField extends javax.swing.JPanel {
                 comp = new DocComparator(2);
             }
             
-            if (cmbSortBy.getModel().getSelectedItem().toString().equals("range")) {
-            	comp = new DocComparator(3);
+            if (cmbSortBy.getModel().getSelectedItem().toString().equals("relevance")) {
+                comp = new DocComparator(3);
             }
+
             Collections.sort(docs, comp);
             setPage(0);
         } catch (Exception ex) {
@@ -411,19 +440,22 @@ public class SearchResultField extends javax.swing.JPanel {
     private void searchResult2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+1));
-        parentWindow.viewerPanel.openedFromHistory = false;
+        parentWindow.viewerPanel.openedFrom = 0;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to the list of the documents");
     }//GEN-LAST:event_searchResult2MouseClicked
 
     private void searchResult3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+2));
-        parentWindow.viewerPanel.openedFromHistory = false;
+        parentWindow.viewerPanel.openedFrom = 0;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to the list of the documents");
     }//GEN-LAST:event_searchResult3MouseClicked
 
     private void searchResult4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+3));
-        parentWindow.viewerPanel.openedFromHistory = false;
+        parentWindow.viewerPanel.openedFrom = 0;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to the list of the documents");
     }//GEN-LAST:event_searchResult4MouseClicked
 
     private void lnkToCategoriesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkToCategoriesMouseEntered

@@ -10,6 +10,8 @@
  */
 package app;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Arrays;
 import ts3000.model.Category;
@@ -81,8 +83,22 @@ public class CategoriesField extends javax.swing.JPanel {
                 howMuch = 4;
             }
             
+            lnkPrevPage.setEnabled(currentPage != 0);
+            lnkNextPage.setEnabled(currentPage != pages - 1);
+            
             if (pages == 0) {
+                lnkPrevPage.setVisible(false);
+                lnkNextPage.setVisible(false);
+                Font font = lblCurPage.getFont();
+                lblCurPage.setFont(font.deriveFont((float)40.));
+                lblCurPage.setForeground(new Color(200, 200, 200));
                 return true;
+            } else {
+                lnkPrevPage.setVisible(true);
+                lnkNextPage.setVisible(true);
+                Font font = lblCurPage.getFont();
+                lblCurPage.setFont(font.deriveFont((float)11.));
+                lblCurPage.setForeground(Color.black);
             }
             
             int maxTextLen = 80;
@@ -273,6 +289,7 @@ public class CategoriesField extends javax.swing.JPanel {
         parentWindow.searchResults.lblTitle.setText("Documents in category \"" + categoryName + "\"");
         parentWindow.searchResults.lnkToCategories.setVisible(true);
         
+        parentWindow.searchResults.setThreeWaySorting();
         parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(categoryName));
         parentWindow.setSearchResults();
     }//GEN-LAST:event_searchResult1MouseClicked
@@ -283,6 +300,7 @@ public class CategoriesField extends javax.swing.JPanel {
         parentWindow.searchResults.lblTitle.setText("Documents in category \"" + categoryName + "\"");
         parentWindow.searchResults.lnkToCategories.setVisible(true);
         
+        parentWindow.searchResults.setThreeWaySorting();
         parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(categoryName));
         parentWindow.setSearchResults();
     }//GEN-LAST:event_searchResult2MouseClicked
@@ -293,6 +311,7 @@ public class CategoriesField extends javax.swing.JPanel {
         parentWindow.searchResults.lblTitle.setText("Documents in category \"" + categoryName + "\"");
         parentWindow.searchResults.lnkToCategories.setVisible(true);
         
+        parentWindow.searchResults.setThreeWaySorting();
         parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(categoryName));
         parentWindow.setSearchResults();
     }//GEN-LAST:event_searchResult3MouseClicked
@@ -303,6 +322,7 @@ public class CategoriesField extends javax.swing.JPanel {
         parentWindow.searchResults.lblTitle.setText("Documents in category \"" + categoryName + "\"");
         parentWindow.searchResults.lnkToCategories.setVisible(true);
         
+        parentWindow.searchResults.setThreeWaySorting();
         parentWindow.searchResults.setSource(parentWindow.database.getDocsByCategory(categoryName));
         parentWindow.setSearchResults();
     }//GEN-LAST:event_searchResult4MouseClicked

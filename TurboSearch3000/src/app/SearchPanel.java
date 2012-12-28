@@ -10,7 +10,18 @@
  */
 package app;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import ts3000.model.Category;
 import ts3000.model.Document;
 
 /**
@@ -21,11 +32,22 @@ public class SearchPanel extends javax.swing.JPanel {
 
     /** Creates new form SearchPanel */
     public SearchPanel() {
-        initComponents();
+        
+            initComponents();
+            
+        try {    
+            imgPicture = (Image) ImageIO.read(new File("swe.jpg"));
+        } catch (IOException ex) {
+            imgPicture = new BufferedImage(picWidth, picHeight, 0);
+        }
     }
+    
+    protected int picWidth = 400;
+    protected int picHeight = 200;
     
     protected Document[] gotDocs;
     protected MainWindow parentWindow;
+    protected static Image imgPicture;
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -38,8 +60,9 @@ public class SearchPanel extends javax.swing.JPanel {
 
         tbxSearchField = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        btnLucky = new javax.swing.JButton();
 
-        tbxSearchField.setFont(new java.awt.Font("Tahoma", 0, 18));
+        tbxSearchField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tbxSearchField.setText("search documents...");
         tbxSearchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,11 +83,19 @@ public class SearchPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 14));
+        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSearch.setText("Search!");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
+            }
+        });
+
+        btnLucky.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnLucky.setText("Feeling lucky");
+        btnLucky.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLuckyActionPerformed(evt);
             }
         });
 
@@ -73,20 +104,27 @@ public class SearchPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(tbxSearchField, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(147, 147, 147))
+                .addGap(98, 98, 98)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addGap(58, 58, 58)
+                        .addComponent(btnLucky, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(226, 226, 226))
+                    .addComponent(tbxSearchField, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE))
+                .addGap(121, 121, 121))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(207, 207, 207)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(369, Short.MAX_VALUE)
+                .addComponent(tbxSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbxSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(211, Short.MAX_VALUE))
+                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLucky, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -110,12 +148,22 @@ public class SearchPanel extends javax.swing.JPanel {
                 }
         parentWindow.searchResults.lblTitle.setText("Search results - \"" + searchedText + "\"");
         parentWindow.searchResults.lnkToCategories.setVisible(false);
+        parentWindow.searchResults.setCompleteSorting();
         parentWindow.searchResults.setSource(gotDocs);
         parentWindow.setSearchResults();
     }
     
+    @Override 
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.drawImage(imgPicture, (this.getWidth() - imgPicture.getWidth(this)) / 2, 
+                (tbxSearchField.getLocation().y - imgPicture.getHeight(this)) / 2, this);
+    }
+    
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         setSearch(tbxSearchField.getText());
+        parentWindow.searchField.setText(tbxSearchField.getText());
+        parentWindow.searchField.requestFocus();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void tbxSearchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tbxSearchFieldFocusGained
@@ -136,7 +184,20 @@ public class SearchPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tbxSearchFieldKeyTyped
 
+    private void btnLuckyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuckyActionPerformed
+        ArrayList<Category> categories = parentWindow.database.getCategories();
+        Random rand = new Random(new Date().getTime());
+        ArrayList<Document> docs = parentWindow.database.getDocsByCategory(categories.get(rand.nextInt(categories.size())).getName());
+        Document doc = docs.get(rand.nextInt(docs.size()));
+        parentWindow.viewerPanel.openedFrom = 2;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to the search");        
+        parentWindow.viewerPanel.loadDocument(doc);
+        parentWindow.setViewerPanel();
+        parentWindow.searchPanel.btnLucky.requestFocus();
+    }//GEN-LAST:event_btnLuckyActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    protected javax.swing.JButton btnLucky;
     protected javax.swing.JButton btnSearch;
     protected javax.swing.JTextField tbxSearchField;
     // End of variables declaration//GEN-END:variables

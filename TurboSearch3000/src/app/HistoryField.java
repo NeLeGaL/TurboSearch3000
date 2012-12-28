@@ -10,6 +10,8 @@
  */
 package app;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Comparator;
 import ts3000.model.Document;
@@ -78,8 +80,22 @@ public class HistoryField extends javax.swing.JPanel {
                 howMuch = 4;
             }
             
+            lnkPrevPage.setEnabled(currentPage != 0);
+            lnkNextPage.setEnabled(currentPage != pages - 1);
+            
             if (pages == 0) {
+                lnkPrevPage.setVisible(false);
+                lnkNextPage.setVisible(false);
+                Font font = lblCurPage.getFont();
+                lblCurPage.setFont(font.deriveFont((float)40.));
+                lblCurPage.setForeground(new Color(200, 200, 200));
                 return true;
+            } else {
+                lnkPrevPage.setVisible(true);
+                lnkNextPage.setVisible(true);
+                Font font = lblCurPage.getFont();
+                lblCurPage.setFont(font.deriveFont((float)11.));
+                lblCurPage.setForeground(Color.black);
             }
             
             int maxTextLen = 120;
@@ -282,25 +298,29 @@ public class HistoryField extends javax.swing.JPanel {
     private void searchResult1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult1MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+0));
-        parentWindow.viewerPanel.openedFromHistory = true;
+        parentWindow.viewerPanel.openedFrom = 1;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to history");
     }//GEN-LAST:event_searchResult1MouseClicked
 
     private void searchResult2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult2MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+1));
-        parentWindow.viewerPanel.openedFromHistory = true;
+        parentWindow.viewerPanel.openedFrom = 1;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to history");
     }//GEN-LAST:event_searchResult2MouseClicked
 
     private void searchResult3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult3MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+2));
-        parentWindow.viewerPanel.openedFromHistory = true;
+        parentWindow.viewerPanel.openedFrom = 1;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to history");
     }//GEN-LAST:event_searchResult3MouseClicked
 
     private void searchResult4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchResult4MouseClicked
         parentWindow.setViewerPanel();
         parentWindow.viewerPanel.loadDocument(docs.get(currentPage*4+3));
-        parentWindow.viewerPanel.openedFromHistory = true;
+        parentWindow.viewerPanel.openedFrom = 1;
+        parentWindow.viewerPanel.lnkBack.setText("<< back to history");
     }//GEN-LAST:event_searchResult4MouseClicked
 
     private void lnkPrevPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lnkPrevPageMouseClicked

@@ -11,6 +11,15 @@
 package app;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import ts3000.model.Database;
 
@@ -18,10 +27,19 @@ import ts3000.model.Database;
 public class MainWindow extends javax.swing.JApplet {
     int resCount = 0;
     protected Database database;
+    protected Image imgLogo;
     
     public void addResult()
     {
         
+    }
+    
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        g = this.menuPanel.getGraphics();
+        g.drawImage(imgLogo, (this.getWidth() - imgLogo.getWidth(this)) / 2, 
+                0, this); 
     }
     
     /** Initializes the applet MainWindow */
@@ -33,15 +51,16 @@ public class MainWindow extends javax.swing.JApplet {
             java.awt.EventQueue.invokeAndWait(new Runnable() {                
                 
                 public void run() {
-                    resize(1000, 600); 
+                    resize(Toolkit.getDefaultToolkit().getScreenSize().width - 16,
+                           Toolkit.getDefaultToolkit().getScreenSize().height - 122); 
                     initComponents();
                     searchDocumentLabel.setFocusable(true);
                     allDocumentsLabel.setFocusable(true);
                     historyLabel.setFocusable(true);
                     
                     // set focus for something
-                    allDocumentsLabel.requestFocus();
-                    //searchPanel.tbxSearchField.requestFocus();
+                    //allDocumentsLabel.requestFocus();
+                    searchPanel.tbxSearchField.requestFocus();
                     
                     setSearchPanel();
                     searchPanel.parentWindow = wnd;
@@ -49,6 +68,11 @@ public class MainWindow extends javax.swing.JApplet {
                     viewerPanel.parentWindow = wnd;
                     categoriesField.parentWindow = wnd;
                     historyField.parentWindow = wnd;
+                    try {
+                        imgLogo = (Image) ImageIO.read(new File("logo.jpg"));
+                    } catch (IOException ex) {
+                        imgLogo = new BufferedImage(182, 50, 0);
+                    }
                     
                     
                     //database = new Database("/Users/kolesov93/Documents/workspace/TurboSearch3000/TurboSearch3000/result.txt");
@@ -93,9 +117,9 @@ public class MainWindow extends javax.swing.JApplet {
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        menuPanel.setBackground(new java.awt.Color(230, 230, 230));
+        menuPanel.setBackground(new java.awt.Color(241, 241, 241));
 
-        searchDocumentLabel.setFont(new java.awt.Font("Tahoma", 0, 14));
+        searchDocumentLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         searchDocumentLabel.setForeground(new java.awt.Color(0, 0, 255));
         searchDocumentLabel.setText("Search document");
         searchDocumentLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -124,7 +148,7 @@ public class MainWindow extends javax.swing.JApplet {
             }
         });
 
-        allDocumentsLabel.setFont(new java.awt.Font("Tahoma", 0, 14));
+        allDocumentsLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         allDocumentsLabel.setForeground(new java.awt.Color(0, 0, 255));
         allDocumentsLabel.setText("All documents");
         allDocumentsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -153,7 +177,7 @@ public class MainWindow extends javax.swing.JApplet {
             }
         });
 
-        historyLabel.setFont(new java.awt.Font("Tahoma", 0, 14));
+        historyLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         historyLabel.setForeground(new java.awt.Color(0, 0, 255));
         historyLabel.setText("History");
         historyLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -208,7 +232,7 @@ public class MainWindow extends javax.swing.JApplet {
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(searchDocumentLabel)
                 .addGap(18, 18, 18)
@@ -223,15 +247,15 @@ public class MainWindow extends javax.swing.JApplet {
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchDocumentLabel)
                     .addComponent(allDocumentsLabel)
                     .addComponent(historyLabel)
                     .addComponent(searchButton)
                     .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         contentPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -278,21 +302,21 @@ public class MainWindow extends javax.swing.JApplet {
                         .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchResults, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(viewerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -528,6 +552,7 @@ public class MainWindow extends javax.swing.JApplet {
     
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         searchPanel.setSearch(searchField.getText());
+        searchPanel.tbxSearchField.setText(searchField.getText());
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
@@ -568,7 +593,7 @@ public class MainWindow extends javax.swing.JApplet {
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel searchDocumentLabel;
-    private javax.swing.JTextField searchField;
+    protected javax.swing.JTextField searchField;
     protected app.SearchPanel searchPanel;
     protected app.SearchResultField searchResults;
     protected app.HTMLViewer viewerPanel;

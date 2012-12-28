@@ -12,8 +12,8 @@ import java.util.concurrent.Semaphore;
 import org.apache.log4j.Logger;
 
 class IndexatorAndFinder {
-	static final String DELIMETERS = "\t\n .<>,!&?$%#@()[]{}-\"«»";
-	static final String ALLOWED_SYMBOLS = "àáâãäå¸æçèéêëìíîïğñòóôõö÷øùüûúışÿÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÜÛÚİŞßqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+	static final String DELIMETERS = "\t\n .<>,!&?$%#@()[]{}-\"Â«Â»";
+	static final String ALLOWED_SYMBOLS = "Ğ°Ğ±Ğ²Ğ³Ğ´ĞµÑ‘Ğ¶Ğ·Ğ¸Ğ¹ĞºĞ»Ğ¼Ğ½Ğ¾Ğ¿Ñ€ÑÑ‚ÑƒÑ„Ñ…Ñ†Ñ‡ÑˆÑ‰ÑŠÑ‹ÑŒÑÑÑĞĞ‘Ğ’Ğ“Ğ”Ğ•ĞĞ–Ğ—Ğ˜Ğ™ĞšĞ›ĞĞœĞĞŸĞ Ğ¡Ğ¢Ğ£Ğ¤Ğ¥Ğ¦Ğ§Ğ¨Ğ©ĞªĞ«Ğ¬Ğ­Ğ®Ğ¯qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
 	private FileWorker fileWorker;
 	private Map<String, HashSet<Integer>> grams = new HashMap<String, HashSet<Integer>>();
 	private Semaphore synchSemaphore = new Semaphore(1);
@@ -80,15 +80,15 @@ class IndexatorAndFinder {
     	ArrayList<Category> categories = fileWorker.getCategories();
     	if (categories.size() >= 3) {
     		for (int i = 0; i < categories.size(); ++i) {
-    			if (categories.get(i).getName().equals("Ñåêñ")) {
+    			if (categories.get(i).getName().equals("Ğ¡ĞµĞºÑ")) {
     				swap(categories, 0, i);
     				continue;
     			}
-    			if (categories.get(i).getName().equals("Íàğêîòèêè")) {
+    			if (categories.get(i).getName().equals("ĞĞ°Ñ€ĞºĞ¾Ñ‚Ğ¸ĞºĞ¸")) {
     				swap(categories, 1, i);
     				continue;
     			}
-    			if (categories.get(i).getName().equals("Ğîê-í-ğîëë")) {
+    			if (categories.get(i).getName().equals("Ğ Ğ¾Ğº-Ğ½-Ñ€Ğ¾Ğ»Ğ»")) {
     				swap(categories, 2, i);
     				continue;
     			}    			

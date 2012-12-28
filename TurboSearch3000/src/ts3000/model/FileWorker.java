@@ -142,12 +142,12 @@ class FileWorker extends Thread {
 		}
 		
 		for (String category : categoryDocuments.keySet()) {
-			String annotation = "";
+			String annotation = "Documents - ";
 			int iteration = 0;
 			HashMap<String, Document> tempMap = categoryDocuments.get(category);
 			for (String title : tempMap.keySet()) {
 				++iteration;
-				annotation += "" + iteration + ": " + title;
+				annotation += ((iteration == 1)?"":", ") /*+ iteration + ": "*/ + title;
 				if (iteration == 3) break;
 			}
 			if (iteration == 0) annotation = "Empty category";
